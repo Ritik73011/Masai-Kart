@@ -5,9 +5,9 @@ cardContainers.forEach((items, i) => {
     let containerDimensions = items.getBoundingClientRect();
     let containerWidth = containerDimensions.width;
     nxtBtns[i].addEventListener("click", () => {
-        items.scrollLeft += containerWidth - 100;
+        items.scrollLeft += containerWidth - 40;
     });
     preBtns[i].addEventListener("click", () => {
-        items.scrollLeft -= containerWidth + 100;
+        items.scrollLeft -= containerWidth + 40;
     });
 });

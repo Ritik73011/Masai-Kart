@@ -29,6 +29,11 @@
     padding: 8px;
 }
 
+.catNameFlex a {
+    color: #ed0331;
+    margin: auto 0;
+}
+
 .card {
     width: 100%;
     display: block;
@@ -41,17 +46,17 @@
 }
 
 .card img {
-    width: 220px;
-    height: 180px;
+    width: 270px;
+    height: 310px;
 }
 
 .pre-btn,
 .nxt-btn {
     position: absolute;
-    top: 190px;
+    top: 43%;
     width: 35px;
     height: 20%;
-    z-index: 2;
+    z-index: 1;
     border: none;
     cursor: pointer;
     outline: none;

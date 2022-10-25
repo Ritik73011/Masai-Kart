@@ -12,13 +12,13 @@
     grid-template-columns: repeat(8, 1fr);
     gap: 32px;
     text-align: center;
-    margin-top: 47px;
+    margin-top: 64px;
     padding: 8px 24px;
 }
 
 #category div img {
     border-radius: 50%;
-    border: 1px solid #ed0331;
+    border: 2px solid #ed0331;
     width: 60px;
     height: 60px;
     padding: 4px;
@@ -60,14 +60,14 @@
 @media all and (min-width: 491px) and (max-width: 768px) {
     #category {
         grid-template-columns: repeat(4, 1fr);
-        margin-top: 104px;
+        margin-top: 120px;
     }
 }
 
 @media all and (min-width: 0px) and (max-width: 490px) {
     #category {
         grid-template-columns: repeat(3, 1fr);
-        margin-top: 104px;
+        margin-top: 120px;
     }
 }
 
