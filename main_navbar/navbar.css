@@ -15,6 +15,12 @@ nav {
     padding: 4px 0;
     flex-wrap: wrap;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    background: white;
 }
 
 .layer {
@@ -136,22 +142,22 @@ li {
 
 /*Custum Scroll Bar*/
 /* width */
-::-webkit-scrollbar {
+#searchData::-webkit-scrollbar {
     width: 2px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+#searchData::-webkit-scrollbar-track {
     border-radius: 10px;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+#searchData::-webkit-scrollbar-thumb {
     background: #ed0331;
     border-radius: 10px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+#searchData::-webkit-scrollbar-thumb:hover {
     background: #ed0331;
 }

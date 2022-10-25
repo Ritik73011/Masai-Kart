@@ -1,0 +1,101 @@
+.catName {
+    width: 99%;
+    margin: auto;
+    position: relative;
+    border-radius: 8px;
+    padding: 8px;
+    /* background-color: rgb(101, 203, 203); */
+}
+
+
+#productContainer,
+#fashionContainer,
+#mobileContainer,
+#bigSavingContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    gap: 8px;
+    padding: 10px;
+    /* border: 1px solid black; */
+}
+
+.catNameFlex {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.card {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    font-size: 12px;
+    z-index: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.card img {
+    width: 220px;
+    height: 180px;
+}
+
+.pre-btn,
+.nxt-btn {
+    position: absolute;
+    top: 190px;
+    width: 35px;
+    height: 20%;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nxt-btn {
+    text-align: end;
+}
+
+.pre-btn {
+    left: 10;
+}
+
+.nxt-btn {
+    right: 0;
+    margin-right: 8px;
+}
+
+.pre-btn img,
+.nxt-btn img {
+    width: 20px;
+    height: 30px;
+    margin: auto;
+    display: block;
+}
+
+#title {
+    font-size: 16px;
+    overflow: hidden;
+    word-wrap: wrap;
+    height: 65px;
+}
+
+#price {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: center;
+    font-style: bold;
+}
+
+#discount {
+    margin-top: 8px;
+    font-size: 16px;
+    text-align: center;
+    color: green;
+}

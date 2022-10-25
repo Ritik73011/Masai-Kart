@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#category {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 32px;
+    text-align: center;
+    margin-top: 47px;
+    padding: 8px 24px;
+}
+
+#category div img {
+    border-radius: 50%;
+    border: 1px solid #ed0331;
+    width: 60px;
+    height: 60px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+/*Crousal*/
+.crousal {
+    width: 85%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 16px;
+    height: 300px;
+}
+
+/*Crousal*/
+.item img {
+    width: 100%;
+}
+
+.staticData {
+    padding: 24px;
+}
+
+.staticData h2 {
+    font-size: 18px;
+}
+
+.staticData h3 {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.staticData p {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+@media all and (min-width: 491px) and (max-width: 768px) {
+    #category {
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 104px;
+    }
+}
+
+@media all and (min-width: 0px) and (max-width: 490px) {
+    #category {
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 104px;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ed0331;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ed0331;
+}
