@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+</head>
+
+<!-- <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    </div>
+  </div> -->
+
+<body>
+    <div id="main" style="cursor: pointer;" onclick="openNav()">&#9776</div>
+    <div id="mySidenav" class="sidenav">
+        <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Electronics</a>
+        <a href="#">TVs & Appliances</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Baby & Kids</a>
+        <a href="#">Home & Furnitures</a>
+        <a href="#">Sports, Books & more</a>
+      </div>
+    <div id="nav2">
+        <div class="dropdown">
+            <span class="">Electronics <i class="fa-sharp fa-solid fa-angle-down"></i></span>
+            <div class="dropdown-content">
+                <div id="popDiv">
+                    <div class="col">
+                        <h3>Mobiles</h3>
+                        <p>MI</p>
+                        <p>Realme</p>
+                        <p>Samsung</p>
+                        <p>OPPO</p>
+                        <p>Apple</p>
+                        <p>Infinix</p>
+                        <p>Honor</p>
+                        <p>Vivo</p>
+                        <p>Asus</p>
+                        <p>Nokia</p>
+                        <p>Poco X2</p>
+                        <p>realme Narzo 10</p>
+                        <p>Infinix Hot 9</p>
+                        <p>IQOO 3</p>
+                    </div>
+                    <div class="col">
+                        <h3>Mobile Accessories</h3>
+                        <p>Mobile Cases</p>
+                        <p>Headphones & Headsets</p>
+                        <p>Power banks</p>
+                        <p>Screenguards</p>
+                        <p>Memory cards</p>
+                        <p>Smart headphones</p>
+                        <p>Mobile Cables</p>
+                        <h3>Mobile Chargers</h3>
+                        <p>Smart Wearable Tech</p>
+                        <p>Smart Watches</p>
+                        <p>Smart Glasses (VR)</p>
+                        <p>Smart Bands</p>
+                    </div>
+                    <div class="col">
+                        <h3>Laptops</h3>
+                        <p>Gaming Laptops</p>
+                        <h3>Desktop PCs</h3>
+                        <h3>Gaming & Accessories</h3>
+                        <h3>Computer Accessories</h3>
+                        <p>External Hard Disks</p>
+                        <p>Pendrives</p>
+                        <p>Laptop Skins & Decals</p>
+                        <p>Laptop Bags</p>
+                        <p>Mouse</p>
+                        <p>Printers & Ink Cartridges</p>
+                        <p>Monitors</p>
+                        <h3>Tablets</h3>
+                        <p>Apple iPads</p>
+                    </div>
+                    <div class="col">
+                        <p>Televisions</p>
+                        <h3>Speakers</h3>
+                        <p>Home Audio Speakers</p>
+                        <p>Home Theatres</p>
+                        <p>Soundbars</p>
+                        <p>Bluetooth Speakers</p>
+                        <p>DTH Set Top Box</p>
+                        <h3>Smart Home Automation</h3>
+                        <p>Google Nest</p>
+                        <h3>Camera</h3>
+                        <p>DSLR & Mirrorless</p>
+                        <p>Compact & Bridge Cameras</p>
+                        <p>Sports & Action</p>
+
+                    </div>
+                    <div class="col">
+                        <h3>Featured</h3>
+                        <p>Google Assistant Store</p>
+                        <p>Laptops on Buyback Guarantee</p>
+                        <p>Flipkart SmartBuy</p>
+                        <p>Li-Polymer Power Banks</p>
+                        <p>Sony PS4 Pro & Slim</p>
+                        <p>Apple Products</p>
+                        <p>Microsoft Store</p>
+                        <p>Lenovo Phab Series</p>
+                        <p>JBL Speakers</p>
+                        <p>Philips</p>
+                        <p>Smartphones On Buyback Guarantee</p>
+                        <p>Dr. Morepen</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <span>TVs & Appliances <i class="fa-sharp fa-solid fa-angle-down"></i></span>
+            <div class="dropdown-content">
+                <div id="popDiv">
+                    <div class="col">
+                        <h3>Television</h3>
+                        <h3>New Launches</h3>
+                        <h3>Smart & Ultra HD</h3>
+                        <h3>Top Brands</h3>
+                        <p>Mi</p>
+                        <p>Vu</p>
+                        <p>Thomson</p>
+                        <p>Samsung</p>
+                        <p>iFFALCON by TCL</p>
+                        <p>LG</p>
+                        <p>Nokia</p>
+                        <p>realme</p>
+                        <p>Motorola</p>
+                        <h3>Shop by Screen Size</h3>
+                        <p>24 & below</p>
+                    </div>
+                    <div class="col">
+                        <h3>Washing Machine</h3>
+                        <p>Fully Automatic Front Load</p>
+                        <p>Semi Automatic Top Load</p>
+                        <p>Fully Automatic Top Load</p>
+                        <h3>Air Conditioners</h3>
+                        <p>Inverter AC</p>
+                        <p>Split ACs</p>
+                        <p>Window ACs</p>
+                        <h3>Shop by Brands</h3>
+                        <p>LG</p>
+                        <p>Hitachi</p>
+                        <p>Carrier</p>
+                        <h3>Refrigerators</h3>
+                        <p>Single Door</p>
+                        <p>Double Door</p>
+                        <p>Triple door</p>
+                    </div>
+                    <div class="col">
+                        <h3>Kitchen Appliances</h3>
+                        <p>Microwave Ovens</p>
+                        <p>Oven Toaster Grills (OTG)</p>
+                        <p>Juicer/Mixer/Grinder</p>
+                        <p>Electric Kettle</p>
+                        <p>Induction Cooktops</p>
+                        <p>Chimneys</p>
+                        <p>Hand Blenders</p>
+                        <p>Sandwich Makers</p>
+                        <p>Pop Up Toasters</p>
+                        <p>Electric Cookers</p>
+                        <p>Wet Grinders</p>
+                        <p>Food Processors</p>
+                        <p>Coffee Makers</p>
+                        <p>Dishwashers</p>
+                        <h3>Healthy Living Appliances</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Small Home Appliances</h3>
+                        <p>Irons</p>
+                        <p>Water Purifiers</p>
+                        <p>Fans</p>
+                        <p>Air Coolers</p>
+                        <p>Inverters</p>
+                        <p>Vacuum Cleaners</p>
+                        <p>Sewing Machines</p>
+                        <p>Voltage Stabilizers</p>
+                        <p>Water Geysers</p>
+                        <p>Immersion Rods</p>
+                        <h3>Top Brands</h3>
+                        <p>Livpure</p>
+                        <p>Philips</p>
+                        <p>Bajaj</p>
+                        <p>IFB</p>
+                    </div>
+                    <div class="col">
+                        <h3>Buying Guides</h3>
+                        <p>Televisions</p>
+                        <p>Washing Machines</p>
+                        <p>Refrigerators</p>
+                        <p>Air Conditioners</p>
+                        <p>Water Purifiers</p>
+                        <p>Air Purifiers</p>
+                        <p>Chimneys</p>
+                        <p>Water Geysers</p>
+                        <h3>New Launches</h3>
+                        <p>Coocaa Smart TVs</p>
+                        <p>Nokia (55) 4K Android TV</p>
+                        <p>Mi (32) 4A Pro Android TV</p>
+                        <p>MarQ (43) FHD Smart TV</p>
+                        <p>LG Refrigerators</p>
+                        <p>Thomson (40) 4K Smart TV</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>Men <i class="fa-sharp fa-solid fa-angle-down"></i></span>
+            <div class="dropdown-content">
+                <div id="popDiv">
+                    <div class="col">
+                        <h3>Footwear</h3>
+                        <p>Shoes</p>
+                        <p>Sandals & Floaters</p>
+                        <p>Flip- Flops</p>
+                        <p>Loafers</p>
+                        <p>Boots</p>
+                        <p>Sneakers</p>
+                        <h3>Men's Grooming</h3>
+                        <p>Deodorants</p>
+                        <p>Perfumes</p>
+                        <p>Beard Care & Grooming</p>
+                        <p>Shaving & Aftershave</p>
+                        <p>Sexual Wellness</p>
+                    </div>
+                    <div class="col">
+                        <h3>Clothing</h3>
+                        <h3>Top wear</h3>
+                        <p>T-Shirts</p>
+                        <p>Formal Shirts</p>
+                        <p>Casual Shirts</p>
+                        <h3>Bottom wear</h3>
+                        <p>Jeans</p>
+                        <p>Casual Trousers</p>
+                        <p>Formal Trousers</p>
+                        <p>Track pants</p>
+                        <p>Shorts</p>
+                        <h3>Cargos</h3>
+                        <p>Three Fourths</p>
+                        <h3>Suits, Blazers & Waistcoats</h3>
+                        <h3>Ties, Socks, Caps & More</h3>
+                        <h3>Fabrics</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Winter Wear</h3>
+                        <p>Sweatshirts</p>
+                        <p>Jackets</p>
+                        <p>Sweater</p>
+                        <p>Tracksuits</p>
+                        <h3>Ethnic wear</h3>
+                        <p>Kurta</p>
+                        <p>Ethnic Sets</p>
+                        <p>Sherwanis</p>
+                        <p>Ethnic Pyjama</p>
+                        <p>Dhoti</p>
+                        <p>Lungi</p>
+                        <h3>Innerwear & Loungewear</h3>
+                        <p>Briefs & Trunks</p>
+                        <p>Vests</p>
+                        <p>Boxers</p>
+                    </div>
+                    <div class="col">
+                        <h3>Watches</h3>
+                        <p>Fastrack</p>
+                        <p>Casio</p>
+                        <p>Titan</p>
+                        <p>Fossil</p>
+                        <p>Sonata</p>
+                        <h3>Accessories</h3>
+                        <p>Backpacks</p>
+                        <p>Wallets</p>
+                        <p>Belts</p>
+                        <p>Sunglasses</p>
+                        <p>Luggage & Travel</p>
+                        <p>Frames</p>
+                        <p>Jewellery</p>
+                        <h3>Sports & Fitness Store</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Smart Watches</h3>
+                        <h3>Smart Bands</h3>
+                        <h3>Personal Care Appliances</h3>
+                        <p>Trimmers</p>
+                        <p>Shavers</p>
+                        <p>Grooming Kits</p>
+                        <h3>Featured</h3>
+                        <p>Watches Store</p>
+                        <p>Footwear Club</p>
+                        <p>Bags & Wallet</p>
+                        <p>T-Shirt Store</p>
+                        <p>Adidas</p>
+                        <p>Beardo</p>
+                        <p>Reebok</p>
+                        <p>Skechers</p>
+                        <p>Nike</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>Women <i class="fa-sharp fa-solid fa-angle-down"></i></span>
+            <div class="dropdown-content">
+                <div id="popDiv">
+                    <div class="col">
+                        <h3>Clothing</h3>
+                        <h3>Women Western & Maternity Wear</h3>
+                        <p>Topwear</p>
+                        <p>Dresses</p>
+                        <p>Jeans</p>
+                        <p>Shorts</p>
+                        <p>Skirts</p>
+                        <p>Jeggings & Tights</p>
+                        <p>Trousers & Capris</p>
+                        <h3>Lingerie & Sleepwear</h3>
+                        <p>Bras</p>
+                        <p>Panties</p>
+                        <p>Lingerie Sets</p>
+                        <p>Night Dresses & Nighties</p>
+                        <p>Shapewear</p>
+                        <p>Camisoles & Slips</p>
+                        <h3>Swim & Beachwear</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Ethnic Wear</h3>
+                        <p>Sarees</p>
+                        <p>Kurtas & Kurtis</p>
+                        <p>Dress Material</p>
+                        <p>Lehenga Choli</p>
+                        <p>Blouse</p>
+                        <p>Kurta Sets & Salwar Suits</p>
+                        <p>Gowns</p>
+                        <p>Dupattas</p>
+                        <h3>Ethnic Bottoms</h3>
+                        <p>Leggings & Churidars</p>
+                        <p>Palazzos</p>
+                        <p>Shararas</p>
+                        <p>Salwars & Patiala</p>
+                        <p>Dhoti Pants</p>
+                        <p>Ethnic Trousers</p>
+                        <p>Saree Shapewear & Petticoats</p>
+                    </div>
+                    <div class="col">
+                        <h3>Footwear</h3>
+                        <h3>Sandals</h3>
+                        <p>Flats</p>
+                        <p>Heels</p>
+                        <p>Wedges</p>
+                        <h3>Shoes</h3>
+                        <p>Sports Shoes</p>
+                        <p>Casual Shoes</p>
+                        <p>Boots</p>
+                        <h3>Ballerinas</h3>
+                        <h3>Slippers & Flip- Flop's</h3>
+                        <h3>Watches</h3>
+                        <h3>Smart Watches</h3>
+                        <h3>Personal Care Appliances</h3>
+                        <p>Hair Straightners</p>
+                    </div>
+                    <div class="col">
+                        <h3>Beauty & Grooming</h3>
+                        <p>Make Up</p>
+                        <p>Skin Care</p>
+                        <p>Hair Care</p>
+                        <p>Bath & Spa</p>
+                        <p>Deodorants & Perfumes</p>
+                        <h3>Jewellery</h3>
+                        <p>Artificial Jewellery</p>
+                        <p>Silver Jewellery</p>
+                        <p> Precious Jewellery</p>
+                        <p>Coins and Bars</p>
+                        <h3>Accessories</h3>
+                        <p>Handbags</p>
+                        <p>Shoulder Bags</p>
+                        <p>Totes</p>
+                        <p>Sling bags</p>
+                    </div>
+                    <div class="col">
+                        <h3>Featured</h3>
+                        <p>Forever 21</p>
+                        <p>Accessorize</p>
+                        <p>W</p>
+                        <p>Pantaloons</p>
+                        <p>Chemistry</p>
+                        <p>Lakme</p>
+                        <p>Nivea</p>
+                        <p>Catwalk</p>
+                        <p>Titan-Raga</p>
+                        <p>Fastrack</p>
+                        <p>Divastri</p>
+                        <p>Rare Roots</p>
+                        <p>Anmi</p>
+                        <p>Coins & Bars</p>
+                        <p>Crocs</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>Baby & Kids <i class="fa-sharp fa-solid fa-angle-down"></i></span>
+            <div class="dropdown-content">
+                <div id="popDiv">
+                    <div class="col">
+                        <h3>Kids Clothing</h3>
+                        <h3>Boys' Clothing</h3>
+                        <p>T-Shirts</p>
+                        <p>Ethnic Wear</p>
+                        <p>Shorts</p>
+                        <p>Shirts</p>
+                        <p>Innerwear</p>
+                        <h3>Girls' Clothing</h3>
+                        <p>Dresses & Skirts</p>
+                        <p>Ethnic Wear</p>
+                        <p>T-shirts & Tops</p>
+                        <p>Innerwear</p>
+                        <h3>Baby Boys' Clothing</h3>
+                        <p>Combos Sets</p>
+                        <p>T-Shirts</p>
+                        <p>Innerwear</p>
+                    </div>
+                    <div class="col">
+                        <h3>Kids' Footwear</h3>
+                        <h3>Boys' Footwear</h3>
+                        <p>Sandals</p>
+                        <p>Sport Shoes</p>
+                        <h3>Girls' Footwear</h3>
+                        <p>Flats & Bellies</p>
+                        <p>Sport Shoes</p>
+                        <h3>Infant Footwear</h3>
+                        <h3>Character Shoes</h3>
+                        <p>Kids' Watches</p>
+                        <p>Kids' Sunglasses</p>
+                        <h3>Kids' Winter Wear</h3>
+                        <h3>Boys' Winter Wear</h3>
+                        <p>Boys' Sweatshirts</p>
+                        <p>Boys' Jacket</p>
+                        <h3>Girls' Winter Wear</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Toys</h3>
+                        <p>Remote Control Toys</p>
+                        <p>Educational Toys</p>
+                        <p>Soft Toys</p>
+                        <p>Cars & Die-cast Vehicles</p>
+                        <p>Outdoor Toys</p>
+                        <p>Action Figures</p>
+                        <p>Board Games</p>
+                        <p>Musical Toys</p>
+                        <p>Dolls & Doll Houses</p>
+                        <p>Puzzles</p>
+                        <p>S.T.E.M Toys</p>
+                        <p>Helicopter & Drones</p>
+                        <p>Toy Guns</p>
+                        <p>Party Supplies</p>
+                        <h3>School Supplies</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Baby Care</h3>
+                        <p>Diapers</p>
+                        <p>Wipes</p>
+                        <p>Diapering & Potty Training</p>
+                        <p>Baby Bath, Hair & Skin Care</p>
+                        <p>Baby Grooming</p>
+                        <p>Baby Bathing Accessories</p>
+                        <p>Baby Gift Sets & Combo</p>
+                        <p>Baby Oral Care</p>
+                        <p>Baby Food</p>
+                        <p>Baby Feeding Bottle & Accessories</p>
+                    </div>
+                    <div class="col">
+                        <h3>Featured brands</h3>
+                        <p>Disney</p>
+                        <p>Barbie</p>
+                        <p>United Colors of Benetton</p>
+                        <p>The Children's Place</p>
+                        <p>US Polo</p>
+                        <p>Flying Machine</p>
+                        <p>Crocs</p>
+                        <p>Puma</p>
+                        <p>Funskool</p>
+                        <p>Lego</p>
+                        <p>Luvlap</p>
+                        <p>Mamy Poko</p>
+                        <p>LG Refrigerators</p>
+                        <p>Mee Mee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>Home & Furniture <i class="fa-sharp fa-solid fa-angle-down"></i></span>
+            <div class="dropdown-content">
+                <div id="popDiv">
+                    <div class="col">
+                        <h3>Kitchen, Cookware & Serveware</h3>
+                        <p>Pans</p>
+                        <p>Tawas</p>
+                        <p>Pressure Cookers</p>
+                        <p>Kitchen tools</p>
+                        <p>Gas Stoves</p>
+                        <h3>Tableware & Dinnerware</h3>
+                        <p>Coffee Mugs</p>
+                        <p>Dinner Set</p>
+                        <p>Barware</p>
+                        <h3>Kitchen Storage</h3>
+                        <p>Water Bottles</p>
+                        <p>Lunch Boxes</p>
+                        <p>Flasks</p>
+                        <p>Casseroles</p>
+                        <h3>Kitchen Containers</h3>
+                        <h3>Cleaning Supplies</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Furniture Top Offers</h3>
+                        <p>Bed Room Furniture</p>
+                        <p>Beds</p>
+                        <p>Mattresses</p>
+                        <p>Wardrobes</p>
+                        <h3>Living Room Furniture</h3>
+                        <p>Sofa</p>
+                        <p>Sofa Beds</p>
+                        <p>TV Units</p>
+                        <h3>Dining Tables & Chairs</h3>
+                        <p>Coffee Tables</p>
+                        <p>Shoe Racks</p>
+                        <h3>Office & Study Furniture</h3>
+                        <p>Kids Room Furniture</p>
+                        <h3>DIY Furniture</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Furnishing</h3>
+                        <p>Bedsheets</p>
+                        <p>Curtains</p>
+                        <p>Cushions & Pillows</p>
+                        <p>Blankets</p>
+                        <p>Bath Towels</p>
+                        <p>Kitchen & Table Linen</p>
+                        <p>Floor Coverings</p>
+                        <h3>Smart Home Automation</h3>
+                        <p>Smart Security System</p>
+                        <p>Smart Door Locks</p>
+                        <h3>Home Improvement</h3>
+                        <p>Tools & Measuring Equipments</p>
+                        <p>Home Utilities & Organizers</p>
+                    </div>
+                    <div class="col">
+                        <h3>Home Decor</h3>
+                        <p>Paintings</p>
+                        <p>Clocks</p>
+                        <p>Wall Shelves</p>
+                        <p>Stickers</p>
+                        <p>Showpieces & Figurines</p>
+                        <h3>Home Lighting</h3>
+                        <p>Bulbs</p>
+                        <p>Wall Lamp</p>
+                        <p>Table Lamp</p>
+                        <p>Ceiling Lamp</p>
+                        <p>Emergency Lights</p>
+                        <h3>Festive Decor & Gifts</h3>
+                        <h3>Pet Supplies</h3>
+                        <p>Dogs</p>
+                        <p>Cats</p>
+                        <p>Fish & Aquatics</p>
+                    </div>
+                    <div class="col">
+                        <h3>Durability Certified Furniture</h3>
+                        <h3>Featured</h3>
+                        <h3>Christmas Store</h3>
+                        <p>Mugs Store</p>
+                        <h3>Gardening Store</h3>
+                        <p>Stainless Steel Store</p>
+                        <p>Milton</p>
+                        <p>Bombay Dyeing</p>
+                        <p>@home</p>
+                        <p>HomeTown</p>
+                        <p>Ajanta</p>
+                        <p>Prestige</p>
+                        <h3>Perfect Home Store</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>Sports, Books & More <i class="fa-sharp fa-solid fa-angle-down"></i></span>
+            <div class="dropdown-content">
+                <div id="popDiv">
+                    <div class="col">
+                        <h3>Sports</h3>
+                        <p>Cricket</p>
+                        <p>Badminton</p>
+                        <p>Cycling</p>
+                        <p>Football</p>
+                        <p>Skating</p>
+                        <h3>Camping & Hiking</h3>
+                        <p>Swimming</p>
+                        <h3>Exercise Fitness</h3>
+                        <p>Barware</p>
+                        <h3>Kitchen Storage</h3>
+                        <p>Cardio Equipment</p>
+                        <p>Home Gyms</p>
+                    </div>
+                    <div class="col">
+                        <h3>Food Essentials</h3>
+                        <p>Nuts & Dry Fruits</p>
+                        <p>Tea, Coffee and Beverages</p>
+                        <p>Chocolates</p>
+                        <p>Snacks Corner</p>
+                        <p>Gifting Combos</p>
+                        <p>Sweets Store</p>
+                        <p>Jams, Spreads and Honey</p>
+                        <p>Breakfast Items</p>
+                        <h3>Health & Nutrition</h3>
+                        <p>All Supplements</p>
+                        <p>Protein Supplements</p>
+                        <p>Vitamin Supplements</p>
+                    </div>
+                    <div class="col">
+                        <h3>Books</h3>
+                        <p>Entrance Exams</p>
+                        <p>Academics</p>
+                        <p>Literature & Fiction</p>
+                        <p>Non Fiction</p>
+                        <p>Young Readers</p>
+                        <p>Self-Help</p>
+                        <p>E-Learning</p>
+                        <p>Preorders</p>
+                        <p>Indian Languages</p>
+                        <h3>Stationery</h3>
+                        <p>Pens</p>
+                        <p>Diaries</p>
+                        <p>Card Holders</p>
+                    </div>
+                    <div class="col">
+                        <h3>Auto Accessories</h3>
+                        <p>Helmets & Riding Gears</p>
+                        <p>Car Audio/Video</p>
+                        <p>Car Mobile Accessories</p>
+                        <p>Car & Bike Care</p>
+                        <p>Vehicle Lubricants</p>
+                        <h3>Industrial & Scientific tools</h3>
+                        <p>Industrial Measurement Devices</p>
+                        <p>Industrial Testing Devices</p>
+                        <p>Lab & Scientific Products</p>
+                        <p>Packaging & Shipping Products</p>
+                        <p>Safety Products</p>
+                    </div>
+                    <div class="col">
+                        <h3>Music</h3>
+                        <p>Musical Instruments</p>
+                        <p>Music</p>
+                        <p>Movies & Tv shows</p>
+                        <h3>Gaming</h3>
+                        <p>Gaming Consoles</p>
+                        <p>Gaming Accessories</p>
+                        <p>PS4 Games</p>
+                        <p>Smart Glasses (VR)</p>
+                        <h3>Grocery (Only in Select Cities)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <span>Offers</span>
+    </div>
+    <!-- <div id="mainPopDiv">
+        <div id="popDiv">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+            <div class="col">4</div>
+            <div class="col">5</div>
+        </div>
+    </div> -->
+</body>
+
+</html>
+<script>
+    function openNav(){
+        document.getElementById("mySidenav").style.width="250px"
+    }
+    function closeNav(){
+        document.getElementById("mySidenav").style.width="0px"
+    }
+</script>
+<script src="https://kit.fontawesome.com/c3ff0c4a78.js" crossorigin="anonymous"></script>
