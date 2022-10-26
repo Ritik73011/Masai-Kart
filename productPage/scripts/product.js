@@ -1,6 +1,6 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 
-let str = "Fashion";
+let str = "Mobiles";
 
 const starCountRef = ref(database, "Products");
 onValue(starCountRef, (snapshot) => {
@@ -51,15 +51,17 @@ function appendProduct(arr){
 
         let strPrice=document.createElement("p");
         strPrice.id="strP";
-        strPrice.innerText="₹"+ele.strPrice;
-
-
+        
         let dis=document.createElement("p");
-        dis.id="dis";
-        dis.innerText=ele.discount+"% off";
-        pStdis.append(price,strPrice,dis);
+        if(ele.discount!=""){
+            strPrice.innerText="₹"+ele.strPrice;
+            
+            dis.id="dis";
+            dis.innerText=ele.discount+"% off";
+        }
+            pStdis.append(price,strPrice,dis,heart);
 
-        mainDiv.append(imgDiv,heart,brRat,title,pStdis)
+        mainDiv.append(imgDiv,brRat,title,pStdis)
         document.getElementById("mainProd").append(mainDiv);
 
 

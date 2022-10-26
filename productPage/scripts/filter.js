@@ -1,6 +1,6 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 
-let str = "Fashion";
+let str = "Mobiles";
 
 const starCountRef = ref(database, "Products");
 onValue(starCountRef, (snapshot) => {
@@ -46,19 +46,21 @@ function appendSize(arr) {
   let unique = removeDuplicate(temp);
   // console.log(temp)
   unique.map((ele, idx) => {
-    let inpDiv = document.createElement("div");
-    inpDiv.setAttribute("class", "inp");
+    if (ele != "") {
+      let inpDiv = document.createElement("div");
+      inpDiv.setAttribute("class", "inp");
 
-    let input = document.createElement("input");
-    input.type = "checkbox"
-    input.setAttribute("id", "s" + idx);
+      let input = document.createElement("input");
+      input.type = "checkbox"
+      input.setAttribute("id", "s" + idx);
 
-    let label = document.createElement("label");
-    label.setAttribute("for", "s" + idx);
-    label.innerText = ele;
+      let label = document.createElement("label");
+      label.setAttribute("for", "s" + idx);
+      label.innerText = ele;
 
-    inpDiv.append(input, label);
-    document.getElementById("size").append(inpDiv);
+      inpDiv.append(input, label);
+      document.getElementById("size").append(inpDiv);
+    }
   })
 }
 
