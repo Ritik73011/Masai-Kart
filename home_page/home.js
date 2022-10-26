@@ -57,21 +57,27 @@ function appendProducts(filterKey, arr, id) {
             let img = document.createElement("img");
             img.src = element.images.img1;
 
+            let flexDiv = document.createElement("div");
+            flexDiv.id = "flexDiv";
             let title = document.createElement("p");
             title.id = "title";
             title.innerText = element.title;
 
             let price = document.createElement("p");
             price.id = "price";
-            price.innerText = "@ " + element.price;
+            price.innerText = "₹ " + element.price;
 
             let discount = document.createElement("p");
             discount.id = "discount";
 
+            flexDiv.append(price, discount);
             if (element.discount != "") {
                 discount.innerText = "Up to " + element.discount + "% off";
             }
-            div.append(img, title, price, discount);
+
+            let addToCart = document.createElement("button");
+            addToCart.innerText = "ADD TO CART";
+            div.append(img, title, flexDiv, addToCart);
             document.getElementById(id).append(div);
         }
 
@@ -102,17 +108,63 @@ function appendProductsBigSaving(filterKey, arr, id) {
             title.id = "title";
             title.innerText = element.title;
 
+            let flexDiv = document.createElement("div");
+            flexDiv.id = "flexDiv";
+
             let price = document.createElement("p");
             price.id = "price";
-            price.innerText = "@ " + element.price;
+            price.innerText = "₹ " + element.price;
 
             let discount = document.createElement("p");
             discount.id = "discount";
             discount.innerText = "Up to " + element.discount + "% off";
 
-            div.append(img, title, price, discount);
+            flexDiv.append(price, discount);
+            let addToCart = document.createElement("button");
+            addToCart.innerText = "ADD TO CART";
+
+            div.append(img, title, flexDiv, addToCart);
             document.getElementById(id).append(div);
         }
 
+    });
+}
+
+setCrousal();
+
+function setCrousal() {
+    document.querySelector(".carousel-indicators").innerHTML = "";
+    document.querySelector(".carousel-inner").innerHTML = "";
+    const starCountRef = ref(database, "Carousel");
+    onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        data.forEach((element, indx) => {
+            let div = document.createElement("div");
+            if (indx == 0) {
+                div.setAttribute("class", "carousel-item active");
+            }
+            else {
+                div.setAttribute("class", "carousel-item");
+            }
+
+            let img = document.createElement("img");
+            img.src = element.img;
+            img.style.width = "100%";
+            img.setAttribute("class", "d-block");
+
+            div.append(img);
+            document.querySelector(".carousel-inner").append(div);
+
+            let btn = document.createElement("button");
+            btn.type = "button";
+            btn.setAttribute("data-bs-target", "#demo");
+            btn.setAttribute("data-bs-slide-to", `${indx}`);
+
+            if (indx == 0) {
+                btn.setAttribute("class", "active");
+            }
+
+            document.querySelector(".carousel-indicators").append(btn);
+        });
     });
 }

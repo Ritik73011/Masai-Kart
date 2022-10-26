@@ -4,6 +4,7 @@
     position: relative;
     border-radius: 8px;
     padding: 8px;
+    margin-top: 16px;
     /* background-color: rgb(101, 203, 203); */
 }
 
@@ -18,7 +19,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    gap: 8px;
+    gap: 20px;
     padding: 10px;
     /* border: 1px solid black; */
 }
@@ -34,13 +35,17 @@
     margin: auto 0;
 }
 
+.catNameFlex h2 {
+    color: #333;
+}
+
 .card {
     width: 100%;
     display: block;
-    border-radius: 12px;
+    border-radius: 24px;
     font-size: 12px;
     z-index: 0;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     padding: 8px;
     cursor: pointer;
 }
@@ -48,6 +53,7 @@
 .card img {
     width: 270px;
     height: 310px;
+    border-radius: 24px 24px 0 0;
 }
 
 .pre-btn,
@@ -86,16 +92,19 @@
 
 #title {
     font-size: 16px;
+    white-space: nowrap;
+    width: 264px;
     overflow: hidden;
-    word-wrap: wrap;
-    height: 65px;
+    text-overflow: ellipsis;
+    margin: 8px 0;
 }
 
 #price {
     margin-top: 8px;
-    font-size: 14px;
-    text-align: center;
+    font-size: 16px;
     font-style: bold;
+    text-align: center;
+    margin-bottom: 14px;
 }
 
 #discount {
@@ -103,4 +112,30 @@
     font-size: 16px;
     text-align: center;
     color: green;
+    margin-bottom: 14px;
+}
+
+#flexDiv {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+.card button {
+    width: 60%;
+    margin: auto;
+    display: block;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ed0331;
+    color: white;
+    font-weight: 700;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #ca1a3d;
 }
