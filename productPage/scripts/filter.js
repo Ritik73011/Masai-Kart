@@ -1,15 +1,22 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
+import { appendProduct } from ".././scripts/product.js";
 
-let str = "Mobiles";
-
+let str = "Fashion";
+let arrTemp = [];
 const starCountRef = ref(database, "Products");
 onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();
-  appendBrand(data);
-  appendSize(data)
+  const filtered = data.filter(ele => {
+    return ele.mainCat === str;
+  })
+  appendBrand(filtered);
+  appendSize(filtered)
+  addevent("d1", filtered)
+  addevent("d2", filtered)
+  addevent("d3", filtered)
 });
 
-
+//APPENDING BRAND START
 function appendBrand(arr) {
   document.getElementById("brandDiv").innerHTML = "";
   let temp = [];
@@ -22,25 +29,53 @@ function appendBrand(arr) {
   let unique = removeDuplicate(temp);
   unique.map((ele, idx) => {
     if (idx < 5) {
-      appendDiv(ele, idx);
+      appendDiv(ele, idx, arr)
     }
     else if (idx >= 5) {
       document.getElementById("see").addEventListener("click", () => {
-        appendDiv(ele, idx)
+        appendDiv(ele, idx, arr);
+
       })
     }
   })
 }
 
+function appendDiv(ele, idx, arr) {
+  let inpDiv = document.createElement("div");
+  inpDiv.setAttribute("class", "inp");
+
+  let input = document.createElement("input");
+  input.type = "checkbox"
+  input.setAttribute("id", "b" + idx);
+
+  let label = document.createElement("label");
+  label.setAttribute("for", "b" + idx);
+  label.innerText = ele;
+
+  input.addEventListener("change", () => {
+    if (input.checked) {
+      console.log(label.innerText)
+      // filterByBS(label.innerText);
+      filterByBrand(label.innerText, arr)
+    } else {
+      appendProduct(arr, arr);
+    }
+  })
+
+  inpDiv.append(input, label);
+  document.getElementById("brandDiv").append(inpDiv);
+}
+//APPENDING BRAND END
+
+
+// APPENDING SIZE START
 function appendSize(arr) {
   document.getElementById("size").innerHTML = "";
   let temp = [];
   arr.forEach(ele => {
-    if (ele.mainCat === str) {
-      temp.push(ele.size.sz1)
-      temp.push(ele.size.sz2)
-      temp.push(ele.size.sz3)
-    }
+    temp.push(ele.size.sz1)
+    temp.push(ele.size.sz2)
+    temp.push(ele.size.sz3)
   })
 
   let unique = removeDuplicate(temp);
@@ -58,30 +93,37 @@ function appendSize(arr) {
       label.setAttribute("for", "s" + idx);
       label.innerText = ele;
 
+      input.addEventListener("change", () => {
+        if (input.checked) {
+          // console.log(label.innerText)
+          arrTemp.push(label.innerText)
+          filterBySize(arrTemp, arr);
+
+        } else {
+
+          if (arrTemp.length != 0) {
+            for (let i = 0; i < arrTemp.length; i++) {
+              if (arrTemp[i] == label.innerText) {
+                arrTemp.splice(i, 1)
+              }
+            }
+            filterBySize(arrTemp, arr);
+            if (arrTemp == 0) {
+              appendProduct(arr, arr);
+            }
+
+          }
+        }
+      })
       inpDiv.append(input, label);
       document.getElementById("size").append(inpDiv);
     }
   })
 }
+//APPENDING SIZE END
 
 
-function appendDiv(ele, idx) {
-  let inpDiv = document.createElement("div");
-  inpDiv.setAttribute("class", "inp");
-
-  let input = document.createElement("input");
-  input.type = "checkbox"
-  input.setAttribute("id", "b" + idx);
-
-  let label = document.createElement("label");
-  label.setAttribute("for", "b" + idx);
-  label.innerText = ele;
-
-  inpDiv.append(input, label);
-  document.getElementById("brandDiv").append(inpDiv);
-}
-
-
+//TO REMOVE DUPLICATE ELEMENT
 function removeDuplicate(arr) {
   const onlyUnique = (value, index) => {
     return arr.indexOf(value) === index;
@@ -90,6 +132,53 @@ function removeDuplicate(arr) {
   return unique;
 }
 
+
+
+let sizeArr = [];
+
+function filterBySize(text, arr) {
+  text.forEach(element => {
+    const array = arr.filter(ele => {
+      return ele.size.sz1 == element || ele.size.sz2 == element || ele.size.sz3 == element;
+
+    })
+    console.log(array)
+    array.forEach(el => {
+      sizeArr.push(el);
+    })
+  })
+  let varSize = removeDuplicate(sizeArr)
+  appendProduct(varSize, arr);
+  sizeArr = [];
+
+}
+
+function filterByBrand(text, arr) {
+  const array = arr.filter(ele => {
+    return ele.brand == text || ele.brand == text || ele.brand == text;
+
+  })
+  appendProduct(array, arr);
+}
+
+function addevent(id, arr) {
+  document.getElementById(id).addEventListener("change", () => {
+    let d1 = document.getElementById(id);
+    if (d1.checked) {
+      console.log(d1.value);
+      filterByDiscount(arr, d1.value);
+    } else {
+      appendProduct(arr, arr);
+    }
+  })
+}
+
+function filterByDiscount(arr, text) {
+  const disArr = arr.filter(ele => {
+    return ele.discount > text;
+  })
+  appendProduct(disArr, arr)
+}
 
 
 

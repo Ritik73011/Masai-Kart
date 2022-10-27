@@ -1,21 +1,23 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 
-let str = "Mobiles";
+let str = "Fashion";
 
 const starCountRef = ref(database, "Products");
 onValue(starCountRef, (snapshot) => {
     const data = snapshot.val();
-  appendProduct(data);
+    const filtered=data.filter(ele=>{
+        return ele.mainCat===str;
+    })
+  appendProduct(filtered,data);
+  sortFun(filtered);
 });
 
 
-function appendProduct(arr){
-    const filtered=arr.filter(ele=>{
-        return ele.mainCat===str;
-    })
-    document.getElementById("totalProd").innerText="Total Products: "+filtered.length +" out of "+arr.length;
+function appendProduct(arr,data){
+    
+    document.getElementById("totalProd").innerText="Total Products: "+arr.length +" out of "+data.length;
     document.getElementById("mainProd").innerHTML="";
-    filtered.map((ele,idx)=>{
+    arr.map((ele,idx)=>{
         let mainDiv=document.createElement("div");
         mainDiv.setAttribute("class","card");
         
@@ -64,11 +66,29 @@ function appendProduct(arr){
         mainDiv.append(imgDiv,brRat,title,pStdis)
         document.getElementById("mainProd").append(mainDiv);
 
-
-
-
-
     })
 }
 
+
+function sortFun(arr){
+    document.querySelector("#sorting").addEventListener("change",function(){
+        var category=document.querySelector("#sorting").value;
+        if(category!=""){
+            if(category==="lth"){
+                const lth=arr.sort((a,b)=>{
+                    return a.price-b.price;
+                })
+                appendProduct(lth)
+            } else {
+                const htl=arr.sort((a,b)=>{
+                    return b.price-a.price;
+                })
+                appendProduct(htl)
+                
+            }
+        }
+    })
+}
+
+export {appendProduct};
 

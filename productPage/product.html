@@ -28,7 +28,7 @@
                         <div class="min-input" id="min-input-val">0</div>
                     </div>
                     <div id="price-max">
-                        <div class="max-input" id="max-input-val">1000</div>
+                        <div class="max-input" id="max-input-val">5000</div>
                     </div>
                 </div>
                 <div class="slider">
@@ -45,16 +45,16 @@
             <div id="discountFil">
                 <h4>DISCOUNT</h4>
                 <div class="inp">
-                    <input type="checkbox" name="" id="d1">
+                    <input type="checkbox" value="30" class="checkDis" id="d1">
                     <label for="d1">30% or more</label>
                 </div>
                 <div class="inp">
-                    <input type="checkbox" name="" id="d2">
+                    <input type="checkbox" value="50" class="checkDis" id="d2">
                     <label for="d2">50% or more</label>
                 </div>
 
                 <div class="inp">
-                    <input type="checkbox" name="" id="d3">
+                    <input type="checkbox" value="70" class="checkDis" id="d3">
                     <label for="d3">70% or more</label>
                 </div>
             </div><hr>
@@ -118,8 +118,8 @@
                 <div class="sort">
                     <select name="" id="sorting">
                         <option value="">Sort by Price</option>
-                        <option value="lth">Low to High</option>
-                        <option value="htl">High to Low</option>
+                        <option id="lth" value="lth">Low to High</option>
+                        <option id="htl" value="htl">High to Low</option>
                     </select>
                 </div>
             </div>
