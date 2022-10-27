@@ -3,7 +3,7 @@ import { appendProduct } from ".././scripts/product.js";
 
 let str = "Electronics";
 let arrTemp = [];
-let brandArr=[];
+let brandArr = [];
 const starCountRef = ref(database, "Products");
 onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();
@@ -15,12 +15,12 @@ onValue(starCountRef, (snapshot) => {
   addevent("d1", filtered)
   addevent("d2", filtered)
   addevent("d3", filtered)
-  addeventRating("r1",filtered,3)
-  addeventRating("r2",filtered,4.1)
-  addeventcolor("cl1", filtered,"Red")
-  addeventcolor("cl2", filtered,"Black")
-  addeventcolor("cl3", filtered,"Green")
-  addeventcolor("cl4", filtered,"Blue")
+  addeventRating("r1", filtered, 3)
+  addeventRating("r2", filtered, 4.1)
+  addeventcolor("cl1", filtered, "Red")
+  addeventcolor("cl2", filtered, "Black")
+  addeventcolor("cl3", filtered, "Green")
+  addeventcolor("cl4", filtered, "Blue")
   priceRangeTracker(filtered);
   findMax(filtered);
 });
@@ -42,11 +42,20 @@ function appendBrand(arr) {
     }
     else if (idx >= 5) {
       document.getElementById("see").addEventListener("click", () => {
-        appendDiv(ele, idx, arr);
+        //appendDiv(ele, idx, arr);
+        let seemore = document.getElementById("see").innerText;
+        if (seemore != "") {
+          appendDiv(ele, idx, arr);
+        }
 
+        if (idx == unique.length - 1) {
+          document.getElementById("see").innerText = "";
+        }
       })
     }
+
   })
+
 }
 
 //APPENDING DIV FOR BRAND
@@ -174,7 +183,7 @@ function filterBySize(text, arr) {
 }
 
 //FILTER BY BRAND
-let tempBrand=[];
+let tempBrand = [];
 function filterByBrand(text, arr) {
   text.forEach(element => {
     const array = arr.filter(ele => {
@@ -213,7 +222,7 @@ function filterByDiscount(arr, text) {
 
 
 //FILTER BY RATING
-function addeventRating(id, arr,text) {
+function addeventRating(id, arr, text) {
   document.getElementById(id).addEventListener("change", () => {
     let d1 = document.getElementById(id);
     if (d1.checked) {
@@ -228,7 +237,7 @@ function addeventRating(id, arr,text) {
 }
 
 //FILTER BY COLOR
-function addeventcolor(id, arr,text) {
+function addeventcolor(id, arr, text) {
   document.getElementById(id).addEventListener("change", () => {
     let d1 = document.getElementById(id);
     if (d1.checked) {
@@ -275,27 +284,27 @@ function priceRangeTracker(arr) {
 }
 
 
-function sortByRange(arr){
-  let minP=document.getElementById("min-input-val").innerText;
-  let maxP=document.getElementById("max-input-val").innerText;
+function sortByRange(arr) {
+  let minP = document.getElementById("min-input-val").innerText;
+  let maxP = document.getElementById("max-input-val").innerText;
   // console.log(minP,maxP)
-  const rangeSorted=arr.filter(ele=>{
-    return ele.price>=minP && ele.price<=maxP;
+  const rangeSorted = arr.filter(ele => {
+    return ele.price >= minP && ele.price <= maxP;
   })
-  appendProduct(rangeSorted,arr);
+  appendProduct(rangeSorted, arr);
 }
 
-function findMax(arr){
-  let max=0;
-  arr.forEach(ele=>{
-    max=Math.max(ele.price,max);
+function findMax(arr) {
+  let max = 0;
+  arr.forEach(ele => {
+    max = Math.max(ele.price, max);
   })
-  document.getElementById("max-input-val").innerText=max;
-  let min=document.getElementById("min");
-  min.setAttribute("max",max);
+  document.getElementById("max-input-val").innerText = max;
+  let min = document.getElementById("min");
+  min.setAttribute("max", max);
 
-  let man=document.getElementById("max");
-  man.setAttribute("max",max);
-  man.setAttribute("value",max);
+  let man = document.getElementById("max");
+  man.setAttribute("max", max);
+  man.setAttribute("value", max);
 
 }
