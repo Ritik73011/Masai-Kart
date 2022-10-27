@@ -13,7 +13,10 @@
 <body>
     <div id="main">
         <div id="left">
-            <h3>FILTERS</h3>
+            <div id="filterCl">
+                <h3>FILTERS</h3>
+                <div id="close" onclick="closeSide()">&times;</div>
+            </div>
             <div id="brand">
                 <h4>BRAND</h4>
                 <div id="brandDiv"></div>
@@ -114,6 +117,7 @@
         </div>
         <div id="right">
             <div id="topProd">
+                <div id="drawer" onclick="openSide()">&#9776</div>
                 <p id="totalProd"></p>
                 <div class="sort">
                     <select name="" id="sorting">
@@ -125,9 +129,6 @@
             </div>
             <div id="mainProd"></div>
 
-            
-
-
         </div>
 
     </div>
@@ -136,6 +137,16 @@
 
 
 </html>
+<script>
+    function openSide(){
+        document.getElementById("left").style.width="240px";
+        document.getElementById("left").style.display="block";
+    }
+    function closeSide(){
+        document.getElementById("left").style.width="0";
+        document.getElementById("left").style.display="none";
+    }
+</script>
 <script type="module" src="./scripts/product.js"></script>
 <script type="module" src="./scripts/filter.js"></script>
 <script src="https://kit.fontawesome.com/c3ff0c4a78.js" crossorigin="anonymous"></script>
