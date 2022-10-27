@@ -28,15 +28,15 @@
                         <div class="min-input" id="min-input-val">0</div>
                     </div>
                     <div id="price-max">
-                        <div class="max-input" id="max-input-val">5000</div>
+                        <div class="max-input" id="max-input-val"></div>
                     </div>
                 </div>
                 <div class="slider">
                     <div class="progress"></div>
                 </div>
                 <div class="range-input">
-                    <input type="range" id="min" min="0" max="5000" value="0" />
-                    <input type="range" id="max" min="0" max="5000" value="5000" />
+                    <input type="range" id="min" min="0" max="" value="0" />
+                    <input type="range" id="max" min="0" max="" value="" />
                 </div>
             </div><hr>
             <!-- end of price range -->
@@ -64,11 +64,11 @@
             <div id="ratingFil">
                 <h4>CUSTOMER RATINGS</h4>
                 <div class="inp">
-                    <input type="checkbox" name="" id="r1">
+                    <input type="checkbox" value="3" id="r1">
                     <label for="r1">3★ & above</label>
                 </div>
                 <div class="inp">
-                    <input type="checkbox" name="" id="r2">
+                    <input type="checkbox" value="4" id="r2">
                     <label for="r2">4★ & above</label>
                 </div>
             </div><hr>
@@ -86,24 +86,24 @@
                 <h4>COLOR</h4>
                 <div id="clrDiv">
                     <div class="inp">
-                        <input type="checkbox" name="" id="cl1">
+                        <input type="checkbox" value="Red" id="cl1">
                         <div style="background-color: red" class="clr"></div>
                         <label for="cl1">Red</label>
                     </div>
                     <div class="inp">
-                        <input type="checkbox" name="" id="cl2">
+                        <input type="checkbox" value="Black" id="cl2">
                         <div style="background-color: black" class="clr"></div>
                         <label for="cl2">Black</label>
                     </div>
                     <div class="inp">
-                        <input type="checkbox" name="" id="cl2">
+                        <input type="checkbox" value="Green" id="cl3">
                         <div style="background-color: green" class="clr"></div>
-                        <label for="cl2">Green</label>
+                        <label for="cl3">Green</label>
                     </div>
                     <div class="inp">
-                        <input type="checkbox" name="" id="cl2">
+                        <input type="checkbox" value="Blue" id="cl4">
                         <div style="background-color: blue" class="clr"></div>
-                        <label for="cl2">Blue</label>
+                        <label for="cl4">Blue</label>
                     </div>
                 </div>
                
@@ -117,16 +117,21 @@
                 <p id="totalProd"></p>
                 <div class="sort">
                     <select name="" id="sorting">
-                        <option value="">Sort by Price</option>
+                        <option id="sbp" value="sbp">Sort by Price</option>
                         <option id="lth" value="lth">Low to High</option>
                         <option id="htl" value="htl">High to Low</option>
                     </select>
                 </div>
             </div>
             <div id="mainProd"></div>
+
+            
+
+
         </div>
 
     </div>
+
 </body>
 
 

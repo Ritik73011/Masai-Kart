@@ -1,6 +1,6 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 
-let str = "Fashion";
+let str = "Electronics";
 
 const starCountRef = ref(database, "Products");
 onValue(starCountRef, (snapshot) => {
@@ -8,7 +8,7 @@ onValue(starCountRef, (snapshot) => {
     const filtered=data.filter(ele=>{
         return ele.mainCat===str;
     })
-  appendProduct(filtered,data);
+  appendProduct(filtered,filtered);
   sortFun(filtered);
 });
 
@@ -78,17 +78,21 @@ function sortFun(arr){
                 const lth=arr.sort((a,b)=>{
                     return a.price-b.price;
                 })
-                appendProduct(lth)
-            } else {
+                appendProduct(lth,arr)
+            } else if(category==="htl"){
                 const htl=arr.sort((a,b)=>{
                     return b.price-a.price;
                 })
-                appendProduct(htl)
+                appendProduct(htl,arr)
                 
             }
         }
+        if(category=="sbp"){
+            appendProduct(arr,arr);
+        }
     })
 }
+
 
 export {appendProduct};
 
