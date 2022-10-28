@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#mainL,#mainL2{
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
+}
+#mainL2{
+    display: none;
+}
+#imgDiv{
+    width: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 20px;
+    border-right: 1px solid gray;
+}
+#imgDiv img{
+    width: 270px;
+}
+#right{
+    /* border: 1px solid red; */
+}
+#content{
+    width: 300px;
+    padding: 10px;
+}
+input,button{
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border: 1px solid #ed0331;
+    outline: none;
+
+}
+button{
+    background-color: #ed0331;
+    color: #fff;
+    font-weight: 550;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #b20024;
+}
+#content p{
+    font-size: 12px;
+    color: gray;
+    padding: 13px;
+    text-align: start;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+#content .or{
+    text-align: center;
+    margin-top: -16px;
+}
+#content .loginusing{
+    margin-top: -16px;
+    text-align: center;
+    color: rgb(59, 57, 57);
+}
+#google{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+#google img,.fa-github{
+    width: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#content #gotologin{
+    /* margin-top: -14px; */
+    vertical-align: bottom;
+    text-align: center;
+    color: #333;
+}
+#content .tosignup,.tologin{
+    color: #ed0331;
+    cursor: pointer;
+}
+#content #gotosignup{
+    /* margin-top: -14px; */
+    color: #333;
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+    #mainL,#mainL2{
+        display: block;
+    }
+    #mainL2{
+        display: none;
+    }
+    #imgDiv{
+        display: none;
+    }
+    #right{
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    
+}
