@@ -127,6 +127,7 @@ input[type="range"]::-moz-range-thumb {
 }
 input[type="checkbox"]{
     width: 16px;
+    cursor: pointer;
 }
 #left p{
     font-size: 14px;
@@ -135,6 +136,7 @@ input[type="checkbox"]{
 #see{
     margin-top: 8px;
     color: #ed0331;
+    cursor: pointer;
 }
 #left h4{
     font-size: 14px;

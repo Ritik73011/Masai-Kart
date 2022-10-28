@@ -160,6 +160,10 @@ body {
 
 #topProd #drawer {
     display: none;
+    cursor: pointer;
+}
+#topProd select,#topProd select option {
+    cursor: pointer;
 }
 
 #filterCl {
