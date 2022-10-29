@@ -36,7 +36,7 @@ body {
 
 .cartProduct {
     margin-top: 8px;
-    height: 200px;
+    height: 190px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     background-color: white;
     overflow-y: scroll;
@@ -97,6 +97,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     margin-top: 10px;
     padding: 16px;
+    border-radius: 4px;
 }
 
 .cartRight p {
@@ -104,7 +105,19 @@ body {
     font-size: 16px;
     color: #212121;
 }
-
+.cartRight #payBtn{
+    width: 150px;
+    display: none;
+    margin: auto;
+    /* padding: 10px 18px; */
+    padding: 12px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #FFF;
+    font-weight: bolder;
+    background-color: #ED0331;
+}
 .cartRight h3 {
     padding-bottom: 8px;
     color: #878787;
@@ -127,6 +140,7 @@ body {
 
 .cartMain .cartRight {
     width: 25%;
+    border-radius: 4px;
 }
 
 @media all and (min-width: 0px) and (max-width: 768px) {
