@@ -1,126 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Description</title>
-    <link rel="stylesheet" href="./styles/desc.css">
-    <link rel="stylesheet" href="./styles/carousel.css">
+    <link rel="stylesheet" href="../../Masai-Kart/main_navbar/navbar.css" />
+    <link rel="stylesheet" href="../../Masai-Kart/footer/footer.css" />
+    <link rel="stylesheet" href="./styles/desc.css" />
+    <link rel="stylesheet" href="./styles/carousel.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div id="navbar"></div>
     <div id="mainDesc">
-        <div id="left">
-            <div id="imgDiv">
-                <div id="imgGrid">
-                    <div class="focus" tabindex="1">
-                        <img id="smallImg1" src="" alt="">
-                    </div>
-                    <div class="focus" tabindex="1">
-                        <img id="smallImg2" src="" alt="">
-                    </div>
-                    <div class="focus" tabindex="1">
-                        <img id="smallImg3" src="" alt="">
-
-                    </div>
-                </div>
-                <div id="imgFull">
-                    <div id="img">
-                        <img id="bigImg" src="" alt="">
-
-                    </div>
-                </div>
+      <div id="left">
+        <div id="imgDiv">
+          <div id="imgGrid">
+            <div class="focus" tabindex="1">
+              <img id="smallImg1" src="" alt="" />
             </div>
-
-            <!--crousal img tab and mobile start-->
-            <!-- Carousel -->
-            <div id="demo" class="carousel slide">
-                <!-- Indicators/dots -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <!-- The slideshow/carousel -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="" alt="Los Angeles" class="d-block"
-                            id="cimg1" />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="" alt="Chicago" class="d-block"
-                            id="cimg2" />
-                    </div>
-                    <div class="carousel-item">
-                        <img src="" alt="New York" class="d-block"
-                            id="cimg3" />
-                    </div>
-                </div>
-                <!-- Left and right controls/icons -->
+            <div class="focus" tabindex="1">
+              <img id="smallImg2" src="" alt="" />
             </div>
-            <!--crousal img tab and mobile end-->
-
-
-            <div id="btnDiv">
-                <button id="addtocart"><i class="fa-solid fa-cart-shopping"></i>&nbsp; ADD TO CART</button>
-                <button id="buy"><i class="fa-solid fa-bag-shopping"></i>&nbsp; BUY NOW</button>
+            <div class="focus" tabindex="1">
+              <img id="smallImg3" src="" alt="" />
             </div>
+          </div>
+          <div id="imgFull">
+            <div id="img">
+              <img id="bigImg" src="" alt="" />
+            </div>
+          </div>
         </div>
-        <div id="right">
-            <p><span id="cat1"></span>
-                <span id="cat2"></span>
-            </p>
-            <h3 id="title"></h3>
-            <p id="brand"></p>
-            <p id="rating"></p>
-            <div id="allPrice">
-                <h3 id="price"></h3>
-                <p id="strPrice"></p>
-                <p id="disPrice"></p>
-            </div>
-            <div id="offer">
-                <p>Available offers</p>
-                <p><i class="fa-solid fa-tag"></i>&nbsp;&nbsp; <strong> Bank Offer10%</strong> off on Citi Credit Card
-                    Transactions, up to ₹1,500. On orders of ₹5,000 and above <span>T&C</span></p>
-                <p><i class="fa-solid fa-tag"></i>&nbsp;&nbsp; <strong> Bank Offer10%</strong> off on Citi Credit Card
-                    EMI Transactions, up to ₹2,000. On orders of ₹5,000 and above <span>T&C</span></p>
-                <p><i class="fa-solid fa-tag"></i>&nbsp;&nbsp; <strong> Bank Offer10%</strong> off on Citi Debit Card
-                    Transactions, up to ₹1,500. On orders of ₹5,000 and above <span>T&C</span></p>
-                <p><i class="fa-solid fa-tag"></i>&nbsp;&nbsp; <strong> Partner Offer</strong> Sign up for Flipkart Pay
-                    Later and get Flipkart Gift Card worth upto ₹1000* <span>Know More</span></p>
-            </div>
 
-            <div id="clrSize">
-                <div id="clr">
-                    <p>Color:</p>
-                    <input type="radio" id="cl1" value="Black" checked="checked" name="same">
-                    <label for="cl1"></label>
-                    <input type="radio" id="cl2" value="Red" name="same">
-                    <label for="cl2"></label>
-                    <input type="radio" id="cl3" value="Green" name="same">
-                    <label for="cl3"></label>
-                </div>
-                <div id="size">
-                    <p>Size:</p>
-                    <input type="radio" id="sz1" value="M" checked="checked" name="samesize">
-                    <label for="sz1"></label>
-                    <input type="radio" id="sz2" value="L" name="samesize">
-                    <label for="sz2"></label>
-                    <input type="radio" id="sz3" value="XL" name="samesize">
-                    <label for="sz3"></label>
-                </div>
+        <!--crousal img tab and mobile start-->
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide">
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#demo"
+              data-bs-slide-to="0"
+              class="active"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#demo"
+              data-bs-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#demo"
+              data-bs-slide-to="2"
+            ></button>
+          </div>
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="" alt="Los Angeles" class="d-block" id="cimg1" />
             </div>
-
-            <p>Seller: <span id="seller"></span></p>
-            <p id="dis">
-                <strong>Description:</strong><span id="descri"></span>
-            </p>
+            <div class="carousel-item">
+              <img src="" alt="Chicago" class="d-block" id="cimg2" />
+            </div>
+            <div class="carousel-item">
+              <img src="" alt="New York" class="d-block" id="cimg3" />
+            </div>
+          </div>
+          <!-- Left and right controls/icons -->
         </div>
-</body>
+        <!--crousal img tab and mobile end-->
 
+        <div id="btnDiv">
+          <button id="addtocart">
+            <i class="fa-solid fa-cart-shopping"></i>&nbsp; ADD TO CART
+          </button>
+          <button id="buy">
+            <i class="fa-solid fa-bag-shopping"></i>&nbsp; BUY NOW
+          </button>
+        </div>
+      </div>
+      <div id="right">
+        <p>
+          <span id="cat1"></span>
+          <span id="cat2"></span>
+        </p>
+        <h3 id="title"></h3>
+        <p id="brand"></p>
+        <p id="rating"></p>
+        <div id="allPrice">
+          <h3 id="price"></h3>
+          <p id="strPrice"></p>
+          <p id="disPrice"></p>
+        </div>
+        <div id="offer">
+          <p>Available offers</p>
+          <p>
+            <i class="fa-solid fa-tag"></i>&nbsp;&nbsp;
+            <strong> Bank Offer10%</strong> off on Citi Credit Card
+            Transactions, up to ₹1,500. On orders of ₹5,000 and above
+            <span>T&C</span>
+          </p>
+          <p>
+            <i class="fa-solid fa-tag"></i>&nbsp;&nbsp;
+            <strong> Bank Offer10%</strong> off on Citi Credit Card EMI
+            Transactions, up to ₹2,000. On orders of ₹5,000 and above
+            <span>T&C</span>
+          </p>
+          <p>
+            <i class="fa-solid fa-tag"></i>&nbsp;&nbsp;
+            <strong> Bank Offer10%</strong> off on Citi Debit Card Transactions,
+            up to ₹1,500. On orders of ₹5,000 and above <span>T&C</span>
+          </p>
+          <p>
+            <i class="fa-solid fa-tag"></i>&nbsp;&nbsp;
+            <strong> Partner Offer</strong> Sign up for Flipkart Pay Later and
+            get Flipkart Gift Card worth upto ₹1000* <span>Know More</span>
+          </p>
+        </div>
+
+        <div id="clrSize">
+          <div id="clr">
+            <p>Color:</p>
+            <input
+              type="radio"
+              id="cl1"
+              value="Black"
+              checked="checked"
+              name="same"
+            />
+            <label id="cc1" for="cl1"></label>
+            <input type="radio" id="cl2" value="Red" name="same" />
+            <label id="cc2" for="cl2"></label>
+            <input type="radio" id="cl3" value="Green" name="same" />
+            <label id="cc3" for="cl3"></label>
+          </div>
+          <div id="size">
+            <p>Size:</p>
+            <input
+              type="radio"
+              id="sz1"
+              value="M"
+              checked="checked"
+              name="samesize"
+            />
+            <label id="ss1" for="sz1"></label>
+            <input type="radio" id="sz2" value="L" name="samesize" />
+            <label id="ss2" for="sz2"></label>
+            <input type="radio" id="sz3" value="XL" name="samesize" />
+            <label id="ss3" for="sz3"></label>
+          </div>
+        </div>
+
+        <p>Seller: <span id="seller"></span></p>
+        <p id="dis"><strong>Description: </strong><span id="descri"></span></p>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
 </html>
-<script src="./scripts/desc.js"></script>
-<script src="https://kit.fontawesome.com/c3ff0c4a78.js" crossorigin="anonymous"></script>
+<script type="module" src="./scripts/desc.js"></script>
+<script
+  src="https://kit.fontawesome.com/c3ff0c4a78.js"
+  crossorigin="anonymous"
+></script>

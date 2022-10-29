@@ -1,4 +1,9 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
+import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
+import { footer } from "../../footer/footer.js";
+document.getElementById("navbar").innerHTML = navBarHtml();
+navBarJavaScript();
+document.getElementById("footer").innerHTML = footer();
 
 let str = localStorage.getItem("catClick");
 let lower = str.toLocaleLowerCase();
@@ -80,7 +85,13 @@ function appendProduct(arr, data) {
         }
         pStdis.append(price, strPrice, dis, heart);
 
-        mainDiv.append(imgDiv, brRat, title, pStdis)
+        mainDiv.addEventListener("click", () => {
+
+            localStorage.setItem("clicked", JSON.stringify(ele));
+            window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+
+        });
+        mainDiv.append(imgDiv, brRat, title, pStdis);
         document.getElementById("mainProd").append(mainDiv);
 
     })

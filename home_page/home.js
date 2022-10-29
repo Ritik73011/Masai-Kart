@@ -79,6 +79,7 @@ function appendProducts(filterKey, arr, id) {
                 discount.innerText = "Up to " + element.discount + "% off";
             }
 
+            clickedProduct(img, title, flexDiv, element);
             let addToCart = document.createElement("button");
             addToCart.innerText = "ADD TO CART";
             div.append(img, title, flexDiv, addToCart);
@@ -89,6 +90,21 @@ function appendProducts(filterKey, arr, id) {
 }
 getProducts();
 
+function clickedProduct(img, title, flexDiv, element) {
+    img.addEventListener("click", () => {
+        localStorage.setItem("clicked", JSON.stringify(element));
+        window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+    });
+    title.addEventListener("click", () => {
+        localStorage.setItem("clicked", JSON.stringify(element));
+        window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+    });
+    flexDiv.addEventListener("click", () => {
+        localStorage.setItem("clicked", JSON.stringify(element));
+        window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+    });
+
+}
 
 function appendProductsBigSaving(filterKey, arr, id) {
     document.getElementById(id).innerHTML = "";
@@ -128,6 +144,7 @@ function appendProductsBigSaving(filterKey, arr, id) {
             addToCart.innerText = "ADD TO CART";
 
             div.append(img, title, flexDiv, addToCart);
+            clickedProduct(img, title, flexDiv, element);
             document.getElementById(id).append(div);
         }
 

@@ -26,7 +26,7 @@ function navBarHtml() {
     </div>
 
     <div class="nav_p">
-      <p>Cart<span id="quan">0</span></p>
+      <p><i class="fa-solid fa-cart-shopping"></i><span id="quan">0</span></p>
       <p>Wallet</p>
       <p id="login">LOGIN</p>
     </div>
