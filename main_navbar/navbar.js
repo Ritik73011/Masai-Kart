@@ -63,8 +63,7 @@ function navBarJavaScript() {
 
 
   document.getElementById("searchBox").addEventListener("input", (event) => {
-    if (event.keyCode === 13 || event.key === "Enter") {
-    }
+
     let key = document.getElementById("searchBox").value;
 
     if (key === "") {
@@ -82,7 +81,9 @@ function navBarJavaScript() {
 
   document.getElementById("searchBox").addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
-      alert("hii");
+      let val = document.getElementById("searchBox").value;
+      localStorage.setItem("catClick", val);
+      window.location.href = "../../Masai-Kart/productPage/product.html";
     }
   });
 }

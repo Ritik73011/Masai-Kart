@@ -1,28 +1,57 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 import { appendProduct } from ".././scripts/product.js";
 
-let str = "Electronics";
+let str = localStorage.getItem("catClick");
+let lower = str.toLocaleLowerCase();
+
 let arrTemp = [];
 let brandArr = [];
 const starCountRef = ref(database, "Products");
 onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();
   const filtered = data.filter(ele => {
-    return ele.mainCat === str;
+    return ele.mainCat.toLocaleLowerCase() === lower;
   })
-  appendBrand(filtered);
-  appendSize(filtered)
-  addevent("d1", filtered)
-  addevent("d2", filtered)
-  addevent("d3", filtered)
-  addeventRating("r1", filtered, 3)
-  addeventRating("r2", filtered, 4.1)
-  addeventcolor("cl1", filtered, "Red")
-  addeventcolor("cl2", filtered, "Black")
-  addeventcolor("cl3", filtered, "Green")
-  addeventcolor("cl4", filtered, "Blue")
-  priceRangeTracker(filtered);
-  findMax(filtered);
+
+  let searchedArr = [];
+  data.map(ele => {
+    let lowe = ele.title.toLocaleLowerCase();
+    if (lowe.includes(lower)) {
+      searchedArr.push(ele);
+    }
+  });
+  if (filtered.length == 0) {
+    appendBrand(searchedArr);
+    //console.log(searchedArr)
+    appendSize(searchedArr)
+    addevent("d1", searchedArr)
+    addevent("d2", searchedArr)
+    addevent("d3", searchedArr)
+    addeventRating("r1", searchedArr, 3)
+    addeventRating("r2", searchedArr, 4.1)
+    addeventcolor("cl1", searchedArr, "Red")
+    addeventcolor("cl2", searchedArr, "Black")
+    addeventcolor("cl3", searchedArr, "Green")
+    addeventcolor("cl4", searchedArr, "Blue")
+    priceRangeTracker(searchedArr);
+    findMax(searchedArr);
+  }
+  else {
+    appendBrand(filtered);
+    appendSize(filtered)
+    addevent("d1", filtered)
+    addevent("d2", filtered)
+    addevent("d3", filtered)
+    addeventRating("r1", filtered, 3)
+    addeventRating("r2", filtered, 4.1)
+    addeventcolor("cl1", filtered, "Red")
+    addeventcolor("cl2", filtered, "Black")
+    addeventcolor("cl3", filtered, "Green")
+    addeventcolor("cl4", filtered, "Blue")
+    priceRangeTracker(filtered);
+    findMax(filtered);
+  }
+
 });
 
 //APPENDING BRAND START
@@ -30,11 +59,18 @@ function appendBrand(arr) {
   document.getElementById("brandDiv").innerHTML = "";
   let temp = [];
   arr.forEach(ele => {
-    if (ele.mainCat === str) {
+    if (ele.mainCat.toLocaleLowerCase() === lower) {
       temp.push(ele.brand)
     }
   })
-
+  if (temp.length == 0) {
+    arr.forEach(ele => {
+      let lo = ele.title.toLocaleLowerCase();
+      if (lo.includes(lower)) {
+        temp.push(ele.brand)
+      }
+    })
+  }
   let unique = removeDuplicate(temp);
   unique.map((ele, idx) => {
     if (idx < 5) {

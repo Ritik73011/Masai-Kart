@@ -25,6 +25,10 @@ function appendCategory(arr) {
         title.innerText = element.title;
 
         div.append(img, title);
+        div.addEventListener("click", () => {
+            localStorage.setItem("catClick", title.innerText);
+            window.location.href = "../../Masai-Kart/productPage/product.html";
+        });
         document.getElementById("category").append(div);
     });
 }
