@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    display: flex;
+    padding: 16px 24px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: #172337;
+    color: white;
+}
+
+.footerContainerLeft {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footerContainerRight {
+    width: 25%;
+}
+
+.footerContainerLeft div {
+    display: grid;
+}
+
+.socialLogo img {
+    width: 24px;
+    height: 24px;
+}
+
+#playStore {
+    width: 75px;
+    margin: auto;
+    display: block;
+}
+
+.footerContainerLeft div a {
+    text-decoration: none;
+    color: white;
+}
+
+.footerContainerRight div .devloper {
+    text-align: center;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.devloper2 {
+    margin-top: 10px;
+}
+
+.footerContainerRight div p {
+    text-align: center;
+}
+
+.socialLogo {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 10px 0;
+}
+
+@media all and (min-width: 0px) and (max-width: 520px) {
+    footer {
+        display: grid;
+        width: 100%;
+    }
+
+    .footerContainerLeft {
+        width: 100%;
+    }
+
+    .footerContainerLeft div {
+        margin-top: 10px;
+    }
+
+    .footerContainerRight {
+        width: 100%;
+        justify-content: center;
+        margin-top: 16px;
+    }
+}
