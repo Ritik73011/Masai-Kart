@@ -1,0 +1,163 @@
+/* css for price range */
+
+#pricerangebox {
+    /* border: 1px solid black; */
+    width: 100%;
+    font-family: sans-serif;
+    margin-top: 20px;
+}
+
+#price-input,
+#price-slider,
+#discount-input,
+#discount-slider {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    /* border: 1px solid red; */
+}
+#price-input{
+    margin-left: 0px;
+}
+
+.min-input,
+.max-input,
+.discount-min-input,
+.discount-max-input {
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgb(219, 218, 218);
+}
+
+.slider,
+.discount-slider {
+    margin: auto;
+    align-items: center;
+    height: 5px;
+    width: 90%;
+    border-radius: 5px;
+    background-color: rgb(225, 225, 226);
+    position: relative;
+    /* border: 1px solid red; */
+}
+.slider{
+    margin-right: 20px;
+}
+
+.slider .progress,
+.discount-slider .discount-progress {
+    height: 5px;
+    border-radius: 5px;
+    left: 2%;
+    right: 0%;
+    background: #ed0331;
+    position: absolute;
+}
+
+.range-input,
+.discount-range-input {
+    /* display: flex; */
+    margin: auto;
+    margin-right: 20px;
+    /* align-items: center; */
+    width: 90%;
+    height: 20px;
+    margin-top: -8px;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+.range-input input,
+.discount-range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: none;
+    border-radius: 5px;
+    pointer-events: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    pointer-events: auto;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    background: white;
+    border: 1px solid gray;
+}
+
+input[type="range"]::-moz-range-thumb {
+    pointer-events: auto;
+    height: 17px;
+    width: 17px;
+    border: none;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    background: rgb(16, 139, 69);
+}
+
+/* end of price range */
+
+.inp {
+    display: flex;
+    gap: 16px;
+}
+
+#brand input {
+    display: block;
+}
+#left{
+    padding: 12px;
+}
+#left>div{
+    margin: 18px 0 18px 10px;
+}
+#left label,input{
+    font-size: 14px;
+    font-weight: 350;
+    margin-top: 4px;
+}
+input[type="checkbox"]{
+    width: 16px;
+    cursor: pointer;
+}
+#left p{
+    font-size: 14px;
+    font-weight: 300;
+}
+#see{
+    margin-top: 8px;
+    color: #ed0331;
+    cursor: pointer;
+}
+#left h4{
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+#left h3,h4{
+    color: #333;
+}
+
+
+
+
+
+
+#colorFil .clr {
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+    border-radius: 50%;
+
+}
+hr{
+    /* width: 280px; */
+}

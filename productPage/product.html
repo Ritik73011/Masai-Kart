@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="./styles/product.css">
+    <link rel="stylesheet" href="./styles/filter.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="left">
+            <div id="filterCl">
+                <h3>FILTERS</h3>
+                <div id="close" onclick="closeSide()">&times;</div>
+            </div>
+            <div id="brand">
+                <h4>BRAND</h4>
+                <div id="brandDiv"></div>
+                <p id="see">See More <i class="fa-sharp fa-solid fa-angle-down"></i></p>
+            </div><hr>
+
+            <!-- for price range -->
+            <div id="pricerangebox">
+                <h4>PRICE</h4>
+                <div id="price-input">
+                    <div id="price-min">
+                        <div class="min-input" id="min-input-val">0</div>
+                    </div>
+                    <div id="price-max">
+                        <div class="max-input" id="max-input-val"></div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="progress"></div>
+                </div>
+                <div class="range-input">
+                    <input type="range" id="min" min="0" max="" value="0" />
+                    <input type="range" id="max" min="0" max="" value="" />
+                </div>
+            </div><hr>
+            <!-- end of price range -->
+
+            <!-- start discount -->
+            <div id="discountFil">
+                <h4>DISCOUNT</h4>
+                <div class="inp">
+                    <input type="checkbox" value="30" class="checkDis" id="d1">
+                    <label for="d1">30% or more</label>
+                </div>
+                <div class="inp">
+                    <input type="checkbox" value="50" class="checkDis" id="d2">
+                    <label for="d2">50% or more</label>
+                </div>
+
+                <div class="inp">
+                    <input type="checkbox" value="70" class="checkDis" id="d3">
+                    <label for="d3">70% or more</label>
+                </div>
+            </div><hr>
+            <!-- end discount -->
+
+            <!-- start rating -->
+            <div id="ratingFil">
+                <h4>CUSTOMER RATINGS</h4>
+                <div class="inp">
+                    <input type="checkbox" value="3" id="r1">
+                    <label for="r1">3★ & above</label>
+                </div>
+                <div class="inp">
+                    <input type="checkbox" value="4" id="r2">
+                    <label for="r2">4★ & above</label>
+                </div>
+            </div><hr>
+            <!-- end rating -->
+
+            <!-- start size -->
+            <div id="sizeFil">
+                <h4>SIZE</h4>
+                <div id="size"></div>
+            </div><hr>
+            <!-- end size -->
+
+            <!-- start color -->
+            <div id="colorFil">
+                <h4>COLOR</h4>
+                <div id="clrDiv">
+                    <div class="inp">
+                        <input type="checkbox" value="Red" id="cl1">
+                        <div style="background-color: red" class="clr"></div>
+                        <label for="cl1">Red</label>
+                    </div>
+                    <div class="inp">
+                        <input type="checkbox" value="Black" id="cl2">
+                        <div style="background-color: black" class="clr"></div>
+                        <label for="cl2">Black</label>
+                    </div>
+                    <div class="inp">
+                        <input type="checkbox" value="Green" id="cl3">
+                        <div style="background-color: green" class="clr"></div>
+                        <label for="cl3">Green</label>
+                    </div>
+                    <div class="inp">
+                        <input type="checkbox" value="Blue" id="cl4">
+                        <div style="background-color: blue" class="clr"></div>
+                        <label for="cl4">Blue</label>
+                    </div>
+                </div>
+               
+            </div>
+            <!--end color-->
+
+
+        </div>
+        <div id="right">
+            <div id="topProd">
+                <div id="drawer" onclick="openSide()"><i class="fa-sharp fa-solid fa-sliders"></i></div>
+                <p id="totalProd"></p>
+                <div class="sort">
+                    <select name="" id="sorting">
+                        <option id="sbp" value="sbp">Sort by Price</option>
+                        <option id="lth" value="lth">Low to High</option>
+                        <option id="htl" value="htl">High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <div id="mainProd"></div>
+
+        </div>
+
+    </div>
+
+</body>
+
+
+</html>
+<script>
+    function openSide(){
+        document.getElementById("left").style.width="240px";
+        document.getElementById("left").style.display="block";
+    }
+    function closeSide(){
+        document.getElementById("left").style.width="0";
+        document.getElementById("left").style.display="none";
+    }
+</script>
+<script type="module" src="./scripts/product.js"></script>
+<script type="module" src="./scripts/filter.js"></script>
+<script src="https://kit.fontawesome.com/c3ff0c4a78.js" crossorigin="anonymous"></script>
