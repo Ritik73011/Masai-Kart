@@ -9,7 +9,7 @@ import {
     remove,
     update
 } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js"
 const firebaseConfig = {
     apiKey: "AIzaSyBLOv4GH_ix5BtYLuH_z9ANVy-p_PjgsQE",
     authDomain: "masai-kart-c9e16.firebaseapp.com",
@@ -24,4 +24,5 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 export { ref, onValue, set, remove, database, update };
-export {getAuth,createUserWithEmailAndPassword };
+export {getAuth,createUserWithEmailAndPassword ,signInWithEmailAndPassword};
+export {GoogleAuthProvider, signInWithPopup}

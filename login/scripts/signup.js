@@ -1,6 +1,6 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 
-import { getAuth, createUserWithEmailAndPassword } from "../../config.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "../../config.js";
 
 document.getElementById("btn2").addEventListener("click",()=>{
     let email=document.getElementById("email").value;
