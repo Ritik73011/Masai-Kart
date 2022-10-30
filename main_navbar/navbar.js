@@ -26,7 +26,10 @@ function navBarHtml() {
     </div>
 
     <div class="nav_p">
-      <p><i class="fa-solid fa-cart-shopping"></i><span id="quan">0</span></p>
+    <div><span id="quan">0</span>
+    <p><i class="fa-solid fa-cart-shopping"></i></p>
+    </div>
+      
       <p>Wallet</p>
       <p id="login">LOGIN</p>
     </div>
@@ -85,6 +88,9 @@ function navBarJavaScript() {
       localStorage.setItem("catClick", val);
       window.location.href = "../../Masai-Kart/productPage/product.html";
     }
+  });
+  document.getElementById("login").addEventListener("click", () => {
+    window.location.href = "../login/login.html";
   });
 }
 

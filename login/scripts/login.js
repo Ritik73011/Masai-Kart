@@ -26,7 +26,7 @@ function signinUser(email, password) {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            alert(user)
+            alert(user.email)
             // ...
         })
         .catch((error) => {
@@ -36,7 +36,7 @@ function signinUser(email, password) {
         });
 }
 
-document.getElementById("googleImg").addEventListener("click",()=>{
+document.getElementById("googleImg").addEventListener("click", () => {
     signinWithGoogle();
 })
 
@@ -50,7 +50,7 @@ function signinWithGoogle() {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
-            alert(token,user);
+            alert(token, user);
             // ...
         }).catch((error) => {
             // Handle Errors here.
@@ -61,6 +61,14 @@ function signinWithGoogle() {
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
-            alert(errorMessage,email,credential);
+            alert(errorMessage, email, credential);
         });
+}
+
+const auth1 = getAuth();
+const user = auth1.currentUser;
+if (user) {
+    console.log("yes");
+} else {
+    console.log("no");
 }

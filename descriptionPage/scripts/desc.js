@@ -1,5 +1,6 @@
 import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
 import { footer } from "../../footer/footer.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../config.js";
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
 document.getElementById("footer").innerHTML = footer();
@@ -97,3 +98,19 @@ changeImg("smallImg3", "click")
 
 
 
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        console.log(uid);
+        //const user = auth.currentUser;
+        console.log(user.email);
+        // ...
+    } else {
+        // User is signed out
+        // ...
+        console.log("object");
+    }
+});
