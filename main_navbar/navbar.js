@@ -1,4 +1,6 @@
-import { ref, onValue, set, remove, database, update } from "../Firebase/config.js";
+import { ref, onValue, set, remove, database, update } from "../../Masai-Kart/config.js";
+
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../Masai-Kart/config.js";
 
 function navBarHtml() {
   return ` <nav>
@@ -32,6 +34,7 @@ function navBarHtml() {
       
       <p id="wallet">Wallet</p>
       <p id="login">LOGIN</p>
+      <img id="profileIcon" src="../../Masai-Kart/Image/profile.svg"/>
     </div>
   </nav>`
 }
@@ -92,6 +95,23 @@ function navBarJavaScript() {
   document.getElementById("login").addEventListener("click", () => {
     window.location.href = "../login/login.html";
   });
+
+document.getElementById("profileIcon").style.display="none";
+  //check in navbar, if user loggedIn or not
+  let aa = getAuth();
+    onAuthStateChanged(aa, (user) => {
+        if (user) {
+            let profile=document.getElementById("login");
+            profile.style.display="none";
+            document.getElementById("profileIcon").style.display="block";
+          }
+          else {
+          let profile=document.getElementById("login");
+          profile.style.display="block";
+          document.getElementById("profileIcon").style.display="none";
+            
+        }
+    });
 }
 
 
