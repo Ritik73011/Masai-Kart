@@ -16,6 +16,7 @@ body {
     gap: 16px;
     justify-content: center;
     margin-top: 10px;
+    margin-top: 80px;
 }
 
 .cartDelevery {
@@ -195,6 +196,7 @@ body {
     .cartMain {
         display: block;
         margin: 0 8px;
+        margin-top: 140px;
     }
 
     .cartMain .cartLeft {

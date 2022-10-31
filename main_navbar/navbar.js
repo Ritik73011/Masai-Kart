@@ -30,7 +30,7 @@ function navBarHtml() {
     <p><i class="fa-solid fa-cart-shopping"></i></p>
     </div>
       
-      <p>Wallet</p>
+      <p id="wallet">Wallet</p>
       <p id="login">LOGIN</p>
     </div>
   </nav>`
