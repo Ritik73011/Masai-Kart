@@ -1,6 +1,7 @@
 import { ref, onValue, set, remove, database, update } from "../Firebase/config.js";
 import { navBarJavaScript, navBarHtml } from "../main_navbar/navbar.js";
 import { footer } from "../footer/footer.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../Masai-Kart/config.js";
 
 document.getElementById("footer").innerHTML = footer();
 document.getElementById("navbar").innerHTML = navBarHtml();
@@ -82,6 +83,11 @@ function appendProducts(filterKey, arr, id) {
             clickedProduct(img, title, flexDiv, element);
             let addToCart = document.createElement("button");
             addToCart.innerText = "ADD TO CART";
+
+            addToCart.addEventListener("click", () => {
+                addToCartFun(element, indx);
+            });
+
             div.append(img, title, flexDiv, addToCart);
             document.getElementById(id).append(div);
         }
@@ -142,7 +148,9 @@ function appendProductsBigSaving(filterKey, arr, id) {
             flexDiv.append(price, discount);
             let addToCart = document.createElement("button");
             addToCart.innerText = "ADD TO CART";
-
+            addToCart.addEventListener("click", () => {
+                addToCartFun(element, indx);
+            });
             div.append(img, title, flexDiv, addToCart);
             clickedProduct(img, title, flexDiv, element);
             document.getElementById(id).append(div);
@@ -189,3 +197,119 @@ function setCrousal() {
         });
     });
 }
+
+//Auth
+let arrCart = JSON.parse(localStorage.getItem("cartItem")) || [];
+
+function addToCartFun(element, idx) {
+    let tt = element.title;
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            let uid = user.uid;
+            let flag = false;
+            const starCountRe = ref(database, "cartItem/" + uid);
+            onValue(starCountRe, (snapshot) => {
+                const data = snapshot.val();
+                for (let key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        let value = data[key];
+                        if (tt == value.title) {
+                            flag = true;
+                        }
+                    }
+                }
+            });
+
+            if (flag === true) {
+                alert("already added");
+            }
+            else {
+                let uniq = (new Date()).getTime();
+                set(ref(database, 'cartItem/' + uid + "/" + uniq), {
+                    img1: element.images.img1,
+                    title: element.title,
+                    size: element.size.sz1,
+                    seller: element.seller,
+                    strPrice: element.strPrice,
+                    price: element.price,
+                    discount: element.discount
+                });
+            }
+
+            const starCountRef = ref(database, "cartItem/" + uid);
+            onValue(starCountRef, (snapshot) => {
+                const data = snapshot.val();
+                let count = 0;
+                for (let key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        //let value = data[key];
+                        count++;
+                    }
+                }
+                document.getElementById("quan").innerText = count;
+            });
+
+            // ...
+        } else {
+
+            let flag = false;
+
+            arrCart.forEach(ele => {
+                if (tt == ele.title) {
+                    flag = true;
+                }
+            });
+
+            if (flag === true) {
+                alert("avilable");
+            }
+            else {
+                let obj = {
+                    img1: element.images.img1,
+                    title: element.title,
+                    size: element.size.sz1,
+                    seller: element.seller,
+                    strPrice: element.strPrice,
+                    price: element.price,
+                    discount: element.discount
+                }
+
+                arrCart.push(obj);
+
+                localStorage.setItem("cartItem", JSON.stringify(arrCart));
+                let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
+                document.getElementById("quan").innerText = cartItem.length;
+            }
+        }
+    });
+}
+
+
+function getIteamCountOnHome() {
+    let aa = getAuth();
+    onAuthStateChanged(aa, (user) => {
+        if (user) {
+            const uid = user.uid;
+            const starCountRef = ref(database, "cartItem/" + uid);
+            onValue(starCountRef, (snapshot) => {
+                const data = snapshot.val();
+                let count = 0;
+
+                for (let key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        let value = data[key];
+                        count++;
+                    }
+                }
+                document.getElementById("quan").innerText = count;
+            });
+        }
+        else {
+            let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
+            document.getElementById("quan").innerText = cartItem.length;
+        }
+    });
+}
+
+getIteamCountOnHome();

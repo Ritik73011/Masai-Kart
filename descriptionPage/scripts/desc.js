@@ -1,6 +1,9 @@
 import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
 import { footer } from "../../footer/footer.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../config.js";
+import { ref, onValue, set, remove, database, update } from "../../config.js";
+
+
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
 document.getElementById("footer").innerHTML = footer();
@@ -96,21 +99,125 @@ changeImg("smallImg2", "click")
 changeImg("smallImg3", "click")
 
 
+//ADD TO CART BTN
 
+document.getElementById("addtocart").addEventListener("click", () => {
+    let element = JSON.parse(localStorage.getItem("clicked"));
 
-const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        console.log(uid);
-        //const user = auth.currentUser;
-        console.log(user.email);
-        // ...
-    } else {
-        // User is signed out
-        // ...
-        console.log("object");
-    }
+    addToCartFun(element);
 });
+//Auth
+let arrCart = JSON.parse(localStorage.getItem("cartItem")) || [];
+
+function addToCartFun(element) {
+    let tt = element.title;
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            let uid = user.uid;
+            let flag = false;
+            const starCountRe = ref(database, "cartItem/" + uid);
+            onValue(starCountRe, (snapshot) => {
+                const data = snapshot.val();
+                for (let key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        let value = data[key];
+                        if (tt == value.title) {
+                            flag = true;
+                        }
+                    }
+                }
+            });
+
+            if (flag === true) {
+                alert("already added");
+            }
+            else {
+                let uniq = (new Date()).getTime();
+                set(ref(database, 'cartItem/' + uid + "/" + uniq), {
+                    img1: element.images.img1,
+                    title: element.title,
+                    size: element.size.sz1,
+                    seller: element.seller,
+                    strPrice: element.strPrice,
+                    price: element.price,
+                    discount: element.discount
+                });
+            }
+
+            const starCountRef = ref(database, "cartItem/" + uid);
+            onValue(starCountRef, (snapshot) => {
+                const data = snapshot.val();
+                let count = 0;
+                for (let key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        //let value = data[key];
+                        count++;
+                    }
+                }
+                document.getElementById("quan").innerText = count;
+            });
+
+            // ...
+        } else {
+
+            let flag = false;
+
+            arrCart.forEach(ele => {
+                if (tt == ele.title) {
+                    flag = true;
+                }
+            });
+
+            if (flag === true) {
+                alert("avilable");
+            }
+            else {
+                let obj = {
+                    img1: element.images.img1,
+                    title: element.title,
+                    size: element.size.sz1,
+                    seller: element.seller,
+                    strPrice: element.strPrice,
+                    price: element.price,
+                    discount: element.discount
+                }
+
+                arrCart.push(obj);
+
+                localStorage.setItem("cartItem", JSON.stringify(arrCart));
+                let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
+                document.getElementById("quan").innerText = cartItem.length;
+            }
+        }
+    });
+}
+
+
+function getIteamCountOnHome() {
+    let aa = getAuth();
+    onAuthStateChanged(aa, (user) => {
+        if (user) {
+            const uid = user.uid;
+            const starCountRef = ref(database, "cartItem/" + uid);
+            onValue(starCountRef, (snapshot) => {
+                const data = snapshot.val();
+                let count = 0;
+
+                for (let key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        let value = data[key];
+                        count++;
+                    }
+                }
+                document.getElementById("quan").innerText = count;
+            });
+        }
+        else {
+            let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
+            document.getElementById("quan").innerText = cartItem.length;
+        }
+    });
+}
+
+getIteamCountOnHome();
