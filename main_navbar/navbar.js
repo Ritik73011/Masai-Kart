@@ -28,7 +28,7 @@ function navBarHtml() {
     </div>
 
     <div class="nav_p">
-    <div><span id="quan">0</span>
+    <div id="toCartPage"><span id="quan">0</span>
     <p><i class="fa-solid fa-cart-shopping"></i></p>
     </div>
       
@@ -95,6 +95,10 @@ function navBarJavaScript() {
   document.getElementById("login").addEventListener("click", () => {
     window.location.href = "../login/login.html";
   });
+
+  document.getElementById("toCartPage").addEventListener("click",()=>{
+    window.location.href="../../Masai-Kart/cart_page/cart.html";
+  })
 
 document.getElementById("profileIcon").style.display="none";
   //check in navbar, if user loggedIn or not

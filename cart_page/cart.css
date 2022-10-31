@@ -57,11 +57,16 @@ body {
 }
 
 .cartProductCard .leftDiv img {
-    width: 120px;
-    height: 120px;
+    display: block;
+    margin: auto;
+    max-width: 120px;
+    max-height: 120px;
 }
-
+.cartProductCard .rightDiv{
+    width: 100%;
+}
 .cartProductCard .rightDiv .titleDD {
+    
     display: flex;
     justify-content: space-between;
     gap: 32px;
@@ -101,19 +106,21 @@ body {
 #title {
     font-size: 16px;
     font-weight: 500;
-    max-width: 380px;
+    max-width: 320px;
     max-height: 43px;
     overflow: hidden;
 }
 
 .titleDD p {
     font-size: 12px;
-    align-items: center;
+    /* margin: auto; */
+    text-align: right;
 }
 
 #size {
     font-size: 14px;
     color: #878787;
+    margin-top: 4px;
 }
 
 #seller {
@@ -217,9 +224,12 @@ body {
 
     .cartProductCard .rightDiv .titleDD {
         display: block;
+        text-align: left;
         gap: 2px;
     }
-
+    #deliveryDate{
+        text-align: left;
+    }
     .cartProductCard .rightDiv .priceDD {
         flex-wrap: wrap;
     }
