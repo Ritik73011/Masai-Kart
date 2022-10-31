@@ -98,6 +98,10 @@ nav {
     font-weight: 600;
 }
 
+#profileIcon{
+    width: 30px;
+}
+
 #login:hover {
     background-color: #FED7D7;
 }
