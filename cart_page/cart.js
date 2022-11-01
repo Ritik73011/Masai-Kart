@@ -115,6 +115,7 @@ function appendProdInCart(arr, uid) {
             temp++;
             if (temp < 6) {
                 updateQuantity(obj, temp, quantity, uid);
+                location.reload();
             } else {
                 alert("product limit exceeded");
             }
@@ -214,8 +215,10 @@ function updateQuantity(obj, temp, quantity, uid) {
             if (data.hasOwnProperty(key)) {
                 let value = data[key];
                 if (obj.title === value.title) {
-                    updateData(obj, key, temp, uid);
-                    //quantity.innerText = data[key].quan;
+                    console.log(key);
+                    update(ref(database, "cartItem/" + uid + "/" + key), {
+                        quan: temp
+                    });
                 }
             }
         }
@@ -237,7 +240,7 @@ function updateData(obj, key, quan, uid) {
     }*/
 
     console.log(key);
-    return update(ref(database, "cartItem/" + uid + "/" + key), {
+    update(ref(database, "cartItem/" + uid + "/" + key), {
         quan: quan
     });
 }
