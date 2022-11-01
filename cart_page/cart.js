@@ -41,6 +41,9 @@ onAuthStateChanged(isLogin, (user) => {
                 document.querySelector(".cartProduct").append(img);
             }
         });
+        document.getElementById("payBtn").addEventListener("click",()=>{
+            window.location.href="../../Masai-Kart/checkoutPage/checkout.html";
+        })
     }
     else {
         let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
@@ -55,7 +58,9 @@ onAuthStateChanged(isLogin, (user) => {
             img.id="imgId";
             document.querySelector(".cartProduct").append(img);
         }
-
+        document.getElementById("payBtn").addEventListener("click",()=>{
+        alert("Please login first");
+        })
     }
 });
 
@@ -79,7 +84,7 @@ function appendProdInCart(arr, uid) {
         quantityDiv.id = "quanDiv";
         let minus = document.createElement("p");
         minus.id = "minus";
-        minus.innerText = "-";
+        minus.innerText = "−";
         let quantity = document.createElement("p");
         quantity.id = "qauntity";
         quantity.innerText = obj.quan;
@@ -208,7 +213,7 @@ function appendFromLocalStorage(arr) {
         quantityDiv.id = "quanDiv";
         let minus = document.createElement("p");
         minus.id = "minus";
-        minus.innerText = "-";
+        minus.innerText = "−";
         let quantity = document.createElement("p");
         quantity.id = "qauntity";
         quantity.innerText = obj.quan;
