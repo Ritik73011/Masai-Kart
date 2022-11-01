@@ -59,16 +59,24 @@ body {
 }
 
 .cartProductCard .leftDiv img {
-    display: block;
-    margin: auto;
     max-width: 120px;
     max-height: 120px;
+    display: block;
+    margin: auto;
 }
-.cartProductCard .rightDiv{
+
+.cartProductCard #quanDiv {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartProductCard .rightDiv {
     width: 100%;
 }
+
 .cartProductCard .rightDiv .titleDD {
-    
+
     display: flex;
     justify-content: space-between;
     gap: 32px;
@@ -94,10 +102,8 @@ body {
     cursor: pointer;
 }
 
-#quantity {
-    border: 0.5px solid grey;
-    border-radius: 50%;
-    padding: 3px 9px;
+.cartProductCard #quanDiv #qauntity {
+    margin-top: 3px;
 }
 
 .cartMain .cartRight div div {
@@ -229,9 +235,11 @@ body {
         text-align: left;
         gap: 2px;
     }
-    #deliveryDate{
+
+    #deliveryDate {
         text-align: left;
     }
+
     .cartProductCard .rightDiv .priceDD {
         flex-wrap: wrap;
     }

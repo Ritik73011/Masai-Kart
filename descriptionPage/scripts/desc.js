@@ -141,7 +141,8 @@ function addToCartFun(element) {
                     seller: element.seller,
                     strPrice: element.strPrice,
                     price: element.price,
-                    discount: element.discount
+                    discount: element.discount,
+                    quan: 1
                 });
             }
 
@@ -180,7 +181,8 @@ function addToCartFun(element) {
                     seller: element.seller,
                     strPrice: element.strPrice,
                     price: element.price,
-                    discount: element.discount
+                    discount: element.discount,
+                    quan: 1
                 }
 
                 arrCart.push(obj);
