@@ -12,7 +12,7 @@ document.getElementById("wallet").style.display = "none";
 document.querySelector("#quan").style.display = "none";
 
 
-
+let amount=0;
 
 let isLogin = getAuth();
 onAuthStateChanged(isLogin, (user) => {
@@ -40,6 +40,9 @@ onAuthStateChanged(isLogin, (user) => {
 function appendProdInCart(arr, uid) {
     document.querySelector(".cartProduct").innerHTML = "";
     arr.forEach(obj => {
+
+        amount=amount+ (obj.price*obj.quan);
+        console.log(( amount))
 
         let cartCard = document.createElement("div");
         cartCard.setAttribute("class", "cartProductCard");
@@ -110,6 +113,17 @@ function appendProdInCart(arr, uid) {
         cartCard.append(leftDiv, rightDiv);
         document.querySelector(".cartProduct").append(cartCard);
 
+        minus.addEventListener("click", () => {
+            let temp = obj.quan;
+            temp--;
+            if (temp < 1) {
+                alert("Product should be atleast 1 quantity");
+            } else {
+                updateQuantity(obj, temp, quantity, uid);
+                location.reload();
+            }
+        })
+
         plus.addEventListener("click", () => {
             let temp = obj.quan;
             temp++;
@@ -119,11 +133,31 @@ function appendProdInCart(arr, uid) {
             } else {
                 alert("product limit exceeded");
             }
-
         });
 
+        remBtn.addEventListener("click", () => {
+            remItems(obj, uid);
+        })
+        
+        document.getElementById("cartPrice").innerText="₹"+amount;
     });
 
+}
+
+function remItems(obj, uid) {
+    const fetchItem = ref(database, "cartItem/" + uid);
+    onValue(fetchItem, (snapshot) => {
+        const data = snapshot.val();
+        for (let key in data) {
+            if (data.hasOwnProperty(key)) {
+                let value = data[key];
+                if (obj.title === value.title) {
+                    remove(ref(database, "cartItem/" + uid + "/" + key));
+
+                }
+            }
+        }
+    })
 }
 
 function appendFromLocalStorage(arr) {
@@ -244,3 +278,6 @@ function updateData(obj, key, quan, uid) {
         quan: quan
     });
 }
+
+
+
