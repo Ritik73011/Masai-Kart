@@ -58,6 +58,13 @@ body {
 
 }
 
+#imgId{
+    display: block;
+    margin: auto;
+    width: min-content;
+    margin-top: 50px;
+}
+
 .cartProductCard .leftDiv img {
     max-width: 120px;
     max-height: 120px;
@@ -179,12 +186,13 @@ body {
 
 .cartRight p {
     margin: 8px 0;
-    font-size: 16px;
+    font-size: 14px;
     color: #212121;
 }
 
 .cartRight h3 {
     padding-bottom: 8px;
+    font-size: 16px;
     color: #878787;
 }
 
@@ -205,6 +213,20 @@ body {
 
 .cartMain .cartRight {
     width: 25%;
+}
+
+.cartRight #payBtn{
+    width: 150px;
+    display: block;
+    margin: auto;
+    /* padding: 10px 18px; */
+    padding: 12px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #FFF;
+    font-weight: bolder;
+    background-color: #ED0331;
 }
 
 @media all and (min-width: 0px) and (max-width: 768px) {
