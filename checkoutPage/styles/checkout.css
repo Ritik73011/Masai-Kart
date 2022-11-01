@@ -42,6 +42,7 @@ body {
     overflow-y: scroll;
     margin-bottom: 18px;
 }
+
 .cartProductSum {
     margin-top: 8px;
     height: 300px;
@@ -60,7 +61,6 @@ body {
     display: flex;
     gap: 20px;
     padding: 8px 24px;
-
 }
 
 #mainAddDiv .radioDiv #radioId {
@@ -105,7 +105,8 @@ body {
     font-size: 16px;
     color: #212121;
 }
-.cartRight #payBtn{
+
+.cartRight #payBtn {
     width: 150px;
     display: none;
     margin: auto;
@@ -118,6 +119,7 @@ body {
     font-weight: bolder;
     background-color: #ED0331;
 }
+
 .cartRight h3 {
     padding-bottom: 8px;
     color: #878787;
@@ -143,38 +145,6 @@ body {
     border-radius: 4px;
 }
 
-@media all and (min-width: 0px) and (max-width: 768px) {
-    .cartMain {
-        display: block;
-        margin: 0 8px;
-    }
-
-    .cartMain .cartLeft {
-        width: 100%;
-    }
-
-    .cartMain .cartRight {
-        width: 100%;
-    }
-
-    #title {
-        font-size: 15px;
-    }
-
-    #price {
-        font-size: 16px;
-    }
-
-    .cartProductCard .rightDiv .titleDD {
-        display: block;
-        gap: 2px;
-    }
-
-    .cartProductCard .rightDiv .priceDD {
-        flex-wrap: wrap;
-    }
-}
-
 
 
 
@@ -182,6 +152,7 @@ body {
 .cartProduct::-webkit-scrollbar {
     width: 3px;
 }
+
 .cartProductSum::-webkit-scrollbar {
     width: 3px;
 }
@@ -208,26 +179,32 @@ body {
     display: flex;
     gap: 24px;
     padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
+
 .cartProductCard .leftDiv img {
     width: 120px;
     height: 120px;
 }
+
 .cartProductCard .rightDiv .titleDD {
     display: flex;
     justify-content: space-between;
     gap: 32px;
 }
+
 .cartProductCard .rightDiv .priceDD {
     display: flex;
     gap: 8px;
     margin-top: 16px;
 }
+
 .cartProductCard .leftDiv div {
     display: flex;
     justify-content: space-between;
     padding: 8px;
 }
+
 #minus,
 #plus {
     border: 0.5px solid grey;
@@ -235,50 +212,60 @@ body {
     padding: 3px 9px;
     cursor: pointer;
 }
+
 #quantity {
     border: 0.5px solid grey;
     border-radius: 50%;
     padding: 3px 9px;
 }
+
 .cartMain .cartRight div div {
     display: flex;
     justify-content: space-between;
 }
+
 #title {
     font-size: 16px;
     font-weight: 500;
     max-width: 380px;
-    max-height: 43px;
+    max-height: 38px;
     overflow: hidden;
 }
+
 .titleDD p {
     font-size: 12px;
     align-items: center;
 }
+
 #size {
     font-size: 14px;
     color: #878787;
 }
+
 #seller {
     font-size: 14px;
     margin-top: 8px;
     color: #878787;
 }
+
 #sPrice {
     color: #878787;
     font-size: 14px;
     margin: auto 0;
     text-decoration: line-through;
 }
+
 #price {
     color: #212121;
     font-size: 18px;
 }
+
 #discount {
     color: green;
     font-size: 14px;
     margin: auto 0;
 }
+
 #remove {
     margin-top: 16px;
     font-size: 16px;
@@ -289,6 +276,7 @@ body {
     border: 1px solid #ED0331;
     border-radius: 4px;
 }
+
 #remove:hover {
     color: #ED0331;
 }
@@ -306,10 +294,12 @@ body {
     background: white;
     padding: 16px;
 }
-#popup_box h2{
+
+#popup_box h2 {
     padding: 8px;
     font-size: 20px;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -332,7 +322,19 @@ form input {
     width: 300px;
     border: none;
     outline: none;
-    border-bottom: 1px solid rgb(75, 74, 74);
+    border-bottom: 1px solid rgb(132, 126, 126);
+}
+
+input[type=submit] {
+    width: 132px;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 14px;
+    margin: 16px 8px;
 }
 
 input[type=number] {
@@ -345,14 +347,6 @@ input[type=number] {
     margin-top: 16px;
 }
 
-#addFlex button {
-    padding: 10px 16px;
-    border: none;
-    width: 150px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bolder;
-}
 
 #cancel {
     background-color: rgb(127, 123, 123);
@@ -362,4 +356,55 @@ input[type=number] {
 #add {
     background-color: #ED0331;
     color: white;
+}
+
+
+
+
+@media all and (min-width: 0px) and (max-width: 768px) {
+    .cartMain {
+        display: block;
+        margin: 0 8px;
+    }
+
+    .cartMain .cartLeft {
+        width: 100%;
+    }
+
+    .cartMain .cartRight {
+        width: 100%;
+    }
+
+    #title {
+        font-size: 15px;
+        max-height: 36px;
+    }
+
+    #price {
+        font-size: 16px;
+    }
+
+    .cartProductCard .rightDiv .titleDD {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .cartProductCard .rightDiv .priceDD {
+        flex-wrap: wrap;
+    }
+
+    form #city,
+    #state {
+        width: 145px;
+    }
+
+    form input[type=submit] {
+        width: 130px;
+    }
+
+    #size {
+        margin-top: 8px;
+    }
 }
