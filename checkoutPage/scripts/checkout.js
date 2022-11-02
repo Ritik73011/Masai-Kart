@@ -1,5 +1,18 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../config.js";
 import { ref, onValue, set, remove, database, update } from "../../config.js";
+import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
+import { footer } from "../../footer/footer.js";
+
+document.getElementById("navbar").innerHTML = navBarHtml();
+navBarJavaScript();
+
+document.getElementById("footer").innerHTML = footer();
+
+document.getElementById("wallet").style.display = "none";
+document.querySelector("#quan").style.display = "none";
+
+let strPrice = 0;
+let prices = 0;
 
 
 const auth = getAuth();
@@ -108,12 +121,12 @@ function addSubmit(uid) {
 }
 
 
-function fetchOrderSummary(uid){
+function fetchOrderSummary(uid) {
 
     const starCountRef = ref(database, "cartItem/" + uid);
     onValue(starCountRef, (snapshot) => {
         const data = snapshot.val();
-        
+
         for (let key in data) {
             if (data.hasOwnProperty(key)) {
                 let value = data[key];
@@ -123,64 +136,77 @@ function fetchOrderSummary(uid){
     });
 }
 
-function appendOrderSummary(ele){
-    let mainDiv=document.createElement("div");
-    mainDiv.setAttribute("class","cartProductCard");
+let count = 0;
+function appendOrderSummary(ele) {
+    count++;
+    let mainDiv = document.createElement("div");
+    mainDiv.setAttribute("class", "cartProductCard");
 
-    let leftDiv=document.createElement("div");
-    leftDiv.setAttribute("class","leftDiv");
-    let img=document.createElement("img");
-    img.src=ele.img1;
+    let leftDiv = document.createElement("div");
+    leftDiv.setAttribute("class", "leftDiv");
+    let img = document.createElement("img");
+    img.src = ele.img1;
     leftDiv.append(img);
 
 
-    let rightDiv=document.createElement("div");
-    rightDiv.setAttribute("class","rightDiv");
+    let rightDiv = document.createElement("div");
+    rightDiv.setAttribute("class", "rightDiv");
 
-    let titleDD=document.createElement("div");
-    titleDD.setAttribute("class","titleDD");
-    
-    let titleH3=document.createElement("h3");
-    titleH3.id="title";
-    titleH3.innerText=ele.title;
+    let titleDD = document.createElement("div");
+    titleDD.setAttribute("class", "titleDD");
 
-    let deliveryP=document.createElement("p");
-    deliveryP.id="deliveryDate"
-    deliveryP.innerText="Delivery by Tue Nov 1 | Free₹40";
-    
-    titleDD.append(titleH3,deliveryP);
-    
-    let size=document.createElement("p");
-    size.id="size";
-    size.innerText=ele.size;
+    let titleH3 = document.createElement("h3");
+    titleH3.id = "title";
+    titleH3.innerText = ele.title;
 
-    let seller=document.createElement("p");
-    seller.id="seller";
-    seller.innerText=ele.seller;
-    
-    let priceDD=document.createElement("div");
-    priceDD.setAttribute("class","priceDD");
-    
-    let sPrice=document.createElement("p");
-    sPrice.id="sPrice";
-    sPrice.innerText="₹"+ele.strPrice;
+    let deliveryP = document.createElement("p");
+    deliveryP.id = "deliveryDate"
+    deliveryP.innerText = "Delivery by Tue Nov 1 | Free₹40";
 
-    let price=document.createElement("p");
-    price.id="price";
-    price.innerText="₹"+ele.price;
+    titleDD.append(titleH3, deliveryP);
 
-    let discount=document.createElement("p");
-    discount.id="discount";
-    discount.innerText=ele.discount+"% off";
+    let size = document.createElement("p");
+    size.id = "size";
+    size.innerText = ele.size;
 
-    priceDD.append(sPrice,price,discount);
+    let seller = document.createElement("p");
+    seller.id = "seller";
+    seller.innerText = ele.seller;
 
-    rightDiv.append(titleDD,size,seller,priceDD);
+    let quan = document.createElement("p");
+    quan.id = "itemQuan";
+    quan.innerText = "QTY:" + ele.quan;
+
+    let priceDD = document.createElement("div");
+    priceDD.setAttribute("class", "priceDD");
+
+    let sPrice = document.createElement("p");
+    sPrice.id = "sPrice";
+    sPrice.innerText = "₹" + ele.strPrice;
+
+    let price = document.createElement("p");
+    price.id = "price";
+    price.innerText = "₹" + ele.price;
+
+    let discount = document.createElement("p");
+    discount.id = "discount";
+    discount.innerText = ele.discount + "% off";
+
+    priceDD.append(sPrice, price, discount);
+
+    rightDiv.append(titleDD, size, seller, quan, priceDD);
 
     mainDiv.append(leftDiv, rightDiv);
 
     document.querySelector(".cartProductSum").append(mainDiv);
+    strPrice += +(ele.quan * ele.strPrice);
+    prices = prices + +(ele.quan * ele.price);
 
+    document.getElementById("itemCount").innerText = count;
+    document.getElementById("cartPrice").innerText = "₹" + strPrice;
+    document.getElementById("totalDiscount").innerText = "- ₹" + +(strPrice - prices);
+    document.getElementById("totalPrice").innerText = "₹" + prices;
+    document.getElementById("totalSaving").innerText = "₹" + +(strPrice - prices);
 
 }
 

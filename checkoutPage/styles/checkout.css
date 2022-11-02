@@ -13,7 +13,13 @@ body {
     display: flex;
     gap: 16px;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 90px;
+}
+
+#itemQuan {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #878787;
 }
 
 .cartDelevery {
@@ -182,18 +188,22 @@ body {
     padding: 16px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-.cartProductCard .leftDiv{
-    width: 120px;
+
+.cartProductCard .leftDiv {
+    min-width: 120px;
 }
+
 .cartProductCard .leftDiv img {
     max-width: 120px;
     max-height: 120px;
     display: block;
     margin: auto;
 }
-.cartProductCard .rightDiv{
+
+.cartProductCard .rightDiv {
     width: 100%;
 }
+
 .cartProductCard .rightDiv .titleDD {
     display: flex;
     justify-content: space-between;
@@ -235,7 +245,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     max-width: 320px;
-    max-height: 40px;
+    max-height: 38px;
     overflow: hidden;
 }
 
@@ -399,9 +409,11 @@ input[type=number] {
         text-align: left;
         gap: 2px;
     }
+
     #deliveryDate {
         text-align: left;
     }
+
     .cartProductCard .rightDiv .priceDD {
         flex-wrap: wrap;
     }
