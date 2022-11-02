@@ -24,7 +24,7 @@ body {
     background-color: white;
     margin-top: 8px;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
     align-items: center;
     font-weight: bolder;
 }
@@ -122,6 +122,7 @@ body {
 
 .cartRight h3 {
     padding-bottom: 8px;
+    font-size: 16px;
     color: #878787;
 }
 
@@ -181,12 +182,18 @@ body {
     padding: 16px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-
-.cartProductCard .leftDiv img {
+.cartProductCard .leftDiv{
     width: 120px;
-    height: 120px;
 }
-
+.cartProductCard .leftDiv img {
+    max-width: 120px;
+    max-height: 120px;
+    display: block;
+    margin: auto;
+}
+.cartProductCard .rightDiv{
+    width: 100%;
+}
 .cartProductCard .rightDiv .titleDD {
     display: flex;
     justify-content: space-between;
@@ -227,19 +234,20 @@ body {
 #title {
     font-size: 16px;
     font-weight: 500;
-    max-width: 380px;
-    max-height: 38px;
+    max-width: 320px;
+    max-height: 40px;
     overflow: hidden;
 }
 
 .titleDD p {
     font-size: 12px;
-    align-items: center;
+    text-align: right;
 }
 
 #size {
     font-size: 14px;
     color: #878787;
+    margin-top: 4px;
 }
 
 #seller {
@@ -325,7 +333,8 @@ form input {
     border-bottom: 1px solid rgb(132, 126, 126);
 }
 
-input[type=submit] {
+input[type=submit],
+#cancel {
     width: 132px;
     border: none;
     outline: none;
@@ -365,6 +374,7 @@ input[type=number] {
     .cartMain {
         display: block;
         margin: 0 8px;
+        margin-top: 140px;
     }
 
     .cartMain .cartLeft {
@@ -385,12 +395,13 @@ input[type=number] {
     }
 
     .cartProductCard .rightDiv .titleDD {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 10px;
+        display: block;
+        text-align: left;
+        gap: 2px;
     }
-
+    #deliveryDate {
+        text-align: left;
+    }
     .cartProductCard .rightDiv .priceDD {
         flex-wrap: wrap;
     }
@@ -400,7 +411,8 @@ input[type=number] {
         width: 145px;
     }
 
-    form input[type=submit] {
+    form input[type=submit],
+    #cancel {
         width: 130px;
     }
 

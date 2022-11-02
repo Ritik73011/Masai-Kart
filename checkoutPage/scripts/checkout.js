@@ -8,6 +8,7 @@ onAuthStateChanged(auth, (user) => {
         const uid = user.uid;
         addSubmit(uid);
         appendAddress(uid);
+        fetchOrderSummary(uid)
     } else {
 
     }
@@ -78,7 +79,7 @@ document.getElementById("cancel").addEventListener("click", () => {
 });
 
 function addSubmit(uid) {
-    document.getElementById("add").addEventListener("click", () => {
+    document.querySelector("form").addEventListener("submit", () => {
         event.preventDefault();
         let form = document.querySelector("form");
 
@@ -105,3 +106,81 @@ function addSubmit(uid) {
         location.reload();
     });
 }
+
+
+function fetchOrderSummary(uid){
+
+    const starCountRef = ref(database, "cartItem/" + uid);
+    onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        
+        for (let key in data) {
+            if (data.hasOwnProperty(key)) {
+                let value = data[key];
+                appendOrderSummary(value)
+            }
+        }
+    });
+}
+
+function appendOrderSummary(ele){
+    let mainDiv=document.createElement("div");
+    mainDiv.setAttribute("class","cartProductCard");
+
+    let leftDiv=document.createElement("div");
+    leftDiv.setAttribute("class","leftDiv");
+    let img=document.createElement("img");
+    img.src=ele.img1;
+    leftDiv.append(img);
+
+
+    let rightDiv=document.createElement("div");
+    rightDiv.setAttribute("class","rightDiv");
+
+    let titleDD=document.createElement("div");
+    titleDD.setAttribute("class","titleDD");
+    
+    let titleH3=document.createElement("h3");
+    titleH3.id="title";
+    titleH3.innerText=ele.title;
+
+    let deliveryP=document.createElement("p");
+    deliveryP.id="deliveryDate"
+    deliveryP.innerText="Delivery by Tue Nov 1 | Free₹40";
+    
+    titleDD.append(titleH3,deliveryP);
+    
+    let size=document.createElement("p");
+    size.id="size";
+    size.innerText=ele.size;
+
+    let seller=document.createElement("p");
+    seller.id="seller";
+    seller.innerText=ele.seller;
+    
+    let priceDD=document.createElement("div");
+    priceDD.setAttribute("class","priceDD");
+    
+    let sPrice=document.createElement("p");
+    sPrice.id="sPrice";
+    sPrice.innerText="₹"+ele.strPrice;
+
+    let price=document.createElement("p");
+    price.id="price";
+    price.innerText="₹"+ele.price;
+
+    let discount=document.createElement("p");
+    discount.id="discount";
+    discount.innerText=ele.discount+"% off";
+
+    priceDD.append(sPrice,price,discount);
+
+    rightDiv.append(titleDD,size,seller,priceDD);
+
+    mainDiv.append(leftDiv, rightDiv);
+
+    document.querySelector(".cartProductSum").append(mainDiv);
+
+
+}
+
