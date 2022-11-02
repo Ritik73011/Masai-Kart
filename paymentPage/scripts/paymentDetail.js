@@ -86,23 +86,30 @@ function getCartItems(uid) {
     onValue(starCountRef, (snapshot) => {
         const data = snapshot.val();
 
-        for (let key in data) {
-            if (data.hasOwnProperty(key)) {
-                let value = data[key];
-                let uniq = (new Date()).getTime();
-                set(ref(database, 'orderHistory/' + uid + "/" + givenOtp), {
-                    img1: value.img1,
-                    title: value.title,
-                    size: value.size,
-                    seller: value.seller,
-                    strPrice: value.strPrice,
-                    price: value.price,
-                    discount: value.discount,
-                    quan: value.quan
-                });
-                remove(ref(database, "cartItem/" + uid + "/" + key));
-            }
-        }
+        let sss = Object.keys(data);
+        sss.forEach(ele => {
+            remItems(ele, uid);
+        });
 
     });
+}
+
+function remItems(ele, uid) {
+    const fetchItem = ref(database, "cartItem/" + uid + "/" + ele);
+    onValue(fetchItem, (snapshot) => {
+        const data = snapshot.val();
+
+        let uniq = (new Date()).getTime();
+        set(ref(database, 'orderHistory/' + uid + "/" + uniq), {
+            img1: data.img1,
+            title: data.title,
+            size: data.size,
+            seller: data.seller,
+            strPrice: data.strPrice,
+            price: data.price,
+            discount: data.discount,
+            quan: data.quan
+        });
+        remove(ref(database, "cartItem/" + uid + "/" + ele));
+    })
 }
