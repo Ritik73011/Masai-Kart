@@ -1,78 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://kit.fontawesome.com/c3ff0c4a78.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./styles/paymentDetail.css">
-</head>
+    <script
+      src="https://kit.fontawesome.com/c3ff0c4a78.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/paymentDetail.css" />
+  </head>
 
-<body>
+  <body>
     <!-- div#main -->
     <div id="logo-brand">
-        <img src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/paymentImages%2FLogo%20Disney%2B%20Hotstar.png?alt=media&token=5d49db47-b53e-4968-bff0-83b98fff3b92"
-            alt="">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/paymentImages%2FLogo%20Disney%2B%20Hotstar.png?alt=media&token=5d49db47-b53e-4968-bff0-83b98fff3b92"
+        alt=""
+      />
     </div>
     <div id="payFrom">
-        <p>You're paying ₹ <span id="netP"></span> for this transaction.</p>
+      <p>You're paying ₹<span id="netP"></span> for this transaction.</p>
     </div>
     <div id="bankMain">
-        <div id="bankDetails">
-            <div class="payBox">
-                <input type="text" name="" id="name" required>
-                <label>Card Holder Name</label>
-            </div>
-            <div class="payBox">
-                <input type="text" name="" id="number" required>
-                <label>Card Number</label>
-            </div>
-            <div id="expCvv">
-                <div class="payBox">
-                    <input type="text" name="" id="exp" required>
-                    <label>MM/YY</label>
-                </div>
-                <div class="payBox">
-                    <i class="fa-sharp fa-solid fa-circle-question"></i>
-                    <div id="cvvDiv">
-                        <img id="cvvimg"
-                            src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/paymentImages%2Fcvv%20ss.png?alt=media&token=beb09c8a-5b32-4521-807e-3e8275fbaa49"
-                            alt="">
-                    </div>
-                    <input type="password" name="" id="cvv" required>
-                    <label id="showcvv">CVV</label>
-                </div>
-            </div>
-            <div id="checked">
-                <input type="checkbox">
-                <p id="checkPara">I am over 18, and I agree to the above
-                    conditions and the <span>Terms of Use</span>
-                    and <span>Privacy Policy</span>.</p>
-            </div>
-            <button id="proceedBtn">PROCEED</button>
+      <div id="bankDetails">
+        <div class="payBox">
+          <input type="text" name="" id="name" required />
+          <label>Card Holder Name</label>
         </div>
+        <div class="payBox">
+          <input type="text" name="" id="number" required />
+          <label>Card Number</label>
+        </div>
+        <div id="expCvv">
+          <div class="payBox">
+            <input type="text" name="" id="exp" required />
+            <label>MM/YY</label>
+          </div>
+          <div class="payBox">
+            <i class="fa-sharp fa-solid fa-circle-question"></i>
+            <div id="cvvDiv">
+              <img
+                id="cvvimg"
+                src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/paymentImages%2Fcvv%20ss.png?alt=media&token=beb09c8a-5b32-4521-807e-3e8275fbaa49"
+                alt=""
+              />
+            </div>
+            <input type="password" name="" id="cvv" required />
+            <label id="showcvv">CVV</label>
+          </div>
+        </div>
+
+        <button id="proceedBtn">PROCEED</button>
+      </div>
     </div>
 
     <div id="main_container">
-        <div id="logo-brand">
-            <img src="../images/Logo Disney+ Hotstar.png" alt="">
-        </div>
-        <div id="containerOtp">
-            <p id="otpGenerate"></p>
-            <input type="text" id="otp" placeholder="Enter your OTP">
-            <button id="otpBtn">PAY</button>
-        </div>
+      <div id="logo-brand">
+        <img src="../images/Logo Disney+ Hotstar.png" alt="" />
+      </div>
+      <div id="containerOtp">
+        <p id="otpGenerate"></p>
+        <input type="text" id="otp" placeholder="Enter your OTP" />
+        <button id="otpBtn">PAY</button>
+      </div>
     </div>
-
 
     <div id="paymentSuccess">
-        <img src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/paymentImages%2Fpayment_processing20201113-8803-s9v2bo.gif?alt=media&token=5824ef2c-c2b9-446d-a234-03f6351e9161" alt="">
-        <p>Congratulations, Your order is placed</p>
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/paymentImages%2Fpayment_processing20201113-8803-s9v2bo.gif?alt=media&token=5824ef2c-c2b9-446d-a234-03f6351e9161"
+        alt=""
+      />
+      <p>Congratulations, Your order is placed</p>
     </div>
     <!-- <p id="dot">.........</p> -->
-</body>
-
+  </body>
 </html>
-<script src="./scripts/paymentDetail.js"></script>
+<script type="module" src="./scripts/paymentDetail.js"></script>

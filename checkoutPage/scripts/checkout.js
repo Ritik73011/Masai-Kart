@@ -90,6 +90,10 @@ document.getElementById("checkPin").addEventListener("click", () => {
     let div = document.getElementById("popup_box"); div.style.display = "block";
 });
 
+document.getElementById("payBtn").addEventListener("click", () => {
+    window.location.href = "../../../Masai-Kart/paymentPage/payment.html";
+});
+
 document.getElementById("cancel").addEventListener("click", () => {
     let div = document.getElementById("popup_box"); div.style.display = "none";
 });
