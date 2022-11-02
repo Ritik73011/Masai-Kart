@@ -1,0 +1,224 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #f5f3f3;
+    font-family: "Roboto","HelveticaNeue-Light",sans-serif;
+}
+
+#logo-brand {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+#otpGenerate{
+    text-align: center;
+    color: #777777;
+}
+#payFrom{
+    margin-top: 100px;
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+}
+#bankMain{
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
+}
+
+#logo-brand>img {
+    width: 120px;
+}
+#bankDetails{
+    margin-top: 100px;
+    width: 400px;
+    padding: 40px;
+}
+.payBox input{
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #ed0331;
+    outline: none;
+    background: transparent;
+}
+#bankDetails .payBox label{
+    position: relative;
+    left: 0;
+    top: -60px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #777777;
+    pointer-events: none;
+    transition: 0.5s;
+}
+#expCvv{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+#checked{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+#checked input{
+    margin-top: -24px;
+    
+}
+
+#checked span{
+    color: #ed0331;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.1mm;
+    font-family: sans-serif;
+}
+
+#checked p{
+    letter-spacing: 0.12mm;
+    line-height: 5.4mm;
+    color: #777777;
+    font-size: 14px;
+}
+
+#bankDetails .payBox input:focus~label,
+#bankDetails .payBox input:valid~label{
+    top: -80px;
+    left: 0;
+    color: #777777;
+    font-size: 12px;
+}
+#proceedBtn{
+    width: 320px;
+    height: 50px;
+    background-color: #ed0331;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 18px 15px 18px;
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+#cvvimg {
+
+    position: absolute;
+    width: 300px;
+    margin-top: -120px;
+    z-index: 9;
+    border-radius: 8px;
+    border: 1px solid rgb(193, 191, 191);
+}
+.payBox i{
+    position: absolute;
+    cursor: pointer;
+    float: right;
+}
+.payBox .fa-solid {
+    padding: 10px;
+    margin-left: 100px;
+    margin-top: -14px;
+    min-width: 50px;
+    text-align: end;
+}
+#cvvDiv{
+    display: none;
+}
+.payBox i:hover + #cvvDiv{
+    display: block;
+}
+
+/* otp */
+#logo-brand {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    margin-top: 12px;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+#logo-brand>img {
+    width: 120px;
+}
+#main_container{
+    display: none;
+}
+#containerOtp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 200px;
+    top: 40%;
+    
+}
+#containerOtp input,#otpBtn{
+    outline: none;
+    border: none;
+    background-color: #fff;
+    width: 90%;
+    border-radius: 3px;
+    margin-top: 14px;
+    padding: 12px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+     rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+   
+    
+}
+#containerOtp #otpBtn{
+    background-color: #ed0331;
+    color: #fff;
+    font-weight: bolder;
+}
+#containerOtp #otpBtn:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+#paymentSuccess{
+    display: none;
+    margin-top: 100px;
+    width: 100%;
+
+}
+#paymentSuccess img{
+    width: 350px;
+    display: block;
+    margin: auto;
+}
+#paymentSuccess p{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+@media screen and (min-width: 0px) and (max-width: 646px){
+    #cvvimg {
+    
+        position: absolute;
+        width: 250px;
+        margin-top: -120px;
+        z-index: 9;
+        margin-left: -100px;
+        border-radius: 8px;
+        border: 1px solid rgb(193, 191, 191);
+    }
+    #bankDetails{
+        width: 360px;
+    }
+    #bankDetails #proceedBtn{
+        width: 280px;
+    }
+}
