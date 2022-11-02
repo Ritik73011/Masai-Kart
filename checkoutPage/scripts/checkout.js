@@ -76,6 +76,9 @@ function createDiv(ele) {
 
     document.querySelector(".cartProduct").append(mainDiv);
 
+    radioBtn.addEventListener("click", () => {
+        document.getElementById("payBtn").style.display = "block";
+    });
 }
 
 
