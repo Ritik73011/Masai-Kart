@@ -3,7 +3,7 @@ import { ref, onValue, set, remove, database, update } from "../../Masai-Kart/co
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../Masai-Kart/config.js";
 
 function navBarHtml() {
-  return ` <nav>
+  return ` <nav id="nav">
     <div class="navL">
       <div class="layer">
         <div></div>
@@ -96,26 +96,26 @@ function navBarJavaScript() {
     window.location.href = "../login/login.html";
   });
 
-  document.getElementById("toCartPage").addEventListener("click",()=>{
-    window.location.href="../../Masai-Kart/cart_page/cart.html";
+  document.getElementById("toCartPage").addEventListener("click", () => {
+    window.location.href = "../../Masai-Kart/cart_page/cart.html";
   })
 
-document.getElementById("profileIcon").style.display="none";
+  document.getElementById("profileIcon").style.display = "none";
   //check in navbar, if user loggedIn or not
   let aa = getAuth();
-    onAuthStateChanged(aa, (user) => {
-        if (user) {
-            let profile=document.getElementById("login");
-            profile.style.display="none";
-            document.getElementById("profileIcon").style.display="block";
-          }
-          else {
-          let profile=document.getElementById("login");
-          profile.style.display="block";
-          document.getElementById("profileIcon").style.display="none";
-            
-        }
-    });
+  onAuthStateChanged(aa, (user) => {
+    if (user) {
+      let profile = document.getElementById("login");
+      profile.style.display = "none";
+      document.getElementById("profileIcon").style.display = "block";
+    }
+    else {
+      let profile = document.getElementById("login");
+      profile.style.display = "block";
+      document.getElementById("profileIcon").style.display = "none";
+
+    }
+  });
 }
 
 

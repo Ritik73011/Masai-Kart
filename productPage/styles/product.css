@@ -11,12 +11,22 @@ body {
     background-color: #f2f2f2;
 }
 
+#pNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 72px;
+    background-color: white;
+    z-index: 100;
+}
+
 #main {
     display: flex;
     justify-content: space-around;
     gap: 10px;
     margin: 10px;
-    margin-top: 90px;
+    margin-top: 130px;
 }
 
 #left {
@@ -209,6 +219,11 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+
+    .layer {
+        display: block;
+    }
+
     #left {
         display: none;
         position: absolute;
@@ -270,6 +285,11 @@ body {
     }
 }
 
+@media all and (min-width: 769px) and (max-width: 870px) {
+    #main {
+        margin-top: 150px;
+    }
+}
 
 @media all and (min-width: 411px) and (max-width: 515px) {
     #mainProd {

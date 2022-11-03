@@ -1,8 +1,14 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
 import { footer } from "../../footer/footer.js";
+import { productNavbarHtml, productNavbarJS } from "../../navbar_product_page/nav.js";
+
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
+
+document.getElementById("pNav").innerHTML = productNavbarHtml();
+productNavbarJS();
+
 document.getElementById("footer").innerHTML = footer();
 
 let str = localStorage.getItem("catClick");

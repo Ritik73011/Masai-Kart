@@ -2,11 +2,17 @@ import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
 import { footer } from "../../footer/footer.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../config.js";
 import { ref, onValue, set, remove, database, update } from "../../config.js";
+import { productNavbarHtml, productNavbarJS } from "../../navbar_product_page/nav.js";
 
 
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
+
+document.getElementById("pNav").innerHTML = productNavbarHtml();
+productNavbarJS();
+
 document.getElementById("footer").innerHTML = footer();
+
 
 
 let local = JSON.parse(localStorage.getItem("clicked"));
