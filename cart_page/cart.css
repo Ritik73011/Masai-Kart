@@ -33,6 +33,7 @@ body {
 
 #checkPin {
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .cartProduct {

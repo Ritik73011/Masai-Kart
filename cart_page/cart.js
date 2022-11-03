@@ -14,6 +14,7 @@ document.querySelector("#quan").style.display = "none";
 
 let amount = 0;
 let strAmount = 0;
+let withoutStrPrice = 0;
 
 let isLogin = getAuth();
 onAuthStateChanged(isLogin, (user) => {
@@ -67,9 +68,14 @@ onAuthStateChanged(isLogin, (user) => {
 function appendProdInCart(arr, uid) {
     document.querySelector(".cartProduct").innerHTML = "";
     arr.forEach(obj => {
-
-        amount = amount + (obj.price * obj.quan);
-        strAmount = strAmount + (obj.strPrice * obj.quan);
+        if (obj.strPrice != "") {
+            amount = amount + (obj.price * obj.quan);
+            strAmount = strAmount + (obj.strPrice * obj.quan);
+        } else {
+            amount = amount + (obj.price * obj.quan);
+            strAmount = strAmount + (obj.price * obj.quan);
+            // withoutStrPrice+= obj.price*obj.quan;
+        }
         console.log((amount))
 
         let cartCard = document.createElement("div");
@@ -122,13 +128,17 @@ function appendProdInCart(arr, uid) {
 
         let sPrice = document.createElement("p");
         sPrice.id = "sPrice";
-        sPrice.innerText = "₹" + obj.strPrice;
+        if (obj.strPrice != "") {
+            sPrice.innerText = "₹" + obj.strPrice;
+        }
         let price = document.createElement("p");
         price.id = "price";
         price.innerText = "₹" + obj.price;
         let discount = document.createElement("p");
         discount.id = "discount";
-        discount.innerText = obj.discount + "% off";
+        if (obj.discount != "") {
+            discount.innerText = obj.discount + "% off";
+        }
 
         priceDiv.append(sPrice, price, discount);
 
@@ -313,24 +323,6 @@ function updateQuantity(obj, temp, quantity, uid) {
     });
 }
 
-function updateData(obj, key, quan, uid) {
-
-    /*let objUpdated = {
-        img1: obj.img1,
-        title: obj.title,
-        size: obj.size,
-        seller: obj.seller,
-        strPrice: obj.strPrice,
-        price: obj.price,
-        discount: obj.discount,
-        quan: quan
-    }*/
-
-    console.log(key);
-    update(ref(database, "cartItem/" + uid + "/" + key), {
-        quan: quan
-    });
-}
 
 
 
