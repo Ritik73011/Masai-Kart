@@ -16,14 +16,14 @@
     justify-content: space-around;
 }
 
-ul {
+.navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-ul li {
+.navbar ul li {
     margin-top: 6px;
     font-family: sans-serif;
     padding: 0 6px;
