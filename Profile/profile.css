@@ -87,6 +87,7 @@ h3 {
 #userInfo input[type=submit] {
     margin-top: 16px;
     width: 123px;
+    cursor: pointer;
 }
 
 #orders #gridDiv #pTitle {
