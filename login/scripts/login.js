@@ -1,6 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "../../config.js";
 import { GoogleAuthProvider, signInWithPopup } from "../../config.js";
-
+import sendPasswordResetEmail from "../../config.js";
 
 document.getElementById("tosignup").addEventListener("click", () => {
     document.getElementById("mainL").style.display = "none";
@@ -72,3 +72,32 @@ if (user) {
 } else {
     console.log("no");
 }
+
+// FORGET PASSWORD
+
+document.getElementById("cancel").addEventListener("click", () => {
+    let div = document.getElementById("popup_box"); div.style.display = "none";
+});
+
+document.getElementById("forget").addEventListener("click", () => {
+    let div = document.getElementById("popup_box"); div.style.display = "block";
+});
+
+document.getElementById("form2").addEventListener("submit", (event) => {
+    event.preventDefault();
+    let email = document.getElementById("email2").value;
+
+    const auth = getAuth();
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            // Password reset email sent!
+            // ..
+            alert("Password reset email sent!");
+            let div = document.getElementById("popup_box"); div.style.display = "none";
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+        });
+});

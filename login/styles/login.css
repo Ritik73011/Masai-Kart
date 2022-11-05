@@ -1,9 +1,11 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-#mainL,#mainL2{
+
+#mainL,
+#mainL2 {
     display: flex;
     justify-content: center;
     /* border: 1px solid red; */
@@ -11,10 +13,12 @@
     margin: auto;
     margin-top: 10%;
 }
-#mainL2{
+
+#mainL2 {
     display: none;
 }
-#imgDiv{
+
+#imgDiv {
     width: 300px;
     display: flex;
     align-items: flex-end;
@@ -22,17 +26,22 @@
     padding-right: 20px;
     border-right: 1px solid gray;
 }
-#imgDiv img{
+
+#imgDiv img {
     width: 270px;
 }
-#right{
+
+#right {
     /* border: 1px solid red; */
 }
-#content{
+
+#content {
     width: 300px;
     padding: 10px;
 }
-input,button{
+
+input,
+button {
     display: block;
     width: 90%;
     margin: auto;
@@ -43,16 +52,19 @@ input,button{
     outline: none;
 
 }
-button{
+
+button {
     background-color: #ed0331;
     color: #fff;
     font-weight: 550;
     cursor: pointer;
 }
-button:hover{
+
+button:hover {
     background-color: #b20024;
 }
-#content p{
+
+#content p {
     font-size: 12px;
     color: gray;
     padding: 13px;
@@ -60,56 +72,133 @@ button:hover{
     margin-bottom: 0px;
     margin-top: 10px;
 }
-#content .or{
+
+#content .or {
     text-align: center;
     margin-top: -16px;
 }
-#content .loginusing{
+
+#content .loginusing {
     margin-top: -16px;
     text-align: center;
     color: rgb(59, 57, 57);
 }
-#google{
+
+#google {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-#google img,.fa-github{
+
+#google img,
+.fa-github {
     width: 30px;
     font-size: 30px;
     cursor: pointer;
 }
-#content #gotologin{
+
+#content #gotologin {
     /* margin-top: -14px; */
     vertical-align: bottom;
     text-align: center;
     color: #333;
 }
-#content .tosignup,.tologin{
+
+#content #forgetPass {
+    text-align: center;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#content #forget {
     color: #ed0331;
     cursor: pointer;
 }
-#content #gotosignup{
+
+#content .tosignup,
+.tologin {
+    color: #ed0331;
+    cursor: pointer;
+}
+
+#content #gotosignup {
     /* margin-top: -14px; */
     color: #333;
     text-align: center;
 }
+
+
+/*POP BOX*/
+
+#popup_box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: white;
+    padding: 16px;
+}
+
+
+#popup_box form {
+    padding: 8px;
+    /* margin-top: 10px; */
+}
+
+#popup_box form input {
+    padding: 8px;
+    margin-top: 8px;
+    width: 300px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(132, 126, 126);
+}
+
+#popup_box button {
+    background-color: grey;
+    color: #333;
+    font-weight: 550;
+    cursor: pointer;
+    border: none;
+}
+
+#popup_box input[type=submit] {
+    outline: none;
+    margin-top: 16px;
+    background-color: #ed0331;
+    color: white;
+    padding: 10px;
+    width: 96%;
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 768px) {
-    #mainL,#mainL2{
+
+    #mainL,
+    #mainL2 {
         display: block;
     }
-    #mainL2{
+
+    #mainL2 {
         display: none;
     }
-    #imgDiv{
+
+    #imgDiv {
         display: none;
     }
-    #right{
+
+    #right {
         display: flex;
         justify-content: center;
         margin-top: 100px;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
-    
+
 }
