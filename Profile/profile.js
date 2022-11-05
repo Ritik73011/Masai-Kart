@@ -2,7 +2,7 @@ import { navBarJavaScript, navBarHtml } from "../main_navbar/navbar.js";
 import { footer } from "../footer/footer.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../config.js";
 import { ref, onValue, set, remove, database, update } from "../config.js";
-
+import { signOut } from "../config.js";
 
 let auth = getAuth();
 onAuthStateChanged(auth, (isLogin) => {
@@ -16,24 +16,24 @@ onAuthStateChanged(auth, (isLogin) => {
 
         })
 
-        document.getElementById("update").addEventListener("click",()=>{
-            let name1=document.getElementById("name").value;
-            let email1=document.getElementById("email").value;
-            update(ref(database,"userInfo/"+ userUid),{
+        document.getElementById("update").addEventListener("click", () => {
+            let name1 = document.getElementById("name").value;
+            let email1 = document.getElementById("email").value;
+            update(ref(database, "userInfo/" + userUid), {
                 name: name1,
                 email: email1
             })
-            document.getElementById("name").setAttribute("readonly",true);
-            document.getElementById("email").setAttribute("readonly",true);
+            document.getElementById("name").setAttribute("readonly", true);
+            document.getElementById("email").setAttribute("readonly", true);
         })
         getOrders(userUid);
     }
 })
 
-document.getElementById("edit").addEventListener("click",()=>{
+document.getElementById("edit").addEventListener("click", () => {
     document.getElementById("name").removeAttribute("readonly");
     document.getElementById("email").removeAttribute("readonly");
-    
+
 })
 
 
@@ -47,60 +47,60 @@ document.getElementById("footer").innerHTML = footer();
 
 function appendOrders(ele) {
     //document.getElementById("orders").innerHTML = "";
-        console.log(ele.img1)
-        let mainD = document.createElement("div");
-        mainD.id = "gridDiv";
+    console.log(ele.img1)
+    let mainD = document.createElement("div");
+    mainD.id = "gridDiv";
 
-        let itemDiv = document.createElement("div");
-        itemDiv.id = "iDiv";
+    let itemDiv = document.createElement("div");
+    itemDiv.id = "iDiv";
 
-        let imgD = document.createElement("div");
-        let img = document.createElement("img");
-        img.src = ele.img1;
-        imgD.append(img);
+    let imgD = document.createElement("div");
+    let img = document.createElement("img");
+    img.src = ele.img1;
+    imgD.append(img);
 
-        let title = document.createElement("p");
-        title.id = "pTitle";
-        title.innerText = ele.title;
+    let title = document.createElement("p");
+    title.id = "pTitle";
+    title.innerText = ele.title;
 
-        let price = document.createElement("p");
-        price.id = "pPrice";
-        price.innerText = ele.price;
+    let price = document.createElement("p");
+    price.id = "pPrice";
+    price.innerText = ele.price;
 
-        itemDiv.append(imgD, title, price);
-        mainD.append(itemDiv);
+    itemDiv.append(imgD, title, price);
+    mainD.append(itemDiv);
 
-        document.getElementById("orders").append(mainD);
-    
+    document.getElementById("orders").append(mainD);
+
 }
 
 function appendWishList(ele) {
     //document.getElementById("orders").innerHTML = "";
-    
-        let mainD = document.createElement("div");
-        mainD.id = "gridDiv";
 
-        let itemDiv = document.createElement("div");
-        itemDiv.id = "iDiv";
+    let mainD = document.createElement("div");
+    mainD.id = "gridDiv";
 
-        let imgD = document.createElement("div");
-        let img = document.createElement("img");
-        img.src = ele.img1;
-        imgD.append(img);
+    let itemDiv = document.createElement("div");
+    itemDiv.id = "iDiv";
 
-        let title = document.createElement("p");
-        title.id = "pTitle";
-        title.innerText = ele.title;
+    let imgD = document.createElement("div");
+    let img = document.createElement("img");
+    img.src = ele.img1;
+    imgD.append(img);
 
-        let price = document.createElement("p");
-        price.id = "pPrice";
-        price.innerText = ele.price;
+    let title = document.createElement("p");
+    title.id = "pTitle";
+    title.innerText = ele.title;
 
-        itemDiv.append(imgD, title, price);
-        mainD.append(itemDiv);
+    let price = document.createElement("p");
+    price.id = "pPrice";
+    price.innerText = ele.price;
 
-        document.getElementById("wishlist").append(mainD);
-    
+    itemDiv.append(imgD, title, price);
+    mainD.append(itemDiv);
+
+    document.getElementById("wishlist").append(mainD);
+
 }
 
 addEvent("orders1", "orders", "userInfo", "wishlist", "grid", "none", "userInfo1", "wishlist1");
@@ -121,29 +121,42 @@ function addEvent(id, idm, id2, id3, str1, str2, bg1, bg2) {
     })
 }
 
-function getOrders(uid){
+function getOrders(uid) {
     const starCountRef = ref(database, "orderHistory/" + uid);
-        onValue(starCountRef, (snapshot) => {
-            const data = snapshot.val();
-            let obj=Object.keys(data);
-            fetchOrders(obj,uid)
-        })
+    onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        let obj = Object.keys(data);
+        fetchOrders(obj, uid)
+    })
 
 }
 
-function fetchOrders(arr,uid){
-    arr.map(ele=>{
-        onValue(ref(database, "orderHistory/" + uid+"/"+ ele),(snapshot)=>{
-            const data=snapshot.val();
+function fetchOrders(arr, uid) {
+    arr.map(ele => {
+        onValue(ref(database, "orderHistory/" + uid + "/" + ele), (snapshot) => {
+            const data = snapshot.val();
             appendOrders(data);
         });
     })
 }
-function fetchWishlist(arr,uid){
-    arr.map(ele=>{
-        onValue(ref(database, "wishlist/" + uid+"/"+ ele),(snapshot)=>{
-            const data=snapshot.val();
+function fetchWishlist(arr, uid) {
+    arr.map(ele => {
+        onValue(ref(database, "wishlist/" + uid + "/" + ele), (snapshot) => {
+            const data = snapshot.val();
             appendWishList(data);
         });
     })
 }
+
+
+//LOGOUT
+
+
+document.getElementById("logout").addEventListener("click", () => {
+    const auth = getAuth();
+    signOut(auth).then(() => {
+        alert("signout successfully");
+    }).catch((error) => {
+        alert(error);
+    });
+});

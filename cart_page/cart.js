@@ -39,6 +39,7 @@ onAuthStateChanged(isLogin, (user) => {
                 let img = document.createElement("img");
                 img.src = "https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/empty_cart.gif?alt=media&token=c547173e-c1a4-4e88-80fd-d11ac0ab1a2e";
                 img.id = "imgId";
+                document.querySelector(".cartProduct").innerHTML = "";
                 document.querySelector(".cartProduct").append(img);
             }
         });
