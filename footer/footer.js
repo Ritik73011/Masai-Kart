@@ -1,7 +1,7 @@
 function footer() {
   return `  <footer>
     <div class="footerContainerLeft">
-      <div>
+      <div class="insideDiv">
         <p class="footerHead">ABOUT</p>
         <a href="#">Contact Us</a>
         <a href="#">About Us</a>
@@ -9,14 +9,14 @@ function footer() {
         <a href="#">Corporate Information</a>
         <a href="#">Press</a>
       </div>
-      <div>
+      <div class="insideDiv">
         <p class="footerHead">HELP</p>
         <a href="#">Payments</a>
         <a href="#">Shipping</a>
         <a href="#">Cancellations and Returns</a>
         <a href="#">FAQ</a>
       </div>
-      <div>
+      <div class="insideDiv">
         <p class="footerHead">POLICY</p>
         <a href="#">Return Policy</a>
         <a href="#">Terms of Use</a>
@@ -27,7 +27,7 @@ function footer() {
     </div>
     <div class="footerContainerRight">
       <div>
-        <p class="devloper">Developer Information</p>
+        <p class="devloper">DEVELOPER INFORMATION</p>
         <p>Ritik Kumar Singh</p>
         <div class="socialLogo">
           <a target="_blank" href="https://github.com/Ritik73011"

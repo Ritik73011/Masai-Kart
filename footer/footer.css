@@ -6,7 +6,7 @@
 
 footer {
     display: flex;
-    padding: 16px 24px;
+    padding: 10px 24px 0 24px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: #172337;
     color: white;
@@ -22,8 +22,10 @@ footer {
     width: 25%;
 }
 
-.footerContainerLeft div {
-    display: grid;
+.footerContainerLeft .insideDiv p,
+.footerContainerLeft .insideDiv a {
+    display: block;
+    margin: 16px 0;
 }
 
 .socialLogo img {
@@ -31,8 +33,14 @@ footer {
     height: 24px;
 }
 
+.socialLogo img:hover,
+#playStore:hover {
+    transform: scale(1.20);
+    transition: 0.2s ease-out;
+}
+
 #playStore {
-    width: 75px;
+    width: 58px;
     margin: auto;
     display: block;
 }
@@ -40,27 +48,32 @@ footer {
 .footerContainerLeft div a {
     text-decoration: none;
     color: white;
+    font-size: 14px;
+}
+
+.footerContainerLeft div a:hover {
+    color: rgb(148, 145, 145);
+    transform: scale(1.02);
 }
 
 .footerContainerRight div .devloper {
     text-align: center;
-    font-size: 18px;
-    margin: 8px 0;
-}
-
-.devloper2 {
-    margin-top: 10px;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 8px;
 }
 
 .footerContainerRight div p {
     text-align: center;
+    font-size: 14px;
 }
 
 .socialLogo {
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin: 10px 0;
+    margin-top: 6px;
+    margin-bottom: 10px;
 }
 
 @media all and (min-width: 0px) and (max-width: 520px) {
@@ -81,5 +94,13 @@ footer {
         width: 100%;
         justify-content: center;
         margin-top: 16px;
+    }
+
+    .footerContainerRight div a {
+        font-size: 12px;
+    }
+
+    .footerContainerRight div p {
+        font-size: 12px;
     }
 }

@@ -211,6 +211,7 @@ a {
         padding: 0 50px 0 15px;
         display: block;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: start;
     }
 
     .navbar .menu>ul>li>a i {

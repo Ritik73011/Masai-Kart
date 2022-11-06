@@ -106,11 +106,11 @@ function appendProduct(arr, data) {
         });
 
         heart.addEventListener("click", () => {
-            addToWishList(ele);
+            addToWishList(ele, heart);
         });
         mainDiv.append(imgDiv, brRat, title, pStdis);
         document.getElementById("mainProd").append(mainDiv);
-
+        checkWishList(ele, heart);
     })
 }
 
@@ -138,23 +138,74 @@ function sortFun(arr) {
     })
 }
 
-function addToWishList(ele) {
+function addToWishList(ele, heart) {
     let auth = getAuth();
     onAuthStateChanged(auth, (user) => {
         if (user) {
+            let flag = false;
             let uid = user.uid;
-            let uniq = (new Date()).getTime();
-            set(ref(database, "wishList/" + uid + "/" + uniq), {
-                img1: ele.images.img1,
-                title: ele.title,
-                price: ele.price
+            onValue(ref(database, "wishList/" + uid), (snapshot) => {
+                let data = snapshot.val();
+                let arr = Object.keys(data);
+
+                //console.log(arr);
+                arr.map(eles => {
+                    onValue(ref(database, "wishList/" + uid + "/" + eles), (snapshot) => {
+                        let data1 = snapshot.val();
+                        if (data1.title === ele.title) {
+                            flag = true;
+                        }
+                    });
+                });
             });
+
+            if (flag === true) {
+                alert("alreday added");
+            }
+            else {
+                let uniq = (new Date()).getTime();
+                set(ref(database, "wishList/" + uid + "/" + uniq), {
+                    img1: ele.images.img1,
+                    title: ele.title,
+                    price: ele.price,
+                    flag: "true"
+                });
+                heart.src = "./styles/brokenHeart.svg";
+            }
         }
         else {
             alert("user not login")
         }
     });
 }
+
+
+function checkWishList(ele, heart) {
+    let auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            let uid = user.uid;
+            let flag = false;
+            onValue(ref(database, "wishList/" + uid), (snapshot) => {
+                let data = snapshot.val();
+                let arr = Object.keys(data);
+                //console.log(arr);
+                arr.map(eles => {
+                    onValue(ref(database, "wishList/" + uid + "/" + eles), (snapshot) => {
+                        let data1 = snapshot.val();
+                        if (data1.title === ele.title) {
+                            flag = true;
+                            heart.src = "./styles/brokenHeart.svg";
+                        }
+                    });
+                });
+            });
+
+        }
+
+    });
+}
+
 
 export { appendProduct };
 
