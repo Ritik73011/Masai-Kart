@@ -1,34 +1,31 @@
-const Toast = {
-    init() {
-        this.hideTimeout = null;
+function showAlert(msg, backColor, color) {
 
-        this.el = document.createElement("div");
-        this.el.className = "toast";
-        document.body.appendChild(this.el);
-    },
+    const containerBox = document.querySelector('body');
 
-    show(message, state) {
-        //console.log(message);
-        clearTimeout(this.hideTimeout);
+    let classAd;
 
-        this.el.textContent = message;
-        this.el.className = "toast toast--visible";
+    const customAlert = () => {
+        const alertBox1 = document.createElement('div');
+        const alertBox = document.createElement('div');
+        alertBox.style.backgroundColor = backColor;
+        alertBox.style.color = color;
+        alertBox1.id = "alertBox";
+        alertBox1.append(alertBox);
+        containerBox.appendChild(alertBox1);
+        alertBox.innerText = msg;
 
-        if (state) {
-            this.el.classList.add(`toast--${state}`);
-        }
-
-        this.hideTimeout = setTimeout(() => {
-            this.el.classList.remove("toast--visible");
-        }, 3000);
-        console.log(this.el.textContent);
-    }
-
-};
+        classAd = alertBox.classList;
+        classAd.add('custom-alert-box');
 
 
-function dom() {
-    return document.addEventListener("DOMContentLoaded", () => Toast.init());
+        const hideAlertBox = function () {
+            alertBox.remove();
+        };
+
+        setTimeout(hideAlertBox, 2000);
+    };
+
+    customAlert();
 }
-dom();
-export { Toast, dom };
+
+export default showAlert;

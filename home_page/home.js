@@ -2,6 +2,7 @@ import { ref, onValue, set, remove, database, update } from "../Firebase/config.
 import { navBarJavaScript, navBarHtml } from "../main_navbar/navbar.js";
 import { footer } from "../footer/footer.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../Masai-Kart/config.js";
+import showAlert from "../popup_alert/alert.js";
 
 document.getElementById("footer").innerHTML = footer();
 document.getElementById("navbar").innerHTML = navBarHtml();
@@ -222,7 +223,8 @@ function addToCartFun(element, idx) {
             });
 
             if (flag === true) {
-                alert("already added");
+                //alert("already added");
+                showAlert("Already added in you cart", "red", "white")
             }
             else {
                 let uniq = (new Date()).getTime();
@@ -236,6 +238,7 @@ function addToCartFun(element, idx) {
                     discount: element.discount,
                     quan: 1
                 });
+                showAlert("Added in cart...", "green", "white");
             }
 
             const starCountRef = ref(database, "cartItem/" + uid);
@@ -263,7 +266,8 @@ function addToCartFun(element, idx) {
             });
 
             if (flag === true) {
-                alert("avilable");
+                //alert("avilable");
+                showAlert("Already added in you cart", "red", "white")
             }
             else {
                 let obj = {
@@ -282,6 +286,7 @@ function addToCartFun(element, idx) {
                 localStorage.setItem("cartItem", JSON.stringify(arrCart));
                 let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
                 document.getElementById("quan").innerText = cartItem.length;
+                showAlert("Added in cart...", "green", "white");
             }
         }
     });
