@@ -138,14 +138,17 @@ function sortFun(arr) {
     })
 }
 
-let arrTemp = [];
 function addToWishList(ele) {
     let auth = getAuth();
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            arrTemp.push(ele);
             let uid = user.uid;
-            set(ref(database, "wishList/" + uid), JSON.stringify(arrTemp));
+            let uniq = (new Date()).getTime();
+            set(ref(database, "wishList/" + uid + "/" + uniq), {
+                img1: ele.images.img1,
+                title: ele.title,
+                price: ele.price
+            });
         }
         else {
             alert("user not login")

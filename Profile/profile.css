@@ -19,9 +19,13 @@
 
 .pLeft {
     width: 20%;
+    height: min-content;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 70px;
+    padding: 8px;
+    margin-top: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .pRight {
@@ -36,6 +40,7 @@ h3 {
 
 .pLeft h3 {
     font-size: 24px;
+    color: #333;
 }
 
 .pLeft p {
@@ -81,6 +86,7 @@ h3 {
     border-radius: 4px;
     outline: none;
     margin-top: 8px;
+    border: 1px solid gray;
     width: 250px;
 }
 
@@ -88,23 +94,44 @@ h3 {
     margin-top: 16px;
     width: 123px;
     cursor: pointer;
+    background-color: #ed0331;
+    border: none;
+    color: #fff;
+    font-weight: bolder;
 }
+#userInfo #edit{
+    background-color: gray;
+    
+    }
 
 #orders #gridDiv #pTitle {
-    margin: 6px 0;
+    margin: 10px 0;
+    overflow: hidden;
+    max-height: 40px;
+    color: rgb(106, 104, 104);
 }
-
+#pPrice{
+    margin-top: 22px;
+    font-size: 20px;
+    color: rgb(4, 116, 4);
+}
 #wishlist #gridDiv #pTitle {
-    margin: 6px 0;
+    margin: 10px 0;
+    overflow: hidden;
+    max-height: 40px;
+    color: rgb(106, 104, 104);
 }
 
 #iDiv img {
-    width: 170px;
+    max-width: 170px;
+    height: 170px;
 }
 
 #iDiv {
     box-shadow: 0px 0px 4px grey;
     padding: 8px;
+    width: 230px;
+    height: 300px;
 }
 
 @media screen and (max-width:1085px) {
@@ -120,5 +147,67 @@ h3 {
 @media screen and (max-width:768px) {
     .pContainer {
         margin-top: 140px;
+        display: block;
+    }
+    .pLeft h3{
+        display: none;
+    }
+    .pLeft{
+        width: 100%;
+        display: flex;
+        position: sticky;
+        top: 124px;
+        margin-top: -20px;
+        background-color: #fff;
+        justify-content: space-around;
+        gap: 10px
+    }
+    .pLeft p{
+        padding: 6px 8px;
+    }
+    .pRight{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width:850px) {
+    .pContainer {
+        margin-top: 140px;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width:528px) {
+    .pLeft p{
+        font-size: 14px;
+        text-align: center;
+    }
+    #iDiv img {
+        max-width: 140px;
+        height: 140px;
+    }
+    
+    #iDiv {
+        box-shadow: 0px 0px 4px grey;
+        padding: 8px;
+        width: 180px;
+        height: 260px;
+    }
+}
+@media screen and (max-width:425px) {
+    #iDiv img {
+        max-width: 120px;
+        height: 120px;
+    }
+    
+    #iDiv {
+        box-shadow: 0px 0px 4px grey;
+        padding: 8px;
+        width: 155px;
+        height: 238px;
+    }
+    #wishlist,#orders{
+        gap: 16px;
     }
 }
