@@ -1,5 +1,6 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../config.js";
 import { footer } from "../../footer/footer.js";
 import { productNavbarHtml, productNavbarJS } from "../../navbar_product_page/nav.js";
 
@@ -91,11 +92,21 @@ function appendProduct(arr, data) {
         }
         pStdis.append(price, strPrice, dis, heart);
 
-        mainDiv.addEventListener("click", () => {
-
+        imgDiv.addEventListener("click", () => {
             localStorage.setItem("clicked", JSON.stringify(ele));
             window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+        });
+        brRat.addEventListener("click", () => {
+            localStorage.setItem("clicked", JSON.stringify(ele));
+            window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+        });
+        title.addEventListener("click", () => {
+            localStorage.setItem("clicked", JSON.stringify(ele));
+            window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+        });
 
+        heart.addEventListener("click", () => {
+            addToWishList(ele);
         });
         mainDiv.append(imgDiv, brRat, title, pStdis);
         document.getElementById("mainProd").append(mainDiv);
@@ -127,6 +138,20 @@ function sortFun(arr) {
     })
 }
 
+let arrTemp = [];
+function addToWishList(ele) {
+    let auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            arrTemp.push(ele);
+            let uid = user.uid;
+            set(ref(database, "wishList/" + uid), JSON.stringify(arrTemp));
+        }
+        else {
+            alert("user not login")
+        }
+    });
+}
 
 export { appendProduct };
 
