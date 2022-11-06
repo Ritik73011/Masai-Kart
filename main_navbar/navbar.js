@@ -12,7 +12,7 @@ function navBarHtml() {
       </div>
 
       <div class="navLogo">
-        <h1>MasaiKart</h1>
+        <img id="masailogoimg" src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/IMG_20221106_231340.png?alt=media&token=64ad5c75-99cf-46c2-9906-573fb2e080e8" alt="masaikartLogo"> 
       </div>
     </div>
     <div class="nav_search">
@@ -28,11 +28,11 @@ function navBarHtml() {
     </div>
 
     <div class="nav_p">
-    <div id="toCartPage"><span id="quan">0</span>
-    <p><i class="fa-solid fa-cart-shopping"></i></p>
+    <div id="toCartPage">
+    <p id="cartP"><i class="fa-solid fa-cart-shopping"></i><span id="quan">0</span></p>
     </div>
       
-      <p id="wallet">Wallet</p>
+      <p id="wallet"><i class="fa-solid fa-wallet"></i></p>
       <p id="login">LOGIN</p>
       <img id="profileIcon" src="../../Masai-Kart/Image/profile.svg"/>
     </div>
@@ -116,6 +116,7 @@ function navBarJavaScript() {
 
     }
   });
+  
 }
 
 

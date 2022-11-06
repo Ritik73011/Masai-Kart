@@ -324,6 +324,8 @@ function updateQuantity(obj, temp, quantity, uid) {
     });
 }
 
-
+document.getElementById("masailogoimg").addEventListener("click",()=>{
+    window.location.href="../index.html"
+  })
 
 

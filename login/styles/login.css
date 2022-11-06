@@ -3,7 +3,19 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+#masailogo{
+    width: 100%;
+    /* border: 1px solid red; */
+    /* height: 100px; */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#masailogo img{
+    width: 300px;
+    /* margin-top: -100px; */
+    /* border: 1px solid green; */
+}
 #mainL,
 #mainL2 {
     display: flex;
@@ -11,7 +23,7 @@
     /* border: 1px solid red; */
     width: 70%;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 #mainL2 {

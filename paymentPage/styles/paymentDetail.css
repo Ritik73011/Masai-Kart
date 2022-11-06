@@ -30,8 +30,8 @@
     margin-top: -100px;
 }
 
-#logo-brand>img {
-    width: 120px;
+#logo-brand img {
+    width: 170px;
 }
 
 #bankDetails {
@@ -161,9 +161,7 @@
 
 }
 
-#logo-brand>img {
-    width: 120px;
-}
+
 
 #main_container {
     display: none;

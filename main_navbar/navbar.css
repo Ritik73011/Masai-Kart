@@ -19,6 +19,7 @@ body {
     left: 0;
     right: 0;
     top: 0;
+    align-items: center;
     background-color: white;
     background: white;
     z-index: 2;
@@ -44,7 +45,7 @@ body {
     background-position: right;
     background-origin: content-box;
     border: 1px solid #ed0331;
-    padding: 10px;
+    padding: 8px;
     border-radius: 4px;
     font-size: 16px;
     outline: none;
@@ -66,23 +67,42 @@ body {
     cursor: pointer;
     font-size: 18px;
 }
-
-.nav_p #quan {
+#toCartPage #cartP{
+    display: flex;
+}
+#quan {
+    color: #fff;
+    margin-left: 2px;
+    /* right: 10px; */
+    border-radius: 50%;
+    padding: 0 5px;
+    background-color: #ed0301;
+    height: 18px;
+    /* top: 12%; */
+    /* border: 1px solid red; */
     font-size: 12px;
+    text-align: center;
 }
 
 .nav_p .fa-cart-shopping {
-    margin-top: -6px;
-    font-size: 20px;
+    margin-top: 5px;
+    font-size: 24px;
+    /* border: 1px solid red; */
+}
+#wallet{
+    font-size: 24px;
 }
 
 .navLogo {
     cursor: pointer;
+
 }
 
-.navLogo h1 {
+.navLogo img {
     margin-top: 6px;
-    color: #333;
+    width: 150px;
+    height: 33px;
+
 }
 
 .nav_search {
@@ -99,22 +119,14 @@ body {
 }
 
 #profileIcon {
-    width: 30px;
+    width: 28px;
 }
 
 #login:hover {
     background-color: #FED7D7;
 }
 
-#quan {
-    color: white;
-    margin-left: 2px;
-    border-radius: 50%;
-    background-color: #ed0331;
-    padding: 0px 5px;
-    font-size: 14px;
-    text-align: center;
-}
+
 
 #searchData {
     width: 39.5%;
@@ -125,7 +137,7 @@ body {
     display: none;
     margin-top: 6px;
     padding: 0 8px;
-    z-index: 1;
+    z-index: 1200;
 }
 
 #searchData ul {
@@ -199,7 +211,29 @@ body {
     }
 
 }
-
+@media screen and (max-width: 377px) {
+    .navLogo img {
+        width: 140px;
+        height: 33px;
+    
+    }
+    .layer {
+        padding: 2px 4px;
+    }
+    .layer div {
+        margin-top: 8px;
+        width: 18px;
+    }
+    .nav_p .fa-cart-shopping {
+        font-size: 20px;
+    }
+    #wallet{
+        font-size: 20px;
+    }
+    #profileIcon {
+        width: 24px;
+    }
+}
 /*Custum Scroll Bar*/
 /* width */
 #searchData::-webkit-scrollbar {

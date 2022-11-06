@@ -318,5 +318,7 @@ function getIteamCountOnHome() {
         }
     });
 }
-
+document.getElementById("masailogoimg").addEventListener("click",()=>{
+    window.location.href="./index.html"
+  })
 getIteamCountOnHome();
