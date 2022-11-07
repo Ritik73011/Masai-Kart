@@ -115,15 +115,31 @@ function navBarJavaScript() {
   let aa = getAuth();
   onAuthStateChanged(aa, (user) => {
     if (user) {
+      let uid = user.uid;
       let profile = document.getElementById("login");
       profile.style.display = "none";
       document.getElementById("profileIcon").style.display = "block";
+
+      const starCountRef = ref(database, "cartItem/" + uid);
+      onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        let count = 0;
+        for (let key in data) {
+          if (data.hasOwnProperty(key)) {
+            //let value = data[key];
+            count++;
+          }
+        }
+        document.getElementById("quan").innerText = count;
+      });
     }
     else {
       let profile = document.getElementById("login");
       profile.style.display = "block";
       document.getElementById("profileIcon").style.display = "none";
 
+      let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
+      document.getElementById("quan").innerText = cartItem.length;
     }
   });
 

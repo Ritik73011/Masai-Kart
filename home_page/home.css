@@ -122,13 +122,12 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #ed0331;
-    border-radius: 10px;
 }
 
 /* Handle on hover */

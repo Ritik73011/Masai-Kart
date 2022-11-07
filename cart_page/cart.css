@@ -59,7 +59,7 @@ body {
 
 }
 
-#imgId{
+#imgId {
     display: block;
     margin: auto;
     width: min-content;
@@ -216,7 +216,7 @@ body {
     width: 25%;
 }
 
-.cartRight #payBtn{
+.cartRight #payBtn {
     width: 150px;
     display: block;
     margin: auto;
@@ -276,6 +276,11 @@ body {
     width: 5px;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
 /* Track */
 ::-webkit-scrollbar-track {
     background: #fff;
@@ -284,7 +289,6 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #ed0331;
-    border-radius: 8px;
 }
 
 /* Handle on hover */
