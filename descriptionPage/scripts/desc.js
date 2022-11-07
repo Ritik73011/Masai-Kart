@@ -233,3 +233,8 @@ document.getElementById("masailogoimg").addEventListener("click", () => {
     window.location.href = "../index.html"
 })
 getIteamCountOnHome();
+
+document.querySelector("title").innerText=local.title;
+document.getElementById("buy").addEventListener("click",()=>{
+    showAlert("This feature is coming soon", "#23d959", "#fff");
+})

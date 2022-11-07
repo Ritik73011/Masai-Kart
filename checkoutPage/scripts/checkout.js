@@ -79,6 +79,7 @@ function createDiv(ele) {
 
     radioBtn.addEventListener("click", () => {
         document.getElementById("payBtn").style.display = "block";
+        document.getElementById("seleAdd").style.display="none";
     });
 }
 

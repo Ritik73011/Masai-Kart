@@ -52,7 +52,9 @@ function payAmount(uid) {
             getCartItems(uid);
             document.getElementById("main_container").style.display = "none";
             document.getElementById("paymentSuccess").style.display = "block";
-            window.location.href = "../../index.html";
+            setTimeout(() => {
+                window.location.href = "../../index.html";
+            }, 2000);
         }
     })
 }
