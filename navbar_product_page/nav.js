@@ -94,17 +94,16 @@ function productNavbarHtml() {
             <div class="list-item">
               <h4 class="title">Men's Fashion</h4>
               <ul>
-                <li><a href="#">Men's Top wear</a></li>
-                <li><a href="#">Men's Bottom wear</a></li>
-                <li><a href="#">Men's Foot wear</a></li>
-                <li><a href="#">Men's Jeans</a></li>
-                <li><a href="#">Men's Trackpants</a></li>
-                <li><a href="#">Men's Shirt</a></li>
-                <li><a href="#">Men's Shoes</a></li>
-                <li><a href="#">Men's T-Shirts</a></li>
-
-                <li><a href="#">Men's Kurtas</a></li>
-                <li><a href="#">Men's Blazers</a></li>
+                <li><a href="#" class="mens" id="mens_topwear">Men's Top wear</a></li>
+                <li><a href="#" class="mens" id="mens_bottomwear">Men's Bottom wear</a></li>
+                <li><a href="#" class="mens" id="mens_footwear">Men's Foot wear</a></li>
+                <li><a href="#" class="mens" id="mens_bottomwear" name="jeans">Men's Jeans</a></li>
+                <li><a href="#" class="mens" id="mens_bottomwear" name="Trackpant">Men's Trackpants</a></li>
+                <li><a href="#" class="mens" id="mens_topwear" name="Shirt">Men's Shirt</a></li>
+                <li><a href="#" class="mens" id="mens_footwear" name="Shoes">Men's Shoes</a></li>
+                <li><a href="#" class="mens" id="mens_topwear" name="T-Shirts">Men's T-Shirts</a></li>
+                <li><a href="#" class="mens" id="mens_topwear" name="Kurtas">Men's Kurtas</a></li>
+                <li><a href="#" class="mens" id="mens_topwear" name="Blazers">Men's Blazers</a></li>
               </ul>
             </div>
             <div class="list-item">

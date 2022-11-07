@@ -3,6 +3,8 @@ import { appendProduct } from "./product.js";
 
 let str = localStorage.getItem("catClick");
 let lower = str.toLocaleLowerCase();
+let str2 = localStorage.getItem("catClick2");
+let lower2 = str2.toLocaleLowerCase();
 
 let arrTemp = [];
 let brandArr = [];
@@ -12,6 +14,10 @@ onValue(starCountRef, (snapshot) => {
   const filtered = data.filter(ele => {
     return ele.mainCat.toLocaleLowerCase() === lower;
   })
+
+  const megaArr = data.filter(ele => {
+    return ele.cat1.toLocaleLowerCase() === lower;
+  });
 
   let searchedArr = [];
   data.map(ele => {
@@ -52,6 +58,47 @@ onValue(starCountRef, (snapshot) => {
     findMax(filtered);
   }
 
+  if (filtered.length == 0 && searchedArr.length == 0) {
+
+    if (lower2 != "") {
+      let subName = [];
+      megaArr.map(ele => {
+        let lowe = ele.title.toLocaleLowerCase();
+        if (lowe.includes(lower2)) {
+          subName.push(ele);
+        }
+      });
+      localStorage.setItem("catClick2", "");
+      appendBrand(subName);
+      appendSize(subName)
+      addevent("d1", subName)
+      addevent("d2", subName)
+      addevent("d3", subName)
+      addeventRating("r1", subName, 3)
+      addeventRating("r2", subName, 4.1)
+      addeventcolor("cl1", subName, "Red")
+      addeventcolor("cl2", subName, "Black")
+      addeventcolor("cl3", subName, "Green")
+      addeventcolor("cl4", subName, "Blue")
+      priceRangeTracker(subName);
+      findMax(subName);
+    }
+    else {
+      appendBrand(megaArr);
+      appendSize(megaArr)
+      addevent("d1", megaArr)
+      addevent("d2", megaArr)
+      addevent("d3", megaArr)
+      addeventRating("r1", megaArr, 3)
+      addeventRating("r2", megaArr, 4.1)
+      addeventcolor("cl1", megaArr, "Red")
+      addeventcolor("cl2", megaArr, "Black")
+      addeventcolor("cl3", megaArr, "Green")
+      addeventcolor("cl4", megaArr, "Blue")
+      priceRangeTracker(megaArr);
+      findMax(megaArr);
+    }
+  }
 });
 
 //APPENDING BRAND START
@@ -67,6 +114,13 @@ function appendBrand(arr) {
     arr.forEach(ele => {
       let lo = ele.title.toLocaleLowerCase();
       if (lo.includes(lower)) {
+        temp.push(ele.brand)
+      }
+    })
+  }
+  if (temp.length == 0) {
+    arr.forEach(ele => {
+      if (ele.cat1.toLocaleLowerCase() === lower) {
         temp.push(ele.brand)
       }
     })

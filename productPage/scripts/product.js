@@ -15,12 +15,20 @@ document.getElementById("footer").innerHTML = footer();
 let str = localStorage.getItem("catClick");
 let lower = str.toLocaleLowerCase();
 
+let str2 = localStorage.getItem("catClick2");
+let lower2 = str2.toLocaleLowerCase();
+
+
 const starCountRef = ref(database, "Products");
 onValue(starCountRef, (snapshot) => {
     const data = snapshot.val();
     const filtered = data.filter(ele => {
         return ele.mainCat.toLocaleLowerCase() === lower;
     })
+
+    const megaArr = data.filter(ele => {
+        return ele.cat1.toLocaleLowerCase() === lower;
+    });
 
     let searchedArr = [];
     data.map(ele => {
@@ -39,6 +47,23 @@ onValue(starCountRef, (snapshot) => {
         sortFun(filtered);
     }
 
+    if (filtered.length == 0 && searchedArr.length == 0) {
+
+        if (lower2 != "") {
+            let subName = [];
+            megaArr.map(ele => {
+                let lowe = ele.title.toLocaleLowerCase();
+                if (lowe.includes(lower2)) {
+                    subName.push(ele);
+                }
+            });
+            localStorage.setItem("catClick2", "");
+            appendProduct(subName, subName);
+        }
+        else {
+            appendProduct(megaArr, megaArr);
+        }
+    }
 });
 
 
@@ -209,5 +234,19 @@ document.getElementById("masailogoimg").addEventListener("click", () => {
     window.location.href = "../index.html"
 })
 
+let nxtBtns = [...document.querySelectorAll(".mens")];
+nxtBtns.forEach((ele, idx) => {
+    nxtBtns[idx].addEventListener("click", () => {
+        if (ele.name === "") {
+            localStorage.setItem("catClick", ele.id);
+            window.location.href = "../../productPage/product.html";
+        }
+        else {
+            localStorage.setItem("catClick", ele.id);
+            localStorage.setItem("catClick2", ele.name);
+            window.location.href = "../../productPage/product.html";
+        }
+    })
+});
 export { appendProduct };
 
