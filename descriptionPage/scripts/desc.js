@@ -3,7 +3,7 @@ import { footer } from "../../footer/footer.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../config.js";
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 import { productNavbarHtml, productNavbarJS } from "../../navbar_product_page/nav.js";
-
+import showAlert from "../../popup_alert/alert.js";
 
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
@@ -136,7 +136,7 @@ function addToCartFun(element) {
             });
 
             if (flag === true) {
-                alert("already added");
+                showAlert("Already added in cart.", "#FF6347", "#fff");
             }
             else {
                 let uniq = (new Date()).getTime();
@@ -150,6 +150,7 @@ function addToCartFun(element) {
                     discount: element.discount,
                     quan: 1
                 });
+                showAlert("Added to cart.", "#23d959", "#fff");
             }
 
             const starCountRef = ref(database, "cartItem/" + uid);
@@ -177,7 +178,7 @@ function addToCartFun(element) {
             });
 
             if (flag === true) {
-                alert("avilable");
+                showAlert("Already added in cart.", "#FF6347", "#fff");
             }
             else {
                 let obj = {
@@ -194,6 +195,7 @@ function addToCartFun(element) {
                 arrCart.push(obj);
 
                 localStorage.setItem("cartItem", JSON.stringify(arrCart));
+                showAlert("Added to cart.", "#23d959", "#fff");
                 let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
                 document.getElementById("quan").innerText = cartItem.length;
             }
@@ -227,7 +229,7 @@ function getIteamCountOnHome() {
         }
     });
 }
-document.getElementById("masailogoimg").addEventListener("click",()=>{
-    window.location.href="../index.html"
-  })
+document.getElementById("masailogoimg").addEventListener("click", () => {
+    window.location.href = "../index.html"
+})
 getIteamCountOnHome();

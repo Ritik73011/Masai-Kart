@@ -8,7 +8,7 @@ document.getElementById("btn2").addEventListener("click", () => {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
-    if(name===""){
+    if (name === "") {
         showAlert("Please enter your name!", "#FF6347", "#fff")
     } else if (email === "") {
         showAlert("Please enter your email!", "#FF6347", "#fff")
@@ -19,7 +19,7 @@ document.getElementById("btn2").addEventListener("click", () => {
     }
 })
 function createUser(name, email, password) {
-    console.log(email, password)
+    //console.log(email, password)
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -31,19 +31,23 @@ function createUser(name, email, password) {
                 email: email
             })
             // alert(user);
-            showAlert("Signup successfull","#23d959","#fff")
+            showAlert("Signup successfull", "#23d959", "#fff")
+            window.location.href = "../../index.html";
             // console.log(user.uid);
             // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            showAlert(errorMessage,"#FF6347","#fff")
+            showAlert(errorMessage, "#FF6347", "#fff")
             // alert(errorMessage)
             // ..
         });
 }
 
+document.getElementById("logoMasai").addEventListener("click", () => {
+    window.location.href = "../../index.html";
+});
 
 
 

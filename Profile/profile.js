@@ -3,6 +3,7 @@ import { footer } from "../footer/footer.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../config.js";
 import { ref, onValue, set, remove, database, update } from "../config.js";
 import { signOut } from "../config.js";
+import showAlert from "../popup_alert/alert.js";
 
 let auth = getAuth();
 onAuthStateChanged(auth, (isLogin) => {
@@ -25,6 +26,7 @@ onAuthStateChanged(auth, (isLogin) => {
             })
             document.getElementById("name").setAttribute("readonly", true);
             document.getElementById("email").setAttribute("readonly", true);
+            showAlert("Updated Successfully", "#23d959", "#fff");
         })
         getOrders(userUid);
         getwishList(userUid);
@@ -34,6 +36,7 @@ onAuthStateChanged(auth, (isLogin) => {
 document.getElementById("edit").addEventListener("click", () => {
     document.getElementById("name").removeAttribute("readonly");
     document.getElementById("email").removeAttribute("readonly");
+    showAlert("Now You Can Edit Your Credentials", "#23d959", "#fff");
 
 })
 
@@ -168,9 +171,10 @@ function getwishList(uid) {
 document.getElementById("logout").addEventListener("click", () => {
     const auth = getAuth();
     signOut(auth).then(() => {
-        alert("signout successfully");
+        showAlert("Logout successfull", "#23d959", "#fff");
+        window.location.href = "../index.html";
     }).catch((error) => {
-        alert(error);
+
     });
 });
 

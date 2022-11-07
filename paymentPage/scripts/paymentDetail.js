@@ -1,6 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../config.js";
 import { ref, onValue, set, remove, database, update } from "../../config.js";
-
+import showAlert from "../../popup_alert/alert.js";
 
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
@@ -23,12 +23,12 @@ document.getElementById("proceedBtn").addEventListener("click", () => {
     let cvv = document.getElementById("cvv").value;
 
     if (number.length != 16) {
-        alert("Invalid Card Number!");
+        showAlert("Invalid card no.", "#FF6347", "#fff");
     } else if (cvv.length != 3) {
-        alert("Invalid CVV");
+        showAlert("Invalid cvv", "#FF6347", "#fff");
     }
     else if (name == "") {
-        alert("enter name");
+        showAlert("Enter your name", "#FF6347", "#fff");
     }
     else {
         document.getElementById("main_container").style.display = "block"
@@ -45,14 +45,14 @@ function payAmount(uid) {
 
         let myOtp = document.getElementById("otp").value;
         if (myOtp != givenOtp) {
-            alert("Wrong OTP!");
+            showAlert("Wrong OTP", "#FF6347", "#fff");
         } else {
             // setTime("Payment Successfull",2000);
-            alert("Payment Successfull");
+            showAlert("Payment Successfull", "#23d959", "#fff");
             getCartItems(uid);
             document.getElementById("main_container").style.display = "none";
             document.getElementById("paymentSuccess").style.display = "block";
-
+            window.location.href = "../../index.html";
         }
     })
 }

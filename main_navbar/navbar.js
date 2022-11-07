@@ -1,7 +1,7 @@
 import { ref, onValue, set, remove, database, update } from "../config.js";
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../config.js";
-
+import showAlert from "../popup_alert/alert.js";
 function navBarHtml() {
   return ` <nav id="nav">
     <div class="navL">
@@ -58,8 +58,10 @@ function navBarJavaScript() {
           li.innerText = prod_name;
 
           li.addEventListener("click", () => {
-            alert(prod_name);
-          })
+            localStorage.setItem("clicked", JSON.stringify(element));
+            window.location.href = "../descriptionPage/desc.html";
+          });
+
           document.getElementById("ul").append(li);
         }
       });
@@ -102,6 +104,10 @@ function navBarJavaScript() {
 
   document.getElementById("profileIcon").addEventListener("click", () => {
     window.location.href = "../Profile/profile.html";
+  });
+
+  document.getElementById("wallet").addEventListener("click", () => {
+    showAlert("This feature is comming soon..", "#23d959", "#fff");
   });
 
   document.getElementById("profileIcon").style.display = "none";

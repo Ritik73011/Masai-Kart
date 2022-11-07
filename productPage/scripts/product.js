@@ -3,7 +3,7 @@ import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../config.js";
 import { footer } from "../../footer/footer.js";
 import { productNavbarHtml, productNavbarJS } from "../../navbar_product_page/nav.js";
-
+import showAlert from "../../popup_alert/alert.js";
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
 
@@ -160,7 +160,7 @@ function addToWishList(ele, heart) {
             });
 
             if (flag === true) {
-                alert("alreday added");
+                showAlert("Already added in wishlist.", "#FF6347", "#fff");
             }
             else {
                 let uniq = (new Date()).getTime();
@@ -174,7 +174,7 @@ function addToWishList(ele, heart) {
             }
         }
         else {
-            alert("user not login")
+            showAlert("You need to login first.", "#FF6347", "#fff");
         }
     });
 }

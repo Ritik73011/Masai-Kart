@@ -33,7 +33,9 @@ function signinUser(email, password) {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            showAlert("Login successfull", "#23d959", "#fff")
+            showAlert("Login successfull", "#23d959", "#fff");
+            window.location.href = "../../index.html";
+
             // window.location.href="../../popup_alert/"
             // ...
         })
@@ -78,11 +80,7 @@ function signinWithGoogle() {
 
 const auth1 = getAuth();
 const user = auth1.currentUser;
-if (user) {
-    console.log("yes");
-} else {
-    console.log("no");
-}
+
 
 // FORGET PASSWORD
 

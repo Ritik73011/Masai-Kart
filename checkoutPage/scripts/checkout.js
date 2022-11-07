@@ -2,6 +2,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 import { navBarJavaScript, navBarHtml } from "../../main_navbar/navbar.js";
 import { footer } from "../../footer/footer.js";
+import showAlert from "../../popup_alert/alert.js";
 
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
@@ -121,7 +122,7 @@ function addSubmit(uid) {
             landmark: landmark,
             address: address
         });
-
+        showAlert("Added Successfull.", "#23d959", "#fff");
         let div = document.getElementById("popup_box"); div.style.display = "none";
         location.reload();
     });

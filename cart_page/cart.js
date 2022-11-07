@@ -2,6 +2,7 @@ import { ref, onValue, set, remove, database, update } from "../config.js";
 import { navBarJavaScript, navBarHtml } from "../main_navbar/navbar.js";
 import { footer } from "../footer/footer.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../config.js";
+import showAlert from "../popup_alert/alert.js";
 
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
@@ -61,7 +62,7 @@ onAuthStateChanged(isLogin, (user) => {
             document.querySelector(".cartProduct").append(img);
         }
         document.getElementById("payBtn").addEventListener("click", () => {
-            alert("Please login first");
+            showAlert("Please login first.", "#FF6347", "#fff");
         })
     }
 });
@@ -156,7 +157,7 @@ function appendProdInCart(arr, uid) {
             let temp = obj.quan;
             temp--;
             if (temp < 1) {
-                alert("Product should be atleast 1 quantity");
+                showAlert("Product should be atleast 1 quantity", "#FF6347", "#fff");
             } else {
                 updateQuantity(obj, temp, quantity, uid);
                 location.reload();
@@ -170,7 +171,7 @@ function appendProdInCart(arr, uid) {
                 updateQuantity(obj, temp, quantity, uid);
                 location.reload();
             } else {
-                alert("product limit exceeded");
+                showAlert("product limit exceeded", "#FF6347", "#fff");
             }
         });
 
@@ -282,10 +283,10 @@ function appendFromLocalStorage(arr) {
         document.querySelector(".cartProduct").append(cartCard);
 
         minus.addEventListener("click", () => {
-            alert("Please login first.");
+            showAlert("Please login first.", "#FF6347", "#fff");
         });
         plus.addEventListener("click", () => {
-            alert("Please login first.");
+            showAlert("Please login first.", "#FF6347", "#fff");
         });
 
         remBtn.addEventListener("click", () => {
