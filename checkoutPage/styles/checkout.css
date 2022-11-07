@@ -5,6 +5,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+#seleAdd {
+    margin-top: 16px;
+    font-weight: bolder;
+    color: #fc2323;
+}
+
 body {
     background-color: #F1F3F6;
 }

@@ -67,9 +67,11 @@ body {
     cursor: pointer;
     font-size: 18px;
 }
-#toCartPage #cartP{
+
+#toCartPage #cartP {
     display: flex;
 }
+
 #quan {
     color: #fff;
     margin-left: 2px;
@@ -89,7 +91,8 @@ body {
     font-size: 24px;
     /* border: 1px solid red; */
 }
-#wallet{
+
+#wallet {
     font-size: 24px;
 }
 
@@ -120,6 +123,7 @@ body {
 
 #profileIcon {
     width: 28px;
+    cursor: pointer;
 }
 
 #login:hover {
@@ -211,29 +215,36 @@ body {
     }
 
 }
+
 @media screen and (max-width: 377px) {
     .navLogo img {
         width: 140px;
         height: 33px;
-    
+
     }
+
     .layer {
         padding: 2px 4px;
     }
+
     .layer div {
         margin-top: 8px;
         width: 18px;
     }
+
     .nav_p .fa-cart-shopping {
         font-size: 20px;
     }
-    #wallet{
+
+    #wallet {
         font-size: 20px;
     }
+
     #profileIcon {
         width: 24px;
     }
 }
+
 /*Custum Scroll Bar*/
 /* width */
 #searchData::-webkit-scrollbar {

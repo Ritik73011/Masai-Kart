@@ -94,15 +94,15 @@ function appendProduct(arr, data) {
 
         imgDiv.addEventListener("click", () => {
             localStorage.setItem("clicked", JSON.stringify(ele));
-            window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+            window.location.href = "../../descriptionPage/desc.html";
         });
         brRat.addEventListener("click", () => {
             localStorage.setItem("clicked", JSON.stringify(ele));
-            window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+            window.location.href = "../../descriptionPage/desc.html";
         });
         title.addEventListener("click", () => {
             localStorage.setItem("clicked", JSON.stringify(ele));
-            window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+            window.location.href = "../../descriptionPage/desc.html";
         });
 
         heart.addEventListener("click", () => {
@@ -205,9 +205,9 @@ function checkWishList(ele, heart) {
 
     });
 }
-document.getElementById("masailogoimg").addEventListener("click",()=>{
-    window.location.href="../index.html"
-  })
+document.getElementById("masailogoimg").addEventListener("click", () => {
+    window.location.href = "../index.html"
+})
 
 export { appendProduct };
 

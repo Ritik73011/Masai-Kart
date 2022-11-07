@@ -91,7 +91,7 @@ document.getElementById("checkPin").addEventListener("click", () => {
 });
 
 document.getElementById("payBtn").addEventListener("click", () => {
-    window.location.href = "../../../Masai-Kart/paymentPage/payment.html";
+    window.location.href = "../../paymentPage/payment.html";
 });
 
 document.getElementById("cancel").addEventListener("click", () => {
@@ -217,6 +217,6 @@ function appendOrderSummary(ele) {
 
 }
 
-document.getElementById("masailogoimg").addEventListener("click",()=>{
-    window.location.href="../index.html"
-  })
+document.getElementById("masailogoimg").addEventListener("click", () => {
+    window.location.href = "../index.html"
+})

@@ -31,12 +31,12 @@ function footer() {
         <p>Ritik Kumar Singh</p>
         <div class="socialLogo">
           <a target="_blank" href="https://github.com/Ritik73011"
-            ><img src="../../Masai-Kart/Image/github.svg" alt=""
+            ><img src="../Image/github.svg" alt=""
           /></a>
           <a
             target="_blank"
             href="www.linkedin.com/in/ritik-kumar-singh-161618208"
-            ><img src="../../Masai-Kart/Image/linkedin.svg" alt=""
+            ><img src="../Image/linkedin.svg" alt=""
           /></a>
         </div>
       </div>
@@ -44,19 +44,19 @@ function footer() {
         <p>Sheikh Zainuddin</p>
         <div class="socialLogo">
           <a target="_blank" href="https://github.com/Sheikhzain07"
-            ><img src="../../Masai-Kart/Image/github.svg" alt=""
+            ><img src="../Image/github.svg" alt=""
           /></a>
           <a
             target="_blank"
             href="https://www.linkedin.com/in/sheikh-zainuddin-10ba54211/"
-            ><img src="../../Masai-Kart/Image/linkedin.svg" alt=""
+            ><img src="../Image/linkedin.svg" alt=""
           /></a>
         </div>
       </div>
       <div>
         <p class="devloper2">Download Our App</p>
         <a href="#"
-          ><img id="playStore" src="../../Masai-Kart/Image/playstore.svg" alt=""
+          ><img id="playStore" src="../Image/playstore.svg" alt=""
         /></a>
       </div>
     </div>

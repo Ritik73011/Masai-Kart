@@ -2,7 +2,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
 import { ref, onValue, set, remove, database, update } from "../../config.js";
 
 document.getElementById("toPay").addEventListener("click", () => {
-    location.href = "./paymentDetail.html";
+    window.location.href = "../paymentDetail.html"
 })
 
 const auth = getAuth();

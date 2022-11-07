@@ -1,7 +1,7 @@
-import { ref, onValue, set, remove, database, update } from "../Firebase/config.js";
+import { ref, onValue, set, remove, database, update } from "../config.js";
 import { navBarJavaScript, navBarHtml } from "../main_navbar/navbar.js";
 import { footer } from "../footer/footer.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../Masai-Kart/config.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../config.js";
 
 document.getElementById("navbar").innerHTML = navBarHtml();
 navBarJavaScript();
@@ -44,7 +44,7 @@ onAuthStateChanged(isLogin, (user) => {
             }
         });
         document.getElementById("payBtn").addEventListener("click", () => {
-            window.location.href = "../../Masai-Kart/checkoutPage/checkout.html";
+            window.location.href = "../checkoutPage/checkout.html";
         })
     }
     else {
@@ -324,8 +324,8 @@ function updateQuantity(obj, temp, quantity, uid) {
     });
 }
 
-document.getElementById("masailogoimg").addEventListener("click",()=>{
-    window.location.href="../index.html"
-  })
+document.getElementById("masailogoimg").addEventListener("click", () => {
+    window.location.href = "../index.html"
+})
 
 

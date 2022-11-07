@@ -66,7 +66,7 @@ function appendOrders(ele) {
 
     let price = document.createElement("p");
     price.id = "pPrice";
-    price.innerText ="₹"+ ele.price;
+    price.innerText = "₹" + ele.price;
 
     itemDiv.append(imgD, title, price);
     mainD.append(itemDiv);
@@ -77,31 +77,31 @@ function appendOrders(ele) {
 
 function appendWishList(ele) {
     // document.getElementById("wishlist").innerHTML="";
-//    console.log(ele.img1)
-        let mainD = document.createElement("div");
-        mainD.id = "gridDiv";
+    //    console.log(ele.img1)
+    let mainD = document.createElement("div");
+    mainD.id = "gridDiv";
 
-        let itemDiv = document.createElement("div");
-        itemDiv.id = "iDiv";
+    let itemDiv = document.createElement("div");
+    itemDiv.id = "iDiv";
 
-        let imgD = document.createElement("div");
-        let img = document.createElement("img");
-        img.src = ele.img1;
-        imgD.append(img);
+    let imgD = document.createElement("div");
+    let img = document.createElement("img");
+    img.src = ele.img1;
+    imgD.append(img);
 
-        let title = document.createElement("p");
-        title.id = "pTitle";
-        title.innerText = ele.title;
+    let title = document.createElement("p");
+    title.id = "pTitle";
+    title.innerText = ele.title;
 
-        let price = document.createElement("p");
-        price.id = "pPrice";
-        price.innerText ="₹"+ ele.price;
+    let price = document.createElement("p");
+    price.id = "pPrice";
+    price.innerText = "₹" + ele.price;
 
-        itemDiv.append(imgD, title, price);
-        mainD.append(itemDiv);
+    itemDiv.append(imgD, title, price);
+    mainD.append(itemDiv);
 
-        document.getElementById("wishlist").append(mainD);
-    
+    document.getElementById("wishlist").append(mainD);
+
 
 }
 
@@ -156,7 +156,7 @@ function getwishList(uid) {
     onValue(starCountRef, (snapshot) => {
         const data = snapshot.val();
         let obj = Object.keys(data);
-        fetchWishlist(obj,uid);
+        fetchWishlist(obj, uid);
     })
 
 }
@@ -172,4 +172,8 @@ document.getElementById("logout").addEventListener("click", () => {
     }).catch((error) => {
         alert(error);
     });
+});
+
+document.getElementById("masailogoimg").addEventListener("click", () => {
+    window.location.href = "../index.html";
 });

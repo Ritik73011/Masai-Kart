@@ -1,5 +1,5 @@
 import { ref, onValue, set, remove, database, update } from "../../config.js";
-import { appendProduct } from ".././scripts/product.js";
+import { appendProduct } from "./product.js";
 
 let str = localStorage.getItem("catClick");
 let lower = str.toLocaleLowerCase();

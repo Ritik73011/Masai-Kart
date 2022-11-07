@@ -1,7 +1,7 @@
-import { ref, onValue, set, remove, database, update } from "../Firebase/config.js";
+import { ref, onValue, set, remove, database, update } from "../config.js";
 import { navBarJavaScript, navBarHtml } from "../main_navbar/navbar.js";
 import { footer } from "../footer/footer.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../Masai-Kart/config.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../config.js";
 import showAlert from "../popup_alert/alert.js";
 
 document.getElementById("footer").innerHTML = footer();
@@ -29,7 +29,7 @@ function appendCategory(arr) {
         div.append(img, title);
         div.addEventListener("click", () => {
             localStorage.setItem("catClick", title.innerText);
-            window.location.href = "../../Masai-Kart/productPage/product.html";
+            window.location.href = "../productPage/product.html";
         });
         document.getElementById("category").append(div);
     });
@@ -100,15 +100,15 @@ getProducts();
 function clickedProduct(img, title, flexDiv, element) {
     img.addEventListener("click", () => {
         localStorage.setItem("clicked", JSON.stringify(element));
-        window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+        window.location.href = "../descriptionPage/desc.html"
     });
     title.addEventListener("click", () => {
         localStorage.setItem("clicked", JSON.stringify(element));
-        window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+        window.location.href = "../descriptionPage/desc.html"
     });
     flexDiv.addEventListener("click", () => {
         localStorage.setItem("clicked", JSON.stringify(element));
-        window.location.href = "../../Masai-Kart/descriptionPage/desc.html"
+        window.location.href = "../descriptionPage/desc.html"
     });
 
 }
@@ -318,7 +318,7 @@ function getIteamCountOnHome() {
         }
     });
 }
-document.getElementById("masailogoimg").addEventListener("click",()=>{
-    window.location.href="./index.html"
-  })
+document.getElementById("masailogoimg").addEventListener("click", () => {
+    window.location.href = "./index.html"
+})
 getIteamCountOnHome();

@@ -1,89 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../popup_alert/alert.css" />
+    <link rel="stylesheet" href="../login/styles/login.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="../popup_alert/alert.css">
-  <link rel="stylesheet" href="../login/styles/login.css" />
-  
-</head>
-
-<body>
-  <div id="masailogo">
-    <img
-      src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/IMG_20221106_231340.png?alt=media&token=64ad5c75-99cf-46c2-9906-573fb2e080e8"
-      alt="">
-  </div>
-  <div id="mainL">
-    <div id="imgDiv">
+  <body>
+    <div id="masailogo">
       <img
-        src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/pngegg.png?alt=media&token=ce01d36a-33f2-4cae-ae17-5732cb1aaaa4"
-        alt="" />
+        src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/IMG_20221106_231340.png?alt=media&token=64ad5c75-99cf-46c2-9906-573fb2e080e8"
+        alt=""
+      />
     </div>
-    <div id="right">
-      <div id="content">
-        <input type="text" id="emailL" placeholder="Enter your email" />
-        <input type="password" id="passL" placeholder="Enter your password" />
+    <div id="mainL">
+      <div id="imgDiv">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/pngegg.png?alt=media&token=ce01d36a-33f2-4cae-ae17-5732cb1aaaa4"
+          alt=""
+        />
+      </div>
+      <div id="right">
+        <div id="content">
+          <input type="text" id="emailL" placeholder="Enter your email" />
+          <input type="password" id="passL" placeholder="Enter your password" />
 
-        <button id="btn">LOGIN</button>
-        <p id="gotosignup">
-          New User? Click here
-          <span class="tosignup" id="tosignup">Signup</span>
-        </p>
-        <p id="forgetPass">
-          Forget password ? <span id="forget"> Click here</span>
-        </p>
-        <p class="or">--Or--</p>
-        <p class="loginusing">Sign In using</p>
-        <div id="google">
-          <img id="googleImg" src="../login/images/Google-G-Logo-PNG-Image.png" alt="" />
-          <i class="fa-brands fa-github"></i>
+          <button id="btn">LOGIN</button>
+          <p id="gotosignup">
+            New User? Click here
+            <span class="tosignup" id="tosignup">Signup</span>
+          </p>
+          <p id="forgetPass">
+            Forget password ? <span id="forget"> Click here</span>
+          </p>
+          <p class="or">--Or--</p>
+          <p class="loginusing">Sign In using</p>
+          <div id="google">
+            <img
+              id="googleImg"
+              src="./images/Google-G-Logo-PNG-Image.png"
+              alt=""
+            />
+            <i class="fa-brands fa-github"></i>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="mainL2">
-    <div id="imgDiv">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/pngegg.png?alt=media&token=ce01d36a-33f2-4cae-ae17-5732cb1aaaa4"
-        alt="" />
-    </div>
-    <div id="right">
-      <div id="content">
-        <input type="text" id="name" placeholder="Enter your Name" />
-        <input type="email" id="email" placeholder="Enter your Email" />
-        <input type="password" id="password" placeholder="Enter your password" />
-        <p>
-          By enrolling your email address, you consent to accept terms and conditions
-          of
-          <strong>Masaikart</strong>.
-        </p>
+    <div id="mainL2">
+      <div id="imgDiv">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/masai-kart-c9e16.appspot.com/o/pngegg.png?alt=media&token=ce01d36a-33f2-4cae-ae17-5732cb1aaaa4"
+          alt=""
+        />
+      </div>
+      <div id="right">
+        <div id="content">
+          <input type="text" id="name" placeholder="Enter your Name" />
+          <input type="email" id="email" placeholder="Enter your Email" />
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+          />
+          <p>
+            By enrolling your email address, you consent to accept terms and
+            conditions of
+            <strong>Masaikart</strong>.
+          </p>
 
-        <button id="btn2" class="btnL">SIGNUP</button>
-        <p id="gotologin">
-          Already have an Account? Click here
-          <span class="tosignup" id="tologin">Login</span>
-        </p>
+          <button id="btn2" class="btnL">SIGNUP</button>
+          <p id="gotologin">
+            Already have an Account? Click here
+            <span class="tosignup" id="tologin">Login</span>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!---->
-  <div id="popup_box">
-    <form id="form2">
-      <input type="email" id="email2" placeholder="Enter email" required />
-      <input type="submit" id="submit2" value="SUBMIT" />
-    </form>
-    <button id="cancel">CANCLE</button>
-  </div>
-  <!---->
-</body>
-
+    <!---->
+    <div id="popup_box">
+      <form id="form2">
+        <input type="email" id="email2" placeholder="Enter email" required />
+        <input type="submit" id="submit2" value="SUBMIT" />
+      </form>
+      <button id="cancel">CANCLE</button>
+    </div>
+    <!---->
+  </body>
 </html>
-<script src="../login/scripts/login.js" type="module"></script>
-<script type="module" src="../login/scripts/signup.js"></script>
-<script src="https://kit.fontawesome.com/c3ff0c4a78.js" crossorigin="anonymous"></script>
+<script src="./scripts/login.js" type="module"></script>
+<script type="module" src="../scripts/signup.js"></script>
+<script
+  src="https://kit.fontawesome.com/c3ff0c4a78.js"
+  crossorigin="anonymous"
+></script>

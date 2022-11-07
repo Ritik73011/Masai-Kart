@@ -1,6 +1,6 @@
-import { ref, onValue, set, remove, database, update } from "../../Masai-Kart/config.js";
+import { ref, onValue, set, remove, database, update } from "../config.js";
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../../Masai-Kart/config.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "../config.js";
 
 function navBarHtml() {
   return ` <nav id="nav">
@@ -34,7 +34,7 @@ function navBarHtml() {
       
       <p id="wallet"><i class="fa-solid fa-wallet"></i></p>
       <p id="login">LOGIN</p>
-      <img id="profileIcon" src="../../Masai-Kart/Image/profile.svg"/>
+      <img id="profileIcon" src="../Image/profile.svg"/>
     </div>
   </nav>`
 }
@@ -89,7 +89,7 @@ function navBarJavaScript() {
     if (event.key === "Enter") {
       let val = document.getElementById("searchBox").value;
       localStorage.setItem("catClick", val);
-      window.location.href = "../../Masai-Kart/productPage/product.html";
+      window.location.href = "../productPage/product.html";
     }
   });
   document.getElementById("login").addEventListener("click", () => {
@@ -97,8 +97,12 @@ function navBarJavaScript() {
   });
 
   document.getElementById("toCartPage").addEventListener("click", () => {
-    window.location.href = "../../Masai-Kart/cart_page/cart.html";
-  })
+    window.location.href = "../cart_page/cart.html";
+  });
+
+  document.getElementById("profileIcon").addEventListener("click", () => {
+    window.location.href = "../Profile/profile.html";
+  });
 
   document.getElementById("profileIcon").style.display = "none";
   //check in navbar, if user loggedIn or not
@@ -116,7 +120,7 @@ function navBarJavaScript() {
 
     }
   });
-  
+
 }
 
 
