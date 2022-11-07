@@ -87,7 +87,7 @@ function productNavbarHtml() {
           </div>
         </li>
         <!---->
-        <li><a href="#">Mobiles</a></li>
+      
         <li class="menu-item-has-children">
           <a href="#">Fashion<i class="fa fa-angle-down"></i></a>
           <div class="sub-menu mega-menu mega-menu-column-4">
@@ -109,25 +109,25 @@ function productNavbarHtml() {
             <div class="list-item">
               <h4 class="title">Womens</h4>
               <ul>
-                <li><a href="#">Women's Top wear</a></li>
-                <li><a href="#">Women's Bottom wear</a></li>
-                <li><a href="#">Women's Foot wear</a></li>
-                <li><a href="#">Women Sarees</a></li>
-                <li><a href="#">Women Gowns</a></li>
-                <li><a href="#">Women Lahengas</a></li>
-                <li><a href="#">Women Tops</a></li>
-                <li><a href="#">Women Skirts</a></li>
-                <li><a href="#">Women Shorts</a></li>
-                <li><a href="#">Women Jeans</a></li>
+                <li><a href="#" class="mens" id="womens_topwear" >Women's Top wear</a></li>
+                <li><a href="#" class="mens" id="womens_bottomwear" >Women's Bottom wear</a></li>
+                <li><a href="#" class="mens" id="womens_footwear" >Women's Foot wear</a></li>
+                <li><a href="#" class="mens" id="womens_topwear" name="Saree">Women Sarees</a></li>
+                <li><a href="#" class="mens" id="womens_topwear" name="Gown">Women Gowns</a></li>
+                <li><a href="#" class="mens" id="womens_topwear" name="Lahenga">Women Lahengas</a></li>
+                <li><a href="#" class="mens" id="womens_topwear" name="top">Women Tops</a></li>
+                <li><a href="#" class="mens" id="womens_bottomwear" name="skirt">Women Skirts</a></li>
+                <li><a href="#" class="mens" id="womens_bottomwear" name="short">Women Shorts</a></li>
+                <li><a href="#" class="mens" id="womens_bottomwear" name="jeans">Women Jeans</a></li>
               </ul>
             </div>
             <div class="list-item">
               <h4 class="title">Kid's</h4>
               <ul>
-                <li><a href="#">Girl's Dress</a></li>
-                <li><a href="#">Boy's & Girl's T-Shirt</a></li>
-                <li><a href="#">Boy's & Girl's Short</a></li>
-                <li><a href="#">Kids Slipper</a></li>
+                <li><a href="#" class="mens" id="girls" name="dress">Girl's Dress</a></li>
+                <li><a href="#" class="mens" id="girls" name="tshirt">Boy's & Girl's T-Shirt</a></li>
+                <li><a href="#" class="mens" id="girls" name="short">Boy's & Girl's Short</a></li>
+                <li><a href="#" class="mens" id="girls" name="slipper">Kids Slipper</a></li>
               </ul>
             </div>
           </div>
@@ -139,20 +139,16 @@ function productNavbarHtml() {
             <div class="list-item">
               <h4 class="title">Mobiles</h4>
               <ul>
-                <li><a href="#"> MI </a></li>
-                <li><a href="#"> Realme </a></li>
-                <li><a href="#"> Samsung </a></li>
-                <li><a href="#"> OPPO </a></li>
-                <li><a href="#"> Apple </a></li>
-                <li><a href="#"> Infinix </a></li>
-                <li><a href="#"> Honor </a></li>
-                <li><a href="#"> Vivo </a></li>
-                <li><a href="#"> Asus </a></li>
-                <li><a href="#"> Nokia </a></li>
-                <li><a href="#"> Poco X2 </a></li>
-                <li><a href="#"> realme Narzo 10 </a></li>
-                <li><a href="#"> Infinix Hot 9 </a></li>
-                <li><a href="#"> IQOO 3 </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="mi"> MI </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="realme"> Realme </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="samsung"> Samsung </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="oppo"> OPPO </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="apple"> Apple </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="infinix"> Infinix </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="honor"> Honor </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="vivo"> Vivo </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="asus"> Asus </a></li>
+                <li><a href="#" class="mens" id="Mobile" name="nokia"> Nokia </a></li>
               </ul>
             </div>
 
@@ -177,7 +173,7 @@ function productNavbarHtml() {
             <div class="list-item">
               <h4 class="title">Laptops</h4>
               <ul>
-                <li><a href="#">Laptops </a></li>
+                <li><a href="#" class="mens" id="Laptop">Laptops </a></li>
 
                 <li><a href="#"> External Hard Disks</a></li>
                 <li><a href="#"> Pendrives</a></li>

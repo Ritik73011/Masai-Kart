@@ -216,7 +216,7 @@ body {
 
 }
 
-@media screen and (max-width: 377px) {
+@media screen and (max-width: 412px) {
     .navLogo img {
         width: 130px;
         height: 33px;
@@ -242,6 +242,12 @@ body {
 
     #profileIcon {
         width: 24px;
+    }
+}
+
+@media screen and (max-width: 366px) {
+    #login {
+        padding: 3px;
     }
 }
 

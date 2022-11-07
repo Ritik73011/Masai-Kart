@@ -13,7 +13,8 @@
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 32px;
 }
 
 .navbar ul {
@@ -127,11 +128,11 @@ a {
 }
 
 .navbar .menu>ul>li .sub-menu.mega-menu-column-4 {
-    width: 90%;
+    width: 80%;
     margin: auto;
     display: flex;
     flex-wrap: nowrap;
-    padding: 20px 15px;
+    padding: 0px 15px 8px 15px;
     justify-content: space-around;
 }
 
@@ -140,9 +141,15 @@ a {
     padding: 0 15px;
 }
 
+.navbar .menu>ul>li .sub-menu.mega-menu-column-4>.list-item:nth-child(odd) {
+    flex: 0 0 25%;
+    padding: 0 15px;
+    background-color: #f9f9f9;
+}
+
 .navbar .menu>ul>li .sub-menu.mega-menu-column-4>.list-item .title {
     font-size: 16px;
-    color: blue;
+    color: #333;
     font-weight: 500;
     line-height: 1;
     padding: 10px 0;
