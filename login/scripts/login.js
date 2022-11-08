@@ -35,7 +35,7 @@ function signinUser(email, password) {
             const user = userCredential.user;
             showAlert("Login successfull", "#23d959", "#fff");
             window.location.href = "../../index.html";
-            
+
             // window.location.href="../../popup_alert/"
             // ...
         })
