@@ -45,6 +45,8 @@
 #imgDiv #imgGrid {
     /* width: 63; */
     padding: 4px;
+    width: 63px;
+    height: 63px;
 }
 
 #imgDiv #imgGrid div {
@@ -66,9 +68,10 @@
 }
 
 #imgGrid img {
-    display: grid;
-    width: 63px;
-    height: 63px;
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 60px;
     padding: 4px;
 }
 

@@ -234,7 +234,23 @@ document.getElementById("masailogoimg").addEventListener("click", () => {
 })
 getIteamCountOnHome();
 
-document.querySelector("title").innerText=local.title;
-document.getElementById("buy").addEventListener("click",()=>{
+document.querySelector("title").innerText = local.title;
+document.getElementById("buy").addEventListener("click", () => {
     showAlert("This feature is coming soon", "#23d959", "#fff");
-})
+});
+
+
+let nxtBtns = [...document.querySelectorAll(".mens")];
+nxtBtns.forEach((ele, idx) => {
+    nxtBtns[idx].addEventListener("click", () => {
+        if (ele.name === "") {
+            localStorage.setItem("catClick", ele.id);
+            window.location.href = "../../productPage/product.html";
+        }
+        else {
+            localStorage.setItem("catClick", ele.id);
+            localStorage.setItem("catClick2", ele.name);
+            window.location.href = "../../productPage/product.html";
+        }
+    })
+});
